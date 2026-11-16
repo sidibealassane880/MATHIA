@@ -4,62 +4,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATHIA - Apprendre les mathématiques</title>
+    <title>MATHIA - Mathématiques intelligentes</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #f0f4f8;
-            margin: 0;
+            color: #243047;
+        }
+
+        header {
+            background: #123c69;
+            color: white;
+            padding: 25px 15px;
             text-align: center;
         }
-        header {
-            background: #075985;
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        nav {
+            background: #0b2948;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
             color: white;
-            padding: 25px;
+            text-decoration: none;
+            margin: 8px;
+            font-weight: bold;
         }
-        main {
-            padding: 25px;
+
+        .container {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 15px;
         }
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .welcome h2 {
+            color: #123c69;
+            margin-bottom: 12px;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
         .card {
             background: white;
-            margin: 20px auto;
-            padding: 25px;
-            border-radius: 15px;
-            max-width: 400px;
-            box-shadow: 0 3px 10px #ccc;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #00000012;
         }
+
+        .card h3 {
+            color: #123c69;
+            margin-bottom: 12px;
+        }
+
         button {
-            background: #0284c7;
+            background: #087f5b;
             color: white;
             border: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 12px 18px;
+            border-radius: 7px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #065f46;
+        }
+
+        #lesson {
+            display: none;
+            background: white;
+            padding: 22px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 35px;
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <h1>📘 MATHIA</h1>
-    <p>L'intelligence artificielle au service des mathématiques</p>
+    <p>Apprendre les mathématiques autrement</p>
+    <p>Programme scolaire du Mali - 10e année</p>
 </header>
 
-<main>
-    <div class="card">
-        <h2>Bienvenue sur MATHIA !</h2>
-        <p>Apprenons les mathématiques autrement.</p>
-        <p>Programme scolaire du Mali 🇲🇱</p>
-    </div>
+<nav>
+    <a href="#">Accueil</a>
+    <a href="#cours">Cours</a>
+    <a href="#exercices">Exercices</a>
+</nav>
 
-    <div class="card">
-        <h2>Classe de 10ème année</h2>
-        <p>Découvre tes cours et exercices de mathématiques.</p>
-        <button onclick="alert('Bienvenue dans MATHIA !')">
-            Commencer
-        </button>
-    </div>
-</main>
+<div class="container">
+
+    <section class="welcome">
+        <h2>Bienvenue sur MATHIA !</h2>
+        <p>
+            Une plateforme intelligente pour apprendre,
+            comprendre et maîtriser les mathématiques.
+        </p>
+        <p>Apprends à ton rythme avec des cours et des exercices.</p>
+    </section>
+
+    <h2 id="cours">📚 Nos cours</h2>
+    <br>
+
+    <section class="courses">
+
+        <div class="card">
+            <h3>Algèbre</h3>
+            <p>Expressions algébriques, équations et calcul littéral.</p>
+            <button onclick="ouvrirCours('algebre')">
+                Découvrir
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Géométrie</h3>
+            <p>Figures géométriques, angles et théorèmes.</p>
+            <button onclick="ouvrirCours('geometrie')">
+                Découvrir
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Fonctions</h3>
+            <p>Étude des fonctions et représentation graphique.</p>
+            <button onclick="ouvrirCours('fonctions')">
+                Découvrir
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Statistiques</h3>
+            <p>Organisation et analyse des données statistiques.</p>
+            <button onclick="ouvrirCours('statistiques')">
+                Découvrir
+            </button>
+        </div>
+
+    </section>
+
+    <section id="lesson">
+        <h2 id="titreCours"></h2>
+        <p id="contenuCours"></p>
+        <button onclick="fermerCours()">Fermer le cours</button>
+    </section>
+
+    <section id="exercices" class="card" style="margin-top:25px;">
+        <h2>📝 Exercice rapide</h2>
+        <p>Combien vaut 5 × 8 + 4 ?</p>
+
+        <button onclick="verifier(44)">44</button>
+        <button onclick="verifier(52)">52</button>
+        <button onclick="verifier(40)">40</button>
+
+        <p id="resultat"></p>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 MATHIA - Éducation et Intelligence Artificielle</p>
+    <p>Développé pour les élèves du Mali 🇲🇱</p>
+</footer>
+
+<script>
+    function ouvrirCours(type) {
+
+        const cours = {
+            algebre: {
+                titre: "Cours d'algèbre",
+                contenu: "L'algèbre permet de manipuler des nombres, des lettres et des expressions mathématiques. Exemple : 2x + 3 = 7."
+            },
+
+            geometrie: {
+                titre: "Cours de géométrie",
+                contenu: "La géométrie étudie les figures, les longueurs, les angles et les propriétés de l'espace."
+            },
+
+            fonctions: {
+                titre: "Cours sur les fonctions",
+                contenu: "Une fonction associe à chaque valeur x une valeur unique f(x). Exemple : f(x) = 2x + 3."
+            },
+
+            statistiques: {
+                titre: "Cours de statistiques",
+                contenu: "Les statistiques permettent de collecter, organiser et analyser des données."
+            }
+        };
+
+        document.getElementById("titreCours").textContent =
+            cours[type].titre;
+
+        document.getElementById("contenuCours").textContent =
+            cours[type].contenu;
+
+        document.getElementById("lesson").style.display = "block";
+
+        document.getElementById("lesson").scrollIntoView();
+    }
+
+    function fermerCours() {
+        document.getElementById("lesson").style.display = "none";
+    }
+
+    function verifier(reponse) {
+        const resultat = document.getElementById("resultat");
+
+        if (reponse === 44) {
+            resultat.textContent = "Bravo ! Bonne réponse 🎉";
+            resultat.style.color = "green";
+        } else {
+            resultat.textContent = "Essaie encore !";
+            resultat.style.color = "red";
+        }
+    }
+</script>
 
 </body>
 </html>
+
