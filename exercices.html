@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATHIA - Exercices</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+}
+header {
+    background: #075985;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+main {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #ccc;
+}
+button {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+input {
+    padding: 10px;
+    width: 90%;
+    margin-top: 10px;
+}
+#resultat {
+    font-weight: bold;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📘 MATHIA</h1>
+<p>Exercices de mathématiques - 10ème année</p>
+</header>
+
+<main>
+
+<div class="card">
+<h2>Exercice 1 : QCM</h2>
+<p>Combien vaut 5 + 7 ?</p>
+
+<label><input type="radio" name="qcm" value="10"> 10</label><br>
+<label><input type="radio" name="qcm" value="12"> 12</label><br>
+<label><input type="radio" name="qcm" value="15"> 15</label>
+</div>
+
+<div class="card">
+<h2>Exercice 2 : Réponse libre</h2>
+<p>Calcule : 8 × 6 = ?</p>
+<input type="number" id="reponse" placeholder="Ta réponse">
+</div>
+
+<button onclick="corriger()">Corriger mes réponses</button>
+
+<div id="resultat"></div>
+
+</main>
+
+<script>
+function corriger() {
+
+    let score = 0;
+
+    let choix = document.querySelector(
+        'input[name="qcm"]:checked'
+    );
+
+    if (choix && choix.value === "12") {
+        score++;
+    }
+
+    let reponse = document.getElementById("reponse").value;
+
+    if (reponse.trim() !== "" && Number(reponse) === 48) {
+        score++;
+    }
+
+    document.getElementById("resultat").innerHTML =
+        "Ton score : " + score + "/2" +
+        "<br>Correction : 5 + 7 = 12 et 8 × 6 = 48.";
+}
+</script>
+
+</body>
+</html>
