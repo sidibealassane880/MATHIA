@@ -2,261 +2,307 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATHIA - Mathématiques intelligentes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATHIA - Apprendre les mathématiques</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f4f8;
-            color: #243047;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
 
-        header {
-            background: #123c69;
-            color: white;
-            padding: 25px 15px;
-            text-align: center;
-        }
+header {
+    background: #123c69;
+    color: white;
+    padding: 22px 15px;
+    text-align: center;
+}
 
-        header h1 {
-            font-size: 32px;
-        }
+header h1 {
+    font-size: 30px;
+}
 
-        header p {
-            margin-top: 8px;
-        }
+header p {
+    margin-top: 8px;
+}
 
-        nav {
-            background: #0b2948;
-            padding: 12px;
-            text-align: center;
-        }
+nav {
+    background: #ffffff;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 2px 5px #ddd;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 8px;
-            font-weight: bold;
-        }
+nav a {
+    color: #123c69;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 25px auto;
-            padding: 15px;
-        }
+.hero {
+    background: linear-gradient(120deg,#123c69,#2563eb);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
 
-        .welcome {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+.hero h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
 
-        .welcome h2 {
-            color: #123c69;
-            margin-bottom: 12px;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px 15px;
+}
 
-        .courses {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-        }
+.section-title {
+    color: #123c69;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-        .card {
-            background: white;
-            padding: 22px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px #00000012;
-        }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 18px;
+}
 
-        .card h3 {
-            color: #123c69;
-            margin-bottom: 12px;
-        }
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000012;
+}
 
-        button {
-            background: #087f5b;
-            color: white;
-            border: none;
-            padding: 12px 18px;
-            border-radius: 7px;
-            margin-top: 15px;
-            cursor: pointer;
-        }
+.card h3 {
+    color: #1d4ed8;
+    margin-bottom: 12px;
+}
 
-        button:hover {
-            background: #065f46;
-        }
+.card p {
+    line-height: 1.6;
+}
 
-        #lesson {
-            display: none;
-            background: white;
-            padding: 22px;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-size: 15px;
+}
 
-        footer {
-            background: #123c69;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 35px;
-        }
-    </style>
+button:hover {
+    background: #123c69;
+}
+
+.lesson {
+    display: none;
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 22px;
+    line-height: 1.8;
+}
+
+.lesson h3 {
+    color: #123c69;
+    margin-bottom: 12px;
+}
+
+.exercise {
+    background: #eff6ff;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+footer {
+    background: #123c69;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <h1>📘 MATHIA</h1>
-    <p>Apprendre les mathématiques autrement</p>
-    <p>Programme scolaire du Mali - 10e année</p>
+    <p>La plateforme intelligente d'apprentissage des mathématiques</p>
 </header>
 
 <nav>
-    <a href="#">Accueil</a>
+    <a href="#accueil">Accueil</a>
     <a href="#cours">Cours</a>
     <a href="#exercices">Exercices</a>
+    <a href="#apropos">À propos</a>
 </nav>
 
-<div class="container">
+<section class="hero" id="accueil">
+    <h2>Bienvenue sur MATHIA</h2>
+    <p>Apprenons les mathématiques autrement !</p>
+    <p>Programme scolaire du Mali - Classe de 10e année</p>
+</section>
 
-    <section class="welcome">
-        <h2>Bienvenue sur MATHIA !</h2>
-        <p>
-            Une plateforme intelligente pour apprendre,
-            comprendre et maîtriser les mathématiques.
-        </p>
-        <p>Apprends à ton rythme avec des cours et des exercices.</p>
-    </section>
+<main class="container" id="cours">
 
-    <h2 id="cours">📚 Nos cours</h2>
-    <br>
+    <h2 class="section-title">📚 Nos cours de mathématiques</h2>
 
-    <section class="courses">
+    <div class="cards">
 
         <div class="card">
-            <h3>Algèbre</h3>
+            <h3>1. Algèbre</h3>
             <p>Expressions algébriques, équations et calcul littéral.</p>
-            <button onclick="ouvrirCours('algebre')">
-                Découvrir
-            </button>
+            <button onclick="ouvrirCours('algebre')">Découvrir le cours</button>
         </div>
 
         <div class="card">
-            <h3>Géométrie</h3>
-            <p>Figures géométriques, angles et théorèmes.</p>
-            <button onclick="ouvrirCours('geometrie')">
-                Découvrir
-            </button>
+            <h3>2. Géométrie</h3>
+            <p>Figures géométriques, angles et propriétés.</p>
+            <button onclick="ouvrirCours('geometrie')">Découvrir le cours</button>
         </div>
 
         <div class="card">
-            <h3>Fonctions</h3>
-            <p>Étude des fonctions et représentation graphique.</p>
-            <button onclick="ouvrirCours('fonctions')">
-                Découvrir
-            </button>
+            <h3>3. Fonctions</h3>
+            <p>Notion de fonction, tableaux et représentations.</p>
+            <button onclick="ouvrirCours('fonctions')">Découvrir le cours</button>
         </div>
 
         <div class="card">
-            <h3>Statistiques</h3>
-            <p>Organisation et analyse des données statistiques.</p>
-            <button onclick="ouvrirCours('statistiques')">
-                Découvrir
-            </button>
+            <h3>4. Statistiques</h3>
+            <p>Moyenne, effectifs et fréquences.</p>
+            <button onclick="ouvrirCours('statistiques')">Découvrir le cours</button>
         </div>
 
-    </section>
+    </div>
 
-    <section id="lesson">
-        <h2 id="titreCours"></h2>
-        <p id="contenuCours"></p>
-        <button onclick="fermerCours()">Fermer le cours</button>
-    </section>
+    <div id="algebre" class="lesson">
+        <h3>Algèbre : les équations du premier degré</h3>
+        <p>Une équation est une égalité contenant une inconnue.</p>
+        <p><strong>Exemple :</strong> 2x + 4 = 10</p>
+        <p>2x = 10 - 4</p>
+        <p>2x = 6</p>
+        <p><strong>x = 3</strong></p>
+        <p>La solution est donc x = 3.</p>
+    </div>
 
-    <section id="exercices" class="card" style="margin-top:25px;">
-        <h2>📝 Exercice rapide</h2>
-        <p>Combien vaut 5 × 8 + 4 ?</p>
+    <div id="geometrie" class="lesson">
+        <h3>Géométrie : le triangle</h3>
+        <p>Un triangle est un polygone possédant trois côtés et trois angles.</p>
+        <p>La somme des angles intérieurs d'un triangle est égale à 180°.</p>
+        <p><strong>Exemple :</strong> 60° + 70° + 50° = 180°.</p>
+    </div>
 
-        <button onclick="verifier(44)">44</button>
-        <button onclick="verifier(52)">52</button>
-        <button onclick="verifier(40)">40</button>
+    <div id="fonctions" class="lesson">
+        <h3>Fonctions mathématiques</h3>
+        <p>Une fonction associe à chaque valeur x de son domaine une valeur unique f(x).</p>
+        <p><strong>Exemple :</strong> f(x) = 2x + 1.</p>
+        <p>Pour x = 3 : f(3) = 2 × 3 + 1 = 7.</p>
+    </div>
 
-        <p id="resultat"></p>
-    </section>
+    <div id="statistiques" class="lesson">
+        <h3>Statistiques : la moyenne</h3>
+        <p>La moyenne est la somme des valeurs divisée par leur nombre.</p>
+        <p><strong>Exemple :</strong> 10, 12, 14.</p>
+        <p>Moyenne = (10 + 12 + 14) / 3 = 12.</p>
+    </div>
 
-</div>
+</main>
+
+<section class="container" id="exercices">
+
+    <h2 class="section-title">🧠 Testons tes connaissances</h2>
+
+    <div class="card">
+        <h3>Exercice interactif</h3>
+        <p>Résous l'équation suivante :</p>
+        <p><strong>3x + 6 = 15</strong></p>
+
+        <div style="margin-top:15px">
+            <label><input type="radio" name="reponse" value="2"> x = 2</label><br><br>
+            <label><input type="radio" name="reponse" value="3"> x = 3</label><br><br>
+            <label><input type="radio" name="reponse" value="4"> x = 4</label>
+        </div>
+
+        <button onclick="corriger()">Vérifier ma réponse</button>
+        <p id="resultat" style="margin-top:15px;font-weight:bold"></p>
+    </div>
+
+</section>
+
+<section class="container" id="apropos">
+    <h2 class="section-title">À propos de MATHIA</h2>
+    <div class="card">
+        <p>
+            MATHIA est une plateforme éducative conçue pour
+            faciliter l'apprentissage des mathématiques.
+            Notre objectif est de rendre les mathématiques
+            accessibles, pratiques et interactives pour
+            les élèves du Mali.
+        </p>
+    </div>
+</section>
 
 <footer>
-    <p>© 2026 MATHIA - Éducation et Intelligence Artificielle</p>
-    <p>Développé pour les élèves du Mali 🇲🇱</p>
+    <p>© 2026 MATHIA - Tous droits réservés.</p>
+    <p>Apprendre aujourd'hui, réussir demain !</p>
 </footer>
 
 <script>
-    function ouvrirCours(type) {
+function ouvrirCours(id) {
+    document.querySelectorAll('.lesson').forEach(cours => {
+        cours.style.display = 'none';
+    });
 
-        const cours = {
-            algebre: {
-                titre: "Cours d'algèbre",
-                contenu: "L'algèbre permet de manipuler des nombres, des lettres et des expressions mathématiques. Exemple : 2x + 3 = 7."
-            },
+    document.getElementById(id).style.display = 'block';
 
-            geometrie: {
-                titre: "Cours de géométrie",
-                contenu: "La géométrie étudie les figures, les longueurs, les angles et les propriétés de l'espace."
-            },
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
 
-            fonctions: {
-                titre: "Cours sur les fonctions",
-                contenu: "Une fonction associe à chaque valeur x une valeur unique f(x). Exemple : f(x) = 2x + 3."
-            },
+function corriger() {
+    const choix = document.querySelector(
+        'input[name="reponse"]:checked'
+    );
 
-            statistiques: {
-                titre: "Cours de statistiques",
-                contenu: "Les statistiques permettent de collecter, organiser et analyser des données."
-            }
-        };
+    const resultat = document.getElementById('resultat');
 
-        document.getElementById("titreCours").textContent =
-            cours[type].titre;
-
-        document.getElementById("contenuCours").textContent =
-            cours[type].contenu;
-
-        document.getElementById("lesson").style.display = "block";
-
-        document.getElementById("lesson").scrollIntoView();
+    if (!choix) {
+        resultat.textContent = "Choisis d'abord une réponse.";
+        resultat.style.color = "orange";
+        return;
     }
 
-    function fermerCours() {
-        document.getElementById("lesson").style.display = "none";
+    if (choix.value === "3") {
+        resultat.textContent = "Bravo ! Bonne réponse. x = 3.";
+        resultat.style.color = "green";
+    } else {
+        resultat.textContent = "Incorrect. Réessaie !";
+        resultat.style.color = "red";
     }
-
-    function verifier(reponse) {
-        const resultat = document.getElementById("resultat");
-
-        if (reponse === 44) {
-            resultat.textContent = "Bravo ! Bonne réponse 🎉";
-            resultat.style.color = "green";
-        } else {
-            resultat.textContent = "Essaie encore !";
-            resultat.style.color = "red";
-        }
-    }
+}
 </script>
 
 </body>
 </html>
+
 
