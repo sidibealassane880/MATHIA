@@ -5,185 +5,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MATHIA - Apprendre les mathématiques</title>
-
 <style>
-:root {
-    --blue:#123c69;
-    --light:#eef5fc;
-    --green:#15966a;
-    --orange:#f39c32;
-    --dark:#172b4d;
-}
-* {box-sizing:border-box}
-body {
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#263238;
-    line-height:1.65;
-}
-header {
-    background:var(--blue);
-    color:white;
-    padding:22px 5%;
-}
-.header-content {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-.logo {font-size:27px;font-weight:bold}
-.logo span {color:#66e0a3}
-nav {display:flex;flex-wrap:wrap;gap:15px}
-nav a {color:white;text-decoration:none;font-weight:bold}
-.hero {
-    background:linear-gradient(120deg,#123c69,#1976a8);
-    color:white;
-    text-align:center;
-    padding:55px 20px;
-}
-.hero h1 {font-size:35px;margin:0 0 10px}
-.hero p {max-width:700px;margin:auto}
-.container {max-width:1100px;margin:30px auto;padding:0 18px}
-h2 {color:var(--blue)}
-h3 {color:#176b55}
-.card {
-    background:white;
-    padding:22px;
-    margin:20px 0;
-    border-radius:12px;
-    box-shadow:0 3px 12px #0000000c;
-}
-.lesson-button {
-    width:100%;
-    padding:16px;
-    border:0;
-    background:var(--blue);
-    color:white;
-    font-size:17px;
-    text-align:left;
-    border-radius:8px;
-    cursor:pointer;
-    margin:8px 0;
-}
-.lesson-button:hover {background:#205b91}
-.lesson {
-    display:none;
-    padding:20px;
-    background:white;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-.lesson.active {display:block}
-.formula {
-    background:#edf5ff;
-    border-left:5px solid #2585c7;
-    padding:14px;
-    margin:15px 0;
-    font-weight:bold;
-}
-.example {
-    background:#f0faf4;
-    border-left:5px solid var(--green);
-    padding:15px;
-    margin:15px 0;
-}
-.exercise {
-    background:#fff9eb;
-    border-left:5px solid var(--orange);
-    padding:16px;
-    margin:15px 0;
-    border-radius:5px;
-}
-button.action {
-    background:var(--green);
-    color:white;
-    border:0;
-    padding:10px 17px;
-    border-radius:6px;
-    cursor:pointer;
-    margin-top:10px;
-}
-button.action:hover {background:#08734e}
-input[type="radio"] {margin:8px}
-.result {font-weight:bold;margin-top:10px}
-.correct {color:green}
-.wrong {color:#c0392b}
-.question {padding:12px 0;border-bottom:1px solid #ddd}
-select {
-    padding:10px;
-    border-radius:6px;
-    border:1px solid #bbb;
-    max-width:100%;
-}
-table {
-    border-collapse:collapse;
-    width:100%;
-    margin:15px 0;
-}
-th,td {
-    border:1px solid #bbb;
-    padding:10px;
-    text-align:center;
-}
-th {background:#edf5ff}
-.graph {
-    background:white;
-    border:1px solid #ddd;
-    padding:10px;
-    border-radius:8px;
-    overflow-x:auto;
-}
-footer {
-    background:var(--blue);
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-.small {color:#64748b;font-size:14px}
-ul,ol {padding-left:25px}
-@media(max-width:600px) {
-    .hero h1 {font-size:27px}
-    .card {padding:16px}
-    nav {gap:10px}
-}
+:root{--blue:#123c69;--light:#eef5fc;--green:#15966a;--orange:#f39c32;--dark:#172b4d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#263238;line-height:1.65}
+header{background:var(--blue);color:white;padding:22px 5%}
+.header-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:27px;font-weight:bold}.logo span{color:#66e0a3}
+nav{display:flex;flex-wrap:wrap;gap:15px}nav a{color:white;text-decoration:none;font-weight:bold}
+.hero{background:linear-gradient(120deg,#123c69,#1976a8);color:white;text-align:center;padding:55px 20px}
+.hero h1{font-size:35px;margin:0 0 10px}.hero p{max-width:700px;margin:auto}
+.container{max-width:1100px;margin:30px auto;padding:0 18px}
+h2{color:var(--blue)}h3{color:#176b55}
+.card{background:white;padding:22px;margin:20px 0;border-radius:12px;box-shadow:0 3px 12px #0000000c}
+.lesson-button{width:100%;padding:16px;border:0;background:var(--blue);color:white;font-size:17px;text-align:left;border-radius:8px;cursor:pointer;margin:8px 0}
+.lesson-button:hover{background:#205b91}
+.lesson{display:none;padding:20px;background:white;border-radius:10px;margin-bottom:20px}
+.lesson.active{display:block}
+.formula{background:#edf5ff;border-left:5px solid #2585c7;padding:14px;margin:15px 0;font-weight:bold;overflow-wrap:anywhere}
+.example{background:#f0faf4;border-left:5px solid var(--green);padding:15px;margin:15px 0}
+.exercise{background:#fff9eb;border-left:5px solid var(--orange);padding:16px;margin:15px 0;border-radius:5px}
+button.action{background:var(--green);color:white;border:0;padding:10px 17px;border-radius:6px;cursor:pointer;margin-top:10px}
+button.action:hover{background:#08734e}
+input[type=radio]{margin:8px}.result{font-weight:bold;margin-top:10px}.correct{color:green}.wrong{color:#c0392b}
+.question{padding:12px 0;border-bottom:1px solid #ddd}
+select{padding:10px;border-radius:6px;border:1px solid #bbb;max-width:100%}
+table{border-collapse:collapse;width:100%;margin:15px 0;display:table}
+th,td{border:1px solid #bbb;padding:10px;text-align:center}th{background:#edf5ff}
+.graph{background:white;border:1px solid #ddd;padding:10px;border-radius:8px;overflow-x:auto}
+footer{background:var(--blue);color:white;text-align:center;padding:25px;margin-top:40px}
+.small{color:#64748b;font-size:14px}ul,ol{padding-left:25px}
+@media(max-width:600px){.hero h1{font-size:27px}.card{padding:16px}nav{gap:10px}.lesson{padding:14px}table{font-size:14px}}
 </style>
 </head>
-
 <body>
-
 <header>
-<div class="header-content">
-    <div class="logo">MATH<span>IA</span></div>
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#cours">Cours</a>
-        <a href="#exercices">Exercices</a>
-        <a href="#evaluation">Évaluation</a>
-    </nav>
-</div>
+ <div class="header-content">
+  <div class="logo">MATH<span>IA</span></div>
+  <nav><a href="#accueil">Accueil</a><a href="#cours">Cours</a><a href="#exercices">Exercices</a><a href="#evaluation">Évaluation</a></nav>
+ </div>
 </header>
-
 <section class="hero" id="accueil">
-    <h1>Bienvenue sur MATHIA</h1>
-    <p>Apprendre les mathématiques autrement : comprendre les cours, s'entraîner et évaluer ses connaissances.</p>
+ <h1>Bienvenue sur MATHIA</h1>
+ <p>Apprendre les mathématiques autrement : comprendre les cours, s'entraîner et évaluer ses connaissances.</p>
 </section>
-
 <main class="container">
-
 <section class="card">
-    <h2>Choisir sa classe</h2>
-    <p>Sélectionne ton niveau pour accéder aux ressources pédagogiques.</p>
-    <select id="classe">
-        <option value="10e année">10e année</option>
-        <option disabled>9e année - bientôt disponible</option>
-        <option disabled>11e année - bientôt disponible</option>
-        <option disabled>12e année - bientôt disponible</option>
-    </select>
-    <p class="small">D'autres classes seront ajoutées progressivement.</p>
+ <h2>Choisir sa classe</h2>
+ <p>Sélectionne ton niveau pour accéder aux ressources pédagogiques.</p>
+ <select id="classe">
+  <option value="10e année">10e année</option>
+  <option disabled>9e année - bientôt disponible</option>
+  <option disabled>11e année - bientôt disponible</option>
+  <option disabled>12e année - bientôt disponible</option>
+ </select>
+ <p class="small">D'autres classes seront ajoutées progressivement.</p>
 </section>
 
 <section id="cours">
@@ -191,713 +67,235 @@ ul,ol {padding-left:25px}
 
 <div class="card">
 <h3>Algèbre</h3>
-
-<button class="lesson-button" onclick="ouvrir('chapitre1')">
-Chapitre 1 : Les ensembles de nombres
-</button>
-
+<button class="lesson-button" onclick="ouvrir('chapitre1')">Chapitre 1 : Les ensembles de nombres</button>
 <div class="lesson" id="chapitre1">
 <h2>Chapitre 1 : Les ensembles de nombres</h2>
-
 <h3>1. Objectifs</h3>
-<ul>
-<li>Reconnaître les différents ensembles de nombres.</li>
-<li>Classer un nombre dans un ensemble.</li>
-<li>Utiliser les symboles d'appartenance et d'inclusion.</li>
-<li>Comparer des nombres réels.</li>
-</ul>
-
-<h3>2. Les nombres naturels</h3>
-<p>Les nombres naturels sont utilisés pour compter.</p>
-<div class="formula">ℕ = {0 ; 1 ; 2 ; 3 ; 4 ; 5 ; ...}</div>
-
-<h3>3. Les nombres entiers relatifs</h3>
-<p>Ils comprennent les nombres positifs, négatifs et zéro.</p>
-<div class="formula">ℤ = {... ; -3 ; -2 ; -1 ; 0 ; 1 ; 2 ; 3 ; ...}</div>
-
-<h3>4. Les nombres décimaux</h3>
-<p>Un nombre décimal possède une écriture décimale finie.</p>
-<p>Exemples : 2,5 ; 0,75 ; -3,125 ; 12.</p>
-
-<h3>5. Les nombres rationnels</h3>
-<p>Un nombre rationnel peut s'écrire sous la forme :</p>
-<div class="formula">a/b avec a ∈ ℤ et b ∈ ℤ, b ≠ 0</div>
-
-<h3>6. Les nombres irrationnels</h3>
-<p>Un nombre irrationnel ne peut pas s'écrire comme quotient de deux entiers.</p>
-<p>Exemples : √2, √3 et π.</p>
-
-<h3>7. Les nombres réels</h3>
-<div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div>
-<p>Les nombres réels regroupent les nombres rationnels et irrationnels.</p>
-
-<h3>8. Exemples corrigés</h3>
-<div class="example">
-7 appartient à ℕ, ℤ, 𝔻, ℚ et ℝ.
-</div>
-<div class="example">
--4 appartient à ℤ, 𝔻, ℚ et ℝ, mais pas à ℕ.
-</div>
-<div class="example">
-√5 est irrationnel et appartient à ℝ.
+<ul><li>Reconnaître les différents ensembles de nombres.</li><li>Classer un nombre dans un ensemble.</li><li>Utiliser les symboles d'appartenance et d'inclusion.</li><li>Comparer des nombres réels.</li></ul>
+<h3>2. Les nombres naturels</h3><p>Les nombres naturels sont utilisés pour compter.</p><div class="formula">ℕ = {0 ; 1 ; 2 ; 3 ; 4 ; 5 ; ...}</div>
+<h3>3. Les nombres entiers relatifs</h3><p>Ils comprennent les nombres positifs, négatifs et zéro.</p><div class="formula">ℤ = {... ; -3 ; -2 ; -1 ; 0 ; 1 ; 2 ; 3 ; ...}</div>
+<h3>4. Les nombres décimaux</h3><p>Un nombre décimal possède une écriture décimale finie. Exemples : 2,5 ; 0,75 ; -3,125 ; 12.</p>
+<h3>5. Les nombres rationnels</h3><p>Un nombre rationnel peut s'écrire sous la forme :</p><div class="formula">a/b avec a ∈ ℤ et b ∈ ℤ, b ≠ 0</div>
+<h3>6. Les nombres irrationnels</h3><p>Un nombre irrationnel ne peut pas s'écrire comme quotient de deux entiers. Exemples : √2, √3 et π.</p>
+<h3>7. Les nombres réels</h3><div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div><p>Les nombres réels regroupent les nombres rationnels et irrationnels.</p>
+<h3>8. Exemples corrigés</h3><div class="example">7 appartient à ℕ, ℤ, 𝔻, ℚ et ℝ.</div><div class="example">-4 appartient à ℤ, 𝔻, ℚ et ℝ, mais pas à ℕ.</div><div class="example">√5 est irrationnel et appartient à ℝ.</div>
+<h3>9. À retenir</h3><ul><li>Tout naturel est un entier relatif.</li><li>Tout entier relatif est décimal.</li><li>Tout décimal est rationnel.</li><li>Tout rationnel est réel.</li></ul>
 </div>
 
-<h3>9. À retenir</h3>
-<ul>
-<li>Tout naturel est un entier relatif.</li>
-<li>Tout entier relatif est décimal.</li>
-<li>Tout décimal est rationnel.</li>
-<li>Tout rationnel est réel.</li>
-</ul>
-</div>
-
-<button class="lesson-button" onclick="ouvrir('chapitre2')">
-Chapitre 2 : Opérations sur les nombres réels
-</button>
-
+<button class="lesson-button" onclick="ouvrir('chapitre2')">Chapitre 2 : Opérations sur les nombres réels</button>
 <div class="lesson" id="chapitre2">
 <h2>Chapitre 2 : Opérations sur les nombres réels</h2>
-
-<h3>1. Addition</h3>
-<p>Deux nombres de même signe : on additionne leurs valeurs absolues et on conserve le signe.</p>
-<div class="example">
-(-4) + (-6) = -10<br>
-(+5) + (+3) = +8
-</div>
-<p>Deux nombres de signes contraires : on soustrait les valeurs absolues et on conserve le signe du plus grand.</p>
-<div class="example">
-(+9) + (-4) = +5<br>
-(-12) + (+7) = -5
-</div>
-
-<h3>2. Soustraction</h3>
-<div class="formula">a - b = a + (-b)</div>
-<div class="example">
-8 - 3 = 5<br>
--5 - 4 = -9<br>
--7 - (-2) = -5
-</div>
-
-<h3>3. Multiplication</h3>
-<div class="formula">
-(+) × (+) = (+)<br>
-(-) × (-) = (+)<br>
-(+) × (-) = (-)<br>
-(-) × (+) = (-)
-</div>
-<div class="example">
-(-4) × (-2) = 8<br>
-(-6) × 3 = -18
-</div>
-
-<h3>4. Division</h3>
-<p>La division suit les mêmes règles de signes que la multiplication. Le diviseur doit être non nul.</p>
-<div class="example">
-12 ÷ 3 = 4<br>
-(-20) ÷ (-5) = 4<br>
-(-18) ÷ 3 = -6
-</div>
-
-<h3>5. Fractions</h3>
-<div class="formula">a/c + b/c = (a+b)/c</div>
-<div class="example">
-1/2 + 1/3 = 3/6 + 2/6 = 5/6
-</div>
-
-<div class="formula">(a/b) × (c/d) = (a×c)/(b×d)</div>
-<div class="example">2/3 × 4/5 = 8/15</div>
-
-<p>Pour diviser par une fraction, on multiplie par son inverse.</p>
-<div class="example">
-2/3 ÷ 4/5 = 2/3 × 5/4 = 5/6
-</div>
-
-<h3>6. Priorités opératoires</h3>
-<ol>
-<li>Parenthèses.</li>
-<li>Puissances et racines.</li>
-<li>Multiplications et divisions.</li>
-<li>Additions et soustractions.</li>
-</ol>
-<div class="example">
-A = 5 + 3 × 4<br>
-A = 5 + 12<br>
-A = 17
-</div>
-
-<h3>7. Puissances</h3>
-<div class="formula">aⁿ = a × a × ... × a (n facteurs)</div>
-<ul>
-<li>2³ = 8</li>
-<li>5² = 25</li>
-<li>(-3)² = 9</li>
-<li>(-3)³ = -27</li>
-</ul>
-<div class="formula">
-aᵐ × aⁿ = aᵐ⁺ⁿ<br>
-aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>
-(aᵐ)ⁿ = aᵐˣⁿ<br>
-a⁰ = 1 (a ≠ 0)
-</div>
-
-<h3>8. Racines carrées</h3>
-<div class="formula">√a = b signifie b² = a, avec a ≥ 0 et b ≥ 0.</div>
-<div class="example">
-√25 = 5<br>
-√49 = 7<br>
-√100 = 10
-</div>
-
+<h3>1. Addition</h3><p>Deux nombres de même signe : on additionne leurs valeurs absolues et on conserve le signe. Deux nombres de signes contraires : on soustrait les valeurs absolues et on conserve le signe du plus grand.</p>
+<div class="example">(-4) + (-6) = -10<br>(+5) + (+3) = +8<br>(+9) + (-4) = +5<br>(-12) + (+7) = -5</div>
+<h3>2. Soustraction</h3><div class="formula">a - b = a + (-b)</div><div class="example">8 - 3 = 5<br>-5 - 4 = -9<br>-7 - (-2) = -5</div>
+<h3>3. Multiplication</h3><div class="formula">(+) × (+) = (+)<br>(-) × (-) = (+)<br>(+) × (-) = (-)<br>(-) × (+) = (-)</div><div class="example">(-4) × (-2) = 8<br>(-6) × 3 = -18</div>
+<h3>4. Division</h3><p>La division suit les mêmes règles de signes que la multiplication. Le diviseur doit être non nul.</p><div class="example">12 ÷ 3 = 4<br>(-20) ÷ (-5) = 4<br>(-18) ÷ 3 = -6</div>
+<h3>5. Fractions</h3><div class="formula">a/c + b/c = (a+b)/c<br>(a/b) × (c/d) = (a×c)/(b×d)</div><div class="example">1/2 + 1/3 = 3/6 + 2/6 = 5/6<br>2/3 × 4/5 = 8/15<br>2/3 ÷ 4/5 = 2/3 × 5/4 = 5/6</div>
+<h3>6. Priorités opératoires</h3><ol><li>Parenthèses.</li><li>Puissances et racines.</li><li>Multiplications et divisions.</li><li>Additions et soustractions.</li></ol><div class="example">A = 5 + 3 × 4 = 5 + 12 = 17.</div>
+<h3>7. Puissances</h3><div class="formula">aⁿ = a × a × ... × a (n facteurs)<br>aᵐ × aⁿ = aᵐ⁺ⁿ<br>aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>(aᵐ)ⁿ = aᵐˣⁿ<br>a⁰ = 1 (a ≠ 0)</div><p>Exemples : 2³ = 8 ; 5² = 25 ; (-3)² = 9 ; (-3)³ = -27.</p>
+<h3>8. Racines carrées</h3><div class="formula">√a = b signifie b² = a, avec a ≥ 0 et b ≥ 0.</div><div class="example">√25 = 5 ; √49 = 7 ; √100 = 10.</div>
 <h3>9. Exercices corrigés</h3>
-
-<div class="exercise">
-<strong>Exercice 1 :</strong>
-<p>Calcule A = (-8) + 13 - 6.</p>
-<label><input type="radio" name="e1" value="a"> -1</label><br>
-<label><input type="radio" name="e1" value="b"> 11</label><br>
-<label><input type="radio" name="e1" value="c"> -27</label><br>
-<button class="action" onclick="verifier('e1','a','r1','A = -8 + 13 - 6 = 5 - 6 = -1.')">Vérifier</button>
-<p id="r1" class="result"></p>
+<div class="exercise"><strong>Exercice 1 :</strong><p>Calcule A = (-8) + 13 - 6.</p><label><input type="radio" name="e1" value="a"> -1</label><br><label><input type="radio" name="e1" value="b"> 11</label><br><label><input type="radio" name="e1" value="c"> -27</label><br><button class="action" onclick="verifier('e1','a','r1','A = -8 + 13 - 6 = 5 - 6 = -1.')">Vérifier</button><p id="r1" class="result"></p></div>
+<div class="exercise"><strong>Exercice 2 :</strong><p>Calcule (-7) × (-3).</p><label><input type="radio" name="e2" value="a"> -21</label><br><label><input type="radio" name="e2" value="b"> 21</label><br><label><input type="radio" name="e2" value="c"> -10</label><br><button class="action" onclick="verifier('e2','b','r2','Le produit de deux nombres négatifs est positif : 7 × 3 = 21.')">Vérifier</button><p id="r2" class="result"></p></div>
+<div class="exercise"><strong>Exercice 3 :</strong><p>Calcule 1/2 + 1/4.</p><label><input type="radio" name="e3" value="a"> 2/6</label><br><label><input type="radio" name="e3" value="b"> 3/4</label><br><label><input type="radio" name="e3" value="c"> 1/8</label><br><button class="action" onclick="verifier('e3','b','r3','1/2 = 2/4. Donc 2/4 + 1/4 = 3/4.')">Vérifier</button><p id="r3" class="result"></p></div>
+<div class="exercise"><strong>Exercice 4 :</strong><p>Calcule 6 + 2 × 5.</p><label><input type="radio" name="e4" value="a"> 40</label><br><label><input type="radio" name="e4" value="b"> 16</label><br><label><input type="radio" name="e4" value="c"> 30</label><br><button class="action" onclick="verifier('e4','b','r4','On effectue la multiplication : 6 + 10 = 16.')">Vérifier</button><p id="r4" class="result"></p></div>
+<div class="exercise"><strong>Exercice 5 :</strong><p>Calcule 2³ × 2².</p><label><input type="radio" name="e5" value="a"> 32</label><br><label><input type="radio" name="e5" value="b"> 16</label><br><label><input type="radio" name="e5" value="c"> 64</label><br><button class="action" onclick="verifier('e5','a','r5','2³ × 2² = 2⁵ = 32.')">Vérifier</button><p id="r5" class="result"></p></div>
 </div>
 
-<div class="exercise">
-<strong>Exercice 2 :</strong>
-<p>Calcule (-7) × (-3).</p>
-<label><input type="radio" name="e2" value="a"> -21</label><br>
-<label><input type="radio" name="e2" value="b"> 21</label><br>
-<label><input type="radio" name="e2" value="c"> -10</label><br>
-<button class="action" onclick="verifier('e2','b','r2','Le produit de deux nombres négatifs est positif : 7 × 3 = 21.')">Vérifier</button>
-<p id="r2" class="result"></p>
+<button class="lesson-button" onclick="ouvrir('algebre3')">Chapitre 3 : Développement et factorisation</button>
+<div class="lesson" id="algebre3">
+<h2>Chapitre 3 : Développement et factorisation</h2>
+<h3>1. Développer une expression</h3><p>Développer consiste à transformer un produit en une somme ou une différence.</p>
+<div class="formula">k(a + b) = ka + kb<br>k(a - b) = ka - kb</div>
+<div class="example">3(x + 4) = 3x + 12<br>5(2x - 3) = 10x - 15</div>
+<h3>2. Réduire une expression</h3><p>Réduire consiste à regrouper les termes de même nature.</p><div class="example">3x + 5 + 2x - 1 = 5x + 4.</div>
+<h3>3. Factoriser</h3><p>Factoriser consiste à transformer une somme en un produit.</p><div class="formula">ka + kb = k(a + b)</div>
+<div class="example">4x + 12 = 4(x + 3)<br>5x - 15 = 5(x - 3)</div>
+<h3>4. Identités remarquables</h3>
+<div class="formula">(a + b)² = a² + 2ab + b²<br>(a - b)² = a² - 2ab + b²<br>(a + b)(a - b) = a² - b²</div>
+<div class="example">(x + 3)² = x² + 6x + 9<br>(x - 4)² = x² - 8x + 16<br>(x + 5)(x - 5) = x² - 25</div>
+<h3>5. Exercices</h3>
+<div class="exercise"><strong>Question 1 :</strong><p>Développe 3(x + 2).</p><label><input type="radio" name="a31" value="a"> 3x + 2</label><br><label><input type="radio" name="a31" value="b"> 3x + 6</label><br><label><input type="radio" name="a31" value="c"> 5x</label><br><button class="action" onclick="verifier('a31','b','ar31','3 × x + 3 × 2 = 3x + 6.')">Vérifier</button><p id="ar31" class="result"></p></div>
+<div class="exercise"><strong>Question 2 :</strong><p>Factorise 6x + 18.</p><label><input type="radio" name="a32" value="a"> 6(x + 3)</label><br><label><input type="radio" name="a32" value="b"> 3(6x + 18)</label><br><label><input type="radio" name="a32" value="c"> 6(x + 18)</label><br><button class="action" onclick="verifier('a32','a','ar32','Le facteur commun est 6 : 6x + 18 = 6(x + 3).')">Vérifier</button><p id="ar32" class="result"></p></div>
 </div>
 
-<div class="exercise">
-<strong>Exercice 3 :</strong>
-<p>Calcule 1/2 + 1/4.</p>
-<label><input type="radio" name="e3" value="a"> 2/6</label><br>
-<label><input type="radio" name="e3" value="b"> 3/4</label><br>
-<label><input type="radio" name="e3" value="c"> 1/8</label><br>
-<button class="action" onclick="verifier('e3','b','r3','1/2 = 2/4. Donc 2/4 + 1/4 = 3/4.')">Vérifier</button>
-<p id="r3" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 4 :</strong>
-<p>Calcule 6 + 2 × 5.</p>
-<label><input type="radio" name="e4" value="a"> 40</label><br>
-<label><input type="radio" name="e4" value="b"> 16</label><br>
-<label><input type="radio" name="e4" value="c"> 30</label><br>
-<button class="action" onclick="verifier('e4','b','r4','On effectue la multiplication : 6 + 10 = 16.')">Vérifier</button>
-<p id="r4" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 5 :</strong>
-<p>Calcule 2³ × 2².</p>
-<label><input type="radio" name="e5" value="a"> 32</label><br>
-<label><input type="radio" name="e5" value="b"> 16</label><br>
-<label><input type="radio" name="e5" value="c"> 64</label><br>
-<button class="action" onclick="verifier('e5','a','r5','2³ × 2² = 2⁵ = 32.')">Vérifier</button>
-<p id="r5" class="result"></p>
-</div>
+<button class="lesson-button" onclick="ouvrir('algebre4')">Chapitre 4 : Équations du premier degré</button>
+<div class="lesson" id="algebre4">
+<h2>Chapitre 4 : Équations du premier degré</h2>
+<h3>1. Définition</h3><p>Une équation est une égalité contenant une ou plusieurs inconnues. Résoudre une équation consiste à trouver les valeurs qui rendent l'égalité vraie.</p>
+<div class="formula">ax + b = 0, avec a ≠ 0</div>
+<h3>2. Règles de résolution</h3><ul><li>On peut ajouter ou soustraire un même nombre aux deux membres.</li><li>On peut multiplier ou diviser les deux membres par un même nombre non nul.</li></ul>
+<div class="example">Résoudre 3x + 5 = 17.<br>3x = 17 - 5<br>3x = 12<br>x = 12 / 3<br><strong>x = 4.</strong></div>
+<h3>3. Vérification</h3><p>On remplace x par 4 dans l'équation : 3 × 4 + 5 = 17. L'égalité est vraie.</p>
+<div class="exercise"><strong>Question :</strong><p>Résous 2x + 6 = 14.</p><label><input type="radio" name="a41" value="a"> x = 3</label><br><label><input type="radio" name="a41" value="b"> x = 4</label><br><label><input type="radio" name="a41" value="c"> x = 5</label><br><button class="action" onclick="verifier('a41','b','ar41','2x = 14 - 6 = 8, donc x = 4.')">Vérifier</button><p id="ar41" class="result"></p></div>
 </div>
 </div>
 
 <!-- GEOMETRIE -->
-
 <div class="card">
 <h3>Géométrie</h3>
-<button class="lesson-button" onclick="ouvrir('geo')">Introduction à la géométrie</button>
-<div class="lesson" id="geo">
-<h3>Notions fondamentales</h3>
-<p>La géométrie étudie les figures, les formes, les longueurs, les angles et l'espace.</p>
-<ul>
-<li>Le point : indique une position.</li>
-<li>La droite : ligne illimitée dans les deux sens.</li>
-<li>Le segment : partie d'une droite limitée par deux points.</li>
-<li>L'angle : ouverture formée par deux demi-droites.</li>
-<li>Le triangle : polygone à trois côtés.</li>
-</ul>
-<div class="formula">Somme des angles d'un triangle = 180°</div>
+<button class="lesson-button" onclick="ouvrir('geo1')">Chapitre 1 : Droites et angles</button>
+<div class="lesson" id="geo1">
+<h2>Chapitre 1 : Droites et angles</h2>
+<h3>1. Notions fondamentales</h3><p>La géométrie étudie les figures, les positions, les longueurs et les angles.</p>
+<ul><li>Un point indique une position.</li><li>Une droite est illimitée dans les deux sens.</li><li>Un segment est limité par deux extrémités.</li><li>Une demi-droite possède une origine et est illimitée dans un sens.</li></ul>
+<h3>2. Les différents types d'angles</h3>
+<table><tr><th>Type d'angle</th><th>Mesure</th></tr><tr><td>Angle aigu</td><td>Entre 0° et 90°</td></tr><tr><td>Angle droit</td><td>90°</td></tr><tr><td>Angle obtus</td><td>Entre 90° et 180°</td></tr><tr><td>Angle plat</td><td>180°</td></tr><tr><td>Angle rentrant</td><td>Entre 180° et 360°</td></tr><tr><td>Angle plein</td><td>360°</td></tr></table>
+<h3>3. Angles complémentaires et supplémentaires</h3><div class="formula">Deux angles sont complémentaires si leur somme vaut 90°.<br>Deux angles sont supplémentaires si leur somme vaut 180°.</div>
+<div class="example">Un angle mesure 35°.<br>Son complémentaire vaut : 90° - 35° = 55°.<br>Son supplémentaire vaut : 180° - 35° = 145°.</div>
+<h3>4. Droites parallèles et perpendiculaires</h3><ul><li>Deux droites parallèles ne se rencontrent jamais.</li><li>Deux droites perpendiculaires se coupent en formant un angle droit.</li></ul>
+<div class="formula">(d1) // (d2) : droites parallèles.<br>(d1) ⊥ (d2) : droites perpendiculaires.</div>
+<div class="exercise"><strong>Question 1 :</strong><p>Un angle droit mesure :</p><label><input type="radio" name="geo11" value="a"> 45°</label><br><label><input type="radio" name="geo11" value="b"> 90°</label><br><label><input type="radio" name="geo11" value="c"> 180°</label><br><button class="action" onclick="verifier('geo11','b','geor11','Un angle droit mesure exactement 90°.')">Vérifier</button><p id="geor11" class="result"></p></div>
+<div class="exercise"><strong>Question 2 :</strong><p>Le complémentaire de 40° vaut :</p><label><input type="radio" name="geo12" value="a"> 50°</label><br><label><input type="radio" name="geo12" value="b"> 140°</label><br><label><input type="radio" name="geo12" value="c"> 60°</label><br><button class="action" onclick="verifier('geo12','a','geor12','90° - 40° = 50°.')">Vérifier</button><p id="geor12" class="result"></p></div>
+</div>
+
+<button class="lesson-button" onclick="ouvrir('geo2')">Chapitre 2 : Les triangles</button>
+<div class="lesson" id="geo2">
+<h2>Chapitre 2 : Les triangles</h2>
+<h3>1. Définition</h3><p>Un triangle est un polygone qui possède trois côtés, trois sommets et trois angles.</p>
+<div class="formula">La somme des angles intérieurs d'un triangle est égale à 180°.</div>
+<h3>2. Les différents triangles</h3><ul><li><strong>Triangle équilatéral :</strong> trois côtés égaux et trois angles de 60°.</li><li><strong>Triangle isocèle :</strong> deux côtés égaux.</li><li><strong>Triangle rectangle :</strong> possède un angle droit.</li><li><strong>Triangle quelconque :</strong> aucune propriété particulière imposée.</li></ul>
+<h3>3. Périmètre</h3><div class="formula">P = a + b + c</div><div class="example">Côtés : 5 cm, 6 cm et 7 cm.<br>P = 5 + 6 + 7 = 18 cm.</div>
+<h3>4. Aire d'un triangle</h3><div class="formula">A = (base × hauteur) / 2</div><div class="example">Base = 8 cm et hauteur = 5 cm.<br>A = (8 × 5) / 2 = 20 cm².</div>
+<h3>5. Théorème de Pythagore</h3><p>Dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des deux autres côtés.</p><div class="formula">Si ABC est rectangle en A : BC² = AB² + AC²</div>
+<div class="example">AB = 3 cm et AC = 4 cm.<br>BC² = 3² + 4² = 9 + 16 = 25.<br>BC = √25 = <strong>5 cm.</strong></div>
+<h3>6. Réciproque de Pythagore</h3><p>Si le carré du plus grand côté est égal à la somme des carrés des deux autres côtés, alors le triangle est rectangle.</p><div class="example">6² + 8² = 36 + 64 = 100 = 10². Le triangle de côtés 6, 8 et 10 cm est rectangle.</div>
+<div class="exercise"><strong>Question 1 :</strong><p>Quelle est la somme des angles d'un triangle ?</p><label><input type="radio" name="geo21" value="a"> 90°</label><br><label><input type="radio" name="geo21" value="b"> 180°</label><br><label><input type="radio" name="geo21" value="c"> 360°</label><br><button class="action" onclick="verifier('geo21','b','geor21','La somme des angles intérieurs d’un triangle est 180°.')">Vérifier</button><p id="geor21" class="result"></p></div>
+<div class="exercise"><strong>Question 2 :</strong><p>Un triangle rectangle a pour côtés de l'angle droit 3 cm et 4 cm. Quelle est son hypoténuse ?</p><label><input type="radio" name="geo22" value="a"> 5 cm</label><br><label><input type="radio" name="geo22" value="b"> 6 cm</label><br><label><input type="radio" name="geo22" value="c"> 7 cm</label><br><button class="action" onclick="verifier('geo22','a','geor22','√(3² + 4²) = √25 = 5 cm.')">Vérifier</button><p id="geor22" class="result"></p></div>
+</div>
+
+<button class="lesson-button" onclick="ouvrir('geo3')">Chapitre 3 : Les quadrilatères</button>
+<div class="lesson" id="geo3">
+<h2>Chapitre 3 : Les quadrilatères</h2><h3>1. Définition</h3><p>Un quadrilatère est un polygone qui possède quatre côtés et quatre sommets.</p>
+<h3>2. Les principaux quadrilatères</h3>
+<h4>Le carré</h4><ul><li>Quatre côtés égaux.</li><li>Quatre angles droits.</li><li>Diagonales égales et perpendiculaires.</li></ul><div class="formula">P = 4 × côté<br>A = côté × côté</div>
+<h4>Le rectangle</h4><ul><li>Quatre angles droits.</li><li>Les côtés opposés sont égaux et parallèles.</li></ul><div class="formula">P = 2 × (L + l)<br>A = L × l</div>
+<h4>Le losange</h4><ul><li>Quatre côtés égaux.</li><li>Les diagonales sont perpendiculaires.</li></ul><div class="formula">A = (D × d) / 2</div>
+<h4>Le parallélogramme</h4><ul><li>Les côtés opposés sont parallèles et égaux.</li><li>Les diagonales se coupent en leur milieu.</li></ul><div class="formula">A = base × hauteur</div>
+<h3>3. Exemple corrigé</h3><div class="example">Un rectangle a une longueur de 12 cm et une largeur de 5 cm.<br>P = 2 × (12 + 5) = 34 cm.<br>A = 12 × 5 = 60 cm².</div>
+<div class="exercise"><strong>Question 1 :</strong><p>Combien de côtés possède un quadrilatère ?</p><label><input type="radio" name="geo31" value="a"> 3</label><br><label><input type="radio" name="geo31" value="b"> 4</label><br><label><input type="radio" name="geo31" value="c"> 5</label><br><button class="action" onclick="verifier('geo31','b','geor31','Un quadrilatère possède quatre côtés.')">Vérifier</button><p id="geor31" class="result"></p></div>
+<div class="exercise"><strong>Question 2 :</strong><p>Quelle est l'aire d'un carré de côté 6 cm ?</p><label><input type="radio" name="geo32" value="a"> 12 cm²</label><br><label><input type="radio" name="geo32" value="b"> 24 cm²</label><br><label><input type="radio" name="geo32" value="c"> 36 cm²</label><br><button class="action" onclick="verifier('geo32','c','geor32','A = 6 × 6 = 36 cm².')">Vérifier</button><p id="geor32" class="result"></p></div>
+</div>
+
+<button class="lesson-button" onclick="ouvrir('geo4')">Chapitre 4 : Théorème de Thalès</button>
+<div class="lesson" id="geo4">
+<h2>Chapitre 4 : Théorème de Thalès</h2>
+<h3>1. Énoncé</h3><p>Dans un triangle ABC, si M appartient à [AB], N appartient à [AC] et si (MN) est parallèle à (BC), alors :</p><div class="formula">AM / AB = AN / AC = MN / BC</div>
+<h3>2. Exemple corrigé</h3><div class="example">AM = 3 cm, AB = 6 cm et AC = 8 cm. (MN) est parallèle à (BC).<br>3 / 6 = AN / 8<br>AN = (3 × 8) / 6<br><strong>AN = 4 cm.</strong></div>
+<h3>3. Réciproque de Thalès</h3><p>Si les points sont alignés dans le même ordre et si les rapports des longueurs correspondantes sont égaux, alors les droites concernées sont parallèles.</p>
+<div class="exercise"><strong>Question :</strong><p>AM = 2 cm, AB = 4 cm et AC = 10 cm. Calcule AN.</p><label><input type="radio" name="geo41" value="a"> 2 cm</label><br><label><input type="radio" name="geo41" value="b"> 5 cm</label><br><label><input type="radio" name="geo41" value="c"> 8 cm</label><br><button class="action" onclick="verifier('geo41','b','geor41','AN = (2 × 10) / 4 = 5 cm.')">Vérifier</button><p id="geor41" class="result"></p></div>
 </div>
 </div>
 
-<!-- FONCTIONS : COURS DEVELOPPE -->
-
+<!-- FONCTIONS -->
 <div class="card">
 <h3>Fonctions</h3>
-
-<button class="lesson-button" onclick="ouvrir('fonctions')">
-Chapitre : Généralités sur les fonctions
-</button>
-
+<button class="lesson-button" onclick="ouvrir('fonctions')">Chapitre : Généralités sur les fonctions</button>
 <div class="lesson" id="fonctions">
-
 <h2>Chapitre : Généralités sur les fonctions</h2>
-
-<h3>1. Objectifs du chapitre</h3>
-<p>À la fin de ce chapitre, l'élève doit être capable de :</p>
-<ul>
-<li>Définir une fonction numérique.</li>
-<li>Calculer l'image d'un nombre.</li>
-<li>Déterminer un antécédent.</li>
-<li>Construire un tableau de valeurs.</li>
-<li>Lire une représentation graphique.</li>
-<li>Reconnaître une fonction linéaire et une fonction affine.</li>
-</ul>
-
-<h3>2. Définition d'une fonction</h3>
-<p>Une fonction numérique est une relation qui associe à chaque nombre x de son ensemble de définition un unique nombre appelé image de x.</p>
-
-<div class="formula">
-f : x → f(x)
-</div>
-
-<p>Le nombre x est appelé antécédent et le nombre f(x) est son image.</p>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-Soit la fonction f définie par :<br>
-f(x) = 2x + 3.<br><br>
-Cette fonction associe à chaque nombre x le nombre 2x + 3.
-</div>
-
-<h3>3. Calcul de l'image d'un nombre</h3>
-<p>Pour calculer l'image d'un nombre, on remplace x par ce nombre dans l'expression de la fonction.</p>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-Soit f(x) = 2x + 3.<br><br>
-Calculons l'image de 4.<br>
-f(4) = 2 × 4 + 3<br>
-f(4) = 8 + 3<br>
-<strong>f(4) = 11</strong><br><br>
-L'image de 4 est donc 11.
-</div>
-
-<div class="example">
-<strong>Deuxième exemple :</strong><br>
-Soit g(x) = x² - 5.<br><br>
-Calculons g(3).<br>
-g(3) = 3² - 5<br>
-g(3) = 9 - 5<br>
-<strong>g(3) = 4</strong>
-</div>
-
-<h3>4. Détermination d'un antécédent</h3>
-<p>Déterminer un antécédent d'un nombre consiste à rechercher la valeur de x dont l'image est ce nombre.</p>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-Soit f(x) = 2x + 3.<br>
-Cherchons l'antécédent de 13.<br><br>
-On pose :<br>
-2x + 3 = 13<br>
-2x = 13 - 3<br>
-2x = 10<br>
-x = 10/2<br>
-<strong>x = 5</strong><br><br>
-L'antécédent de 13 est 5.
-</div>
-
-<div class="formula">
-Pour trouver un antécédent, on résout l'équation f(x) = nombre recherché.
-</div>
-
-<h3>5. Tableau de valeurs</h3>
-<p>Un tableau de valeurs permet de présenter plusieurs nombres et leurs images.</p>
-
-<p>Considérons la fonction :</p>
-<div class="formula">f(x) = 2x + 1</div>
-
-<p>Calculons les images de -2, -1, 0, 1 et 2.</p>
-
-<table>
-<tr>
-<th>x</th>
-<td>-2</td>
-<td>-1</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr>
-<th>f(x)</th>
-<td>-3</td>
-<td>-1</td>
-<td>1</td>
-<td>3</td>
-<td>5</td>
-</tr>
-</table>
-
-<div class="example">
-<strong>Vérification :</strong><br>
-f(-2) = 2 × (-2) + 1 = -3<br>
-f(0) = 2 × 0 + 1 = 1<br>
-f(2) = 2 × 2 + 1 = 5
-</div>
-
-<h3>6. Représentation graphique d'une fonction</h3>
-<p>La représentation graphique d'une fonction est l'ensemble des points de coordonnées (x ; f(x)) dans un repère.</p>
-
-<p>Pour tracer une fonction :</p>
-<ol>
-<li>Construire un tableau de valeurs.</li>
-<li>Tracer un repère avec deux axes perpendiculaires.</li>
-<li>Placer les points de coordonnées (x ; f(x)).</li>
-<li>Relier les points lorsque la courbe le permet.</li>
-</ol>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-Pour f(x) = 2x + 1, on obtient les points :<br>
-A(-2 ; -3), B(-1 ; -1), C(0 ; 1), D(1 ; 3) et E(2 ; 5).<br><br>
-Ces points sont alignés. La représentation graphique est une droite.
-</div>
-
-<div class="graph">
-<svg viewBox="0 0 340 280" width="100%" role="img" aria-label="Graphique de la fonction f de x égale 2x plus 1">
-<defs>
-<pattern id="grille" width="30" height="30" patternUnits="userSpaceOnUse">
-<path d="M 30 0 L 0 0 0 30" fill="none" stroke="#dce3eb" stroke-width="1"/>
-</pattern>
-</defs>
-<rect x="20" y="10" width="300" height="240" fill="url(#grille)"/>
-<line x1="20" y1="160" x2="320" y2="160" stroke="#263238" stroke-width="2"/>
-<line x1="170" y1="10" x2="170" y2="250" stroke="#263238" stroke-width="2"/>
-<text x="310" y="177" font-size="12">x</text>
-<text x="180" y="18" font-size="12">y</text>
-<line x1="80" y1="250" x2="260" y2="10" stroke="#15966a" stroke-width="3"/>
-<circle cx="110" cy="220" r="4" fill="#123c69"/>
-<circle cx="140" cy="190" r="4" fill="#123c69"/>
-<circle cx="170" cy="160" r="4" fill="#123c69"/>
-<circle cx="200" cy="130" r="4" fill="#123c69"/>
-<circle cx="230" cy="100" r="4" fill="#123c69"/>
-<text x="175" y="155" font-size="10">1</text>
-<text x="205" y="125" font-size="10">3</text>
-<text x="235" y="95" font-size="10">5</text>
-<text x="95" y="235" font-size="10">-3</text>
-<text x="125" y="205" font-size="10">-1</text>
-</svg>
-<p class="small">Illustration de la droite représentant f(x) = 2x + 1.</p>
-</div>
-
-<h3>7. Fonction linéaire</h3>
-<p>Une fonction linéaire est une fonction définie par une expression de la forme :</p>
-
-<div class="formula">
-f(x) = ax
-</div>
-
-<p>Le nombre a est appelé coefficient de proportionnalité.</p>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-f(x) = 3x.<br><br>
-f(2) = 3 × 2 = 6<br>
-f(4) = 3 × 4 = 12<br>
-f(-2) = 3 × (-2) = -6
-</div>
-
-<p><strong>Propriété :</strong> La représentation graphique d'une fonction linéaire est une droite qui passe par l'origine du repère.</p>
-
-<h3>8. Fonction affine</h3>
-<p>Une fonction affine est une fonction définie par :</p>
-
-<div class="formula">
-f(x) = ax + b
-</div>
-
-<ul>
-<li>a est le coefficient directeur.</li>
-<li>b est l'ordonnée à l'origine.</li>
-</ul>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-Soit f(x) = 2x + 3.<br><br>
-Le coefficient directeur est a = 2.<br>
-L'ordonnée à l'origine est b = 3.<br><br>
-f(1) = 2 × 1 + 3 = 5<br>
-f(2) = 2 × 2 + 3 = 7
-</div>
-
-<p><strong>Propriété :</strong> La représentation graphique d'une fonction affine est une droite.</p>
-
-<h3>9. Différence entre fonction linéaire et fonction affine</h3>
-
-<table>
-<tr>
-<th>Fonction linéaire</th>
-<th>Fonction affine</th>
-</tr>
-<tr>
-<td>f(x) = ax</td>
-<td>f(x) = ax + b</td>
-</tr>
-<tr>
-<td>b = 0</td>
-<td>b peut être non nul</td>
-</tr>
-<tr>
-<td>Passe par l'origine</td>
-<td>Ne passe pas nécessairement par l'origine</td>
-</tr>
-<tr>
-<td>Exemple : 3x</td>
-<td>Exemple : 3x + 2</td>
-</tr>
-</table>
-
-<h3>10. Applications dans la vie courante</h3>
-
-<p>Les fonctions permettent de modéliser de nombreuses situations.</p>
-
-<div class="example">
-<strong>Exemple 1 : Achat de cahiers</strong><br>
-Un cahier coûte 500 FCFA.<br>
-Si x représente le nombre de cahiers achetés, le prix total est :<br><br>
-P(x) = 500x<br><br>
-Pour 4 cahiers :<br>
-P(4) = 500 × 4 = 2 000 FCFA.
-</div>
-
-<div class="example">
-<strong>Exemple 2 : Transport</strong><br>
-Un conducteur demande 500 FCFA de prise en charge et 200 FCFA par kilomètre.<br><br>
-Le prix du trajet est :<br>
-P(x) = 200x + 500<br><br>
-Pour 5 kilomètres :<br>
-P(5) = 200 × 5 + 500<br>
-<strong>P(5) = 1 500 FCFA.</strong>
-</div>
-
-<h3>11. Exercices d'application corrigés</h3>
-
-<div class="exercise">
-<strong>Exercice 1 : Calcul d'image</strong>
-<p>Soit f(x) = 3x + 2. Quelle est l'image de 4 ?</p>
-<label><input type="radio" name="f1" value="a"> 10</label><br>
-<label><input type="radio" name="f1" value="b"> 14</label><br>
-<label><input type="radio" name="f1" value="c"> 20</label><br>
-<button class="action" onclick="verifier('f1','b','fr1','f(4) = 3 × 4 + 2 = 14.')">Vérifier</button>
-<p id="fr1" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 2 : Calcul d'image</strong>
-<p>Soit g(x) = x² - 4. Calcule g(3).</p>
-<label><input type="radio" name="f2" value="a"> 5</label><br>
-<label><input type="radio" name="f2" value="b"> 13</label><br>
-<label><input type="radio" name="f2" value="c"> 9</label><br>
-<button class="action" onclick="verifier('f2','a','fr2','g(3) = 3² - 4 = 9 - 4 = 5.')">Vérifier</button>
-<p id="fr2" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 3 : Recherche d'antécédent</strong>
-<p>Soit f(x) = 2x + 4. Quel est l'antécédent de 10 ?</p>
-<label><input type="radio" name="f3" value="a"> 2</label><br>
-<label><input type="radio" name="f3" value="b"> 3</label><br>
-<label><input type="radio" name="f3" value="c"> 7</label><br>
-<button class="action" onclick="verifier('f3','b','fr3','2x + 4 = 10, donc 2x = 6 et x = 3.')">Vérifier</button>
-<p id="fr3" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 4 : Fonction linéaire</strong>
-<p>Quelle expression définit une fonction linéaire ?</p>
-<label><input type="radio" name="f4" value="a"> f(x) = 2x + 5</label><br>
-<label><input type="radio" name="f4" value="b"> f(x) = x²</label><br>
-<label><input type="radio" name="f4" value="c"> f(x) = 5x</label><br>
-<button class="action" onclick="verifier('f4','c','fr4','Une fonction linéaire est de la forme f(x) = ax.')">Vérifier</button>
-<p id="fr4" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 5 : Fonction affine</strong>
-<p>Dans f(x) = 4x + 7, quelle est l'ordonnée à l'origine ?</p>
-<label><input type="radio" name="f5" value="a"> 4</label><br>
-<label><input type="radio" name="f5" value="b"> 7</label><br>
-<label><input type="radio" name="f5" value="c"> 11</label><br>
-<button class="action" onclick="verifier('f5','b','fr5','Dans f(x) = ax + b, l’ordonnée à l’origine est b = 7.')">Vérifier</button>
-<p id="fr5" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 6 : Tableau de valeurs</strong>
-<p>Soit f(x) = 2x - 1. Calcule f(3).</p>
-<label><input type="radio" name="f6" value="a"> 5</label><br>
-<label><input type="radio" name="f6" value="b"> 6</label><br>
-<label><input type="radio" name="f6" value="c"> 7</label><br>
-<button class="action" onclick="verifier('f6','a','fr6','f(3) = 2 × 3 - 1 = 5.')">Vérifier</button>
-<p id="fr6" class="result"></p>
-</div>
-
-<h3>12. Bilan du chapitre</h3>
-<ul>
-<li>Une fonction associe un nombre à un autre.</li>
-<li>L'image se calcule en remplaçant x par sa valeur.</li>
-<li>L'antécédent se trouve en résolvant une équation.</li>
-<li>Une fonction linéaire est de la forme ax.</li>
-<li>Une fonction affine est de la forme ax + b.</li>
-<li>Le graphique d'une fonction affine est une droite.</li>
-</ul>
-
+<h3>1. Objectifs</h3><ul><li>Définir une fonction numérique.</li><li>Calculer l'image d'un nombre.</li><li>Déterminer un antécédent.</li><li>Construire un tableau de valeurs.</li><li>Lire une représentation graphique.</li><li>Reconnaître une fonction linéaire et une fonction affine.</li></ul>
+<h3>2. Définition</h3><p>Une fonction numérique associe à chaque nombre x de son ensemble de définition un unique nombre appelé image de x.</p><div class="formula">f : x → f(x)</div><p>Le nombre x est appelé antécédent et f(x) est son image.</p>
+<div class="example">Soit f(x) = 2x + 3. Cette fonction associe à chaque nombre x le nombre 2x + 3.</div>
+<h3>3. Calcul de l'image</h3><p>On remplace x par le nombre donné.</p><div class="example">f(x) = 2x + 3.<br>f(4) = 2 × 4 + 3 = 11.<br>L'image de 4 est 11.</div><div class="example">g(x) = x² - 5.<br>g(3) = 3² - 5 = 4.</div>
+<h3>4. Détermination d'un antécédent</h3><p>On résout l'équation f(x) = nombre recherché.</p><div class="example">f(x) = 2x + 3. Cherchons l'antécédent de 13.<br>2x + 3 = 13<br>2x = 10<br><strong>x = 5.</strong></div>
+<h3>5. Tableau de valeurs</h3><p>Considérons f(x) = 2x + 1.</p><table><tr><th>x</th><td>-2</td><td>-1</td><td>0</td><td>1</td><td>2</td></tr><tr><th>f(x)</th><td>-3</td><td>-1</td><td>1</td><td>3</td><td>5</td></tr></table>
+<h3>6. Représentation graphique</h3><p>La représentation graphique est l'ensemble des points de coordonnées (x ; f(x)) dans un repère.</p><ol><li>Construire un tableau de valeurs.</li><li>Tracer un repère.</li><li>Placer les points (x ; f(x)).</li><li>Tracer la courbe correspondante.</li></ol>
+<div class="graph"><svg viewBox="0 0 340 280" width="100%" role="img" aria-label="Graphique de f(x)=2x+1"><defs><pattern id="grille" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M 30 0 L 0 0 0 30" fill="none" stroke="#dce3eb" stroke-width="1"/></pattern></defs><rect x="20" y="10" width="300" height="240" fill="url(#grille)"/><line x1="20" y1="160" x2="320" y2="160" stroke="#263238" stroke-width="2"/><line x1="170" y1="10" x2="170" y2="250" stroke="#263238" stroke-width="2"/><text x="310" y="177" font-size="12">x</text><text x="180" y="18" font-size="12">y</text><line x1="80" y1="250" x2="260" y2="10" stroke="#15966a" stroke-width="3"/><circle cx="110" cy="220" r="4" fill="#123c69"/><circle cx="140" cy="190" r="4" fill="#123c69"/><circle cx="170" cy="160" r="4" fill="#123c69"/><circle cx="200" cy="130" r="4" fill="#123c69"/><circle cx="230" cy="100" r="4" fill="#123c69"/></svg><p class="small">Illustration de la droite représentant f(x) = 2x + 1.</p></div>
+<h3>7. Fonction linéaire</h3><p>Une fonction linéaire est définie par :</p><div class="formula">f(x) = ax</div><p>Le nombre a est le coefficient de proportionnalité. Sa représentation graphique est une droite qui passe par l'origine.</p><div class="example">f(x) = 3x : f(2) = 6 ; f(4) = 12 ; f(-2) = -6.</div>
+<h3>8. Fonction affine</h3><div class="formula">f(x) = ax + b</div><ul><li>a est le coefficient directeur.</li><li>b est l'ordonnée à l'origine.</li></ul><div class="example">f(x) = 2x + 3 : a = 2 et b = 3. f(1) = 5 et f(2) = 7.</div>
+<h3>9. Différence entre fonction linéaire et affine</h3><table><tr><th>Fonction linéaire</th><th>Fonction affine</th></tr><tr><td>f(x) = ax</td><td>f(x) = ax + b</td></tr><tr><td>b = 0</td><td>b peut être non nul</td></tr><tr><td>Passe par l'origine</td><td>Ne passe pas nécessairement par l'origine</td></tr><tr><td>Exemple : 3x</td><td>Exemple : 3x + 2</td></tr></table>
+<h3>10. Applications</h3><div class="example">Un cahier coûte 500 FCFA. Pour x cahiers : P(x) = 500x. Pour 4 cahiers : P(4) = 2 000 FCFA.</div><div class="example">Un transport coûte 500 FCFA de prise en charge et 200 FCFA par kilomètre. P(x) = 200x + 500. Pour 5 km : P(5) = 1 500 FCFA.</div>
+<h3>11. Exercices</h3>
+<div class="exercise"><strong>Exercice 1 :</strong><p>Soit f(x) = 3x + 2. Quelle est l'image de 4 ?</p><label><input type="radio" name="f1" value="a"> 10</label><br><label><input type="radio" name="f1" value="b"> 14</label><br><label><input type="radio" name="f1" value="c"> 20</label><br><button class="action" onclick="verifier('f1','b','fr1','f(4) = 3 × 4 + 2 = 14.')">Vérifier</button><p id="fr1" class="result"></p></div>
+<div class="exercise"><strong>Exercice 2 :</strong><p>Soit g(x) = x² - 4. Calcule g(3).</p><label><input type="radio" name="f2" value="a"> 5</label><br><label><input type="radio" name="f2" value="b"> 13</label><br><label><input type="radio" name="f2" value="c"> 9</label><br><button class="action" onclick="verifier('f2','a','fr2','g(3) = 3² - 4 = 5.')">Vérifier</button><p id="fr2" class="result"></p></div>
+<div class="exercise"><strong>Exercice 3 :</strong><p>Soit f(x) = 2x + 4. Quel est l'antécédent de 10 ?</p><label><input type="radio" name="f3" value="a"> 2</label><br><label><input type="radio" name="f3" value="b"> 3</label><br><label><input type="radio" name="f3" value="c"> 7</label><br><button class="action" onclick="verifier('f3','b','fr3','2x + 4 = 10, donc x = 3.')">Vérifier</button><p id="fr3" class="result"></p></div>
+<div class="exercise"><strong>Exercice 4 :</strong><p>Quelle expression définit une fonction linéaire ?</p><label><input type="radio" name="f4" value="a"> 2x + 5</label><br><label><input type="radio" name="f4" value="b"> x²</label><br><label><input type="radio" name="f4" value="c"> 5x</label><br><button class="action" onclick="verifier('f4','c','fr4','Une fonction linéaire est de la forme f(x) = ax.')">Vérifier</button><p id="fr4" class="result"></p></div>
+<div class="exercise"><strong>Exercice 5 :</strong><p>Dans f(x) = 4x + 7, quelle est l'ordonnée à l'origine ?</p><label><input type="radio" name="f5" value="a"> 4</label><br><label><input type="radio" name="f5" value="b"> 7</label><br><label><input type="radio" name="f5" value="c"> 11</label><br><button class="action" onclick="verifier('f5','b','fr5','Dans f(x) = ax + b, l’ordonnée à l’origine est b = 7.')">Vérifier</button><p id="fr5" class="result"></p></div>
+<div class="exercise"><strong>Exercice 6 :</strong><p>Soit f(x) = 2x - 1. Calcule f(3).</p><label><input type="radio" name="f6" value="a"> 5</label><br><label><input type="radio" name="f6" value="b"> 6</label><br><label><input type="radio" name="f6" value="c"> 7</label><br><button class="action" onclick="verifier('f6','a','fr6','f(3) = 2 × 3 - 1 = 5.')">Vérifier</button><p id="fr6" class="result"></p></div>
+<h3>12. Bilan</h3><ul><li>Une fonction associe un nombre à un autre.</li><li>L'image se calcule en remplaçant x par sa valeur.</li><li>L'antécédent se trouve en résolvant une équation.</li><li>Une fonction linéaire est de la forme ax.</li><li>Une fonction affine est de la forme ax + b.</li><li>Le graphique d'une fonction affine est une droite.</li></ul>
 </div>
 </div>
 
 <!-- STATISTIQUES -->
-
 <div class="card">
 <h3>Statistiques</h3>
-<button class="lesson-button" onclick="ouvrir('stats')">Introduction aux statistiques</button>
-<div class="lesson" id="stats">
-<h3>Définition</h3>
-<p>Les statistiques permettent de collecter, organiser, représenter et analyser des données.</p>
-<div class="formula">Moyenne = Somme des valeurs / Effectif total</div>
-<div class="example">
-Exemple : 10, 12 et 14.<br>
-Moyenne = (10 + 12 + 14) / 3 = 12.
-</div>
-</div>
+<button class="lesson-button" onclick="ouvrir('stats1')">Chapitre 1 : Vocabulaire statistique</button>
+<div class="lesson" id="stats1">
+<h2>Chapitre 1 : Vocabulaire statistique</h2>
+<h3>1. Définition</h3><p>La statistique est une branche des mathématiques qui permet de collecter, organiser, représenter et analyser des données.</p>
+<h3>2. Vocabulaire essentiel</h3><ul><li><strong>Population :</strong> ensemble des individus étudiés.</li><li><strong>Individu :</strong> élément de la population.</li><li><strong>Caractère :</strong> propriété étudiée.</li><li><strong>Effectif :</strong> nombre d'individus correspondant à une valeur.</li><li><strong>Effectif total :</strong> nombre total d'observations.</li><li><strong>Fréquence :</strong> proportion d'un effectif par rapport au total.</li></ul>
+<h3>3. Exemple</h3><p>On interroge 20 élèves sur leur sport préféré.</p><table><tr><th>Sport</th><th>Effectif</th></tr><tr><td>Football</td><td>10</td></tr><tr><td>Basketball</td><td>5</td></tr><tr><td>Handball</td><td>3</td></tr><tr><td>Autres</td><td>2</td></tr><tr><th>Total</th><th>20</th></tr></table>
+<h3>4. Fréquence</h3><div class="formula">Fréquence = Effectif / Effectif total</div><div class="example">La fréquence du football est 10 / 20 = 0,5 = 50 %.</div>
+<div class="exercise"><strong>Question :</strong><p>Dans une classe de 30 élèves, 15 aiment le football. Quelle est la fréquence ?</p><label><input type="radio" name="st11" value="a"> 25 %</label><br><label><input type="radio" name="st11" value="b"> 50 %</label><br><label><input type="radio" name="st11" value="c"> 75 %</label><br><button class="action" onclick="verifier('st11','b','str11','15 / 30 = 0,5, soit 50 %.')">Vérifier</button><p id="str11" class="result"></p></div>
 </div>
 
+<button class="lesson-button" onclick="ouvrir('stats2')">Chapitre 2 : Moyenne, médiane et étendue</button>
+<div class="lesson" id="stats2">
+<h2>Chapitre 2 : Moyenne, médiane et étendue</h2>
+<h3>1. La moyenne arithmétique</h3><p>La moyenne est obtenue en divisant la somme des valeurs par le nombre total de valeurs.</p><div class="formula">Moyenne = Somme des valeurs / Effectif total</div><div class="example">Notes : 10 ; 12 ; 14 ; 16.<br>Moyenne = (10 + 12 + 14 + 16) / 4 = 52 / 4 = <strong>13.</strong></div>
+<h3>2. La moyenne pondérée</h3><p>Lorsque les valeurs possèdent des effectifs différents, on utilise la moyenne pondérée.</p><div class="formula">Moyenne = Σ(valeur × effectif) / effectif total</div><div class="example"><table><tr><th>Note</th><th>Effectif</th></tr><tr><td>10</td><td>2</td></tr><tr><td>12</td><td>3</td></tr><tr><td>15</td><td>1</td></tr></table>Moyenne = (10 × 2 + 12 × 3 + 15 × 1) / 6 = 71 / 6 ≈ <strong>11,83.</strong></div>
+<h3>3. La médiane</h3><p>La médiane partage une série statistique ordonnée en deux groupes de même effectif, selon la convention habituelle.</p><div class="example">Série : 4 ; 6 ; 8 ; 10 ; 12. La valeur centrale est 8. <strong>Médiane = 8.</strong></div><p>Pour un effectif pair, on prend généralement la moyenne des deux valeurs centrales.</p><div class="example">Série : 2 ; 4 ; 6 ; 8. Médiane = (4 + 6) / 2 = 5.</div>
+<h3>4. L'étendue</h3><p>L'étendue mesure l'écart entre la plus grande et la plus petite valeur.</p><div class="formula">Étendue = Valeur maximale - Valeur minimale</div><div class="example">Série : 5 ; 8 ; 10 ; 12 ; 15. Étendue = 15 - 5 = 10.</div>
+<div class="exercise"><strong>Question 1 :</strong><p>Calcule la moyenne de 8 ; 10 ; 12.</p><label><input type="radio" name="st21" value="a"> 9</label><br><label><input type="radio" name="st21" value="b"> 10</label><br><label><input type="radio" name="st21" value="c"> 12</label><br><button class="action" onclick="verifier('st21','b','str21','(8 + 10 + 12) / 3 = 10.')">Vérifier</button><p id="str21" class="result"></p></div>
+<div class="exercise"><strong>Question 2 :</strong><p>Quelle est la médiane de 2 ; 4 ; 6 ; 8 ; 10 ?</p><label><input type="radio" name="st22" value="a"> 4</label><br><label><input type="radio" name="st22" value="b"> 6</label><br><label><input type="radio" name="st22" value="c"> 8</label><br><button class="action" onclick="verifier('st22','b','str22','La valeur centrale de la série ordonnée est 6.')">Vérifier</button><p id="str22" class="result"></p></div>
+<div class="exercise"><strong>Question 3 :</strong><p>Quelle est l'étendue de 3 ; 7 ; 9 ; 15 ?</p><label><input type="radio" name="st23" value="a"> 12</label><br><label><input type="radio" name="st23" value="b"> 15</label><br><label><input type="radio" name="st23" value="c"> 18</label><br><button class="action" onclick="verifier('st23','a','str23','15 - 3 = 12.')">Vérifier</button><p id="str23" class="result"></p></div>
+</div>
+
+<button class="lesson-button" onclick="ouvrir('stats3')">Chapitre 3 : Représentations graphiques</button>
+<div class="lesson" id="stats3">
+<h2>Chapitre 3 : Représentations graphiques</h2>
+<h3>1. Diagramme en bâtons</h3><p>Il permet de comparer les effectifs de différentes catégories à l'aide de bâtons.</p>
+<h3>2. Diagramme circulaire</h3><p>Il représente les différentes catégories sous forme de secteurs d'un disque.</p><div class="formula">Angle d'un secteur = Fréquence × 360°</div><div class="example">Une catégorie représente 25 % des observations. Angle = 0,25 × 360° = 90°.</div>
+<h3>3. Histogramme</h3><p>Un histogramme représente des données quantitatives regroupées en classes. Les rectangles sont accolés.</p>
+<h3>4. Courbe d'évolution</h3><p>Une courbe permet de suivre l'évolution d'une grandeur au cours du temps.</p>
+<h3>5. Exemple de tableau statistique</h3><table><tr><th>Mois</th><th>Production (tonnes)</th></tr><tr><td>Janvier</td><td>10</td></tr><tr><td>Février</td><td>15</td></tr><tr><td>Mars</td><td>20</td></tr><tr><td>Avril</td><td>25</td></tr></table>
+<div class="exercise"><strong>Question :</strong><p>Quel angle correspond à une fréquence de 50 % dans un diagramme circulaire ?</p><label><input type="radio" name="st31" value="a"> 90°</label><br><label><input type="radio" name="st31" value="b"> 180°</label><br><label><input type="radio" name="st31" value="c"> 270°</label><br><button class="action" onclick="verifier('st31','b','str31','0,5 × 360° = 180°.')">Vérifier</button><p id="str31" class="result"></p></div>
+</div>
+</div>
 </section>
 
-<!-- ENTRAINEMENT GENERAL -->
-
 <section id="exercices" class="card">
-<h2>Entraînement général</h2>
-<p>Teste tes connaissances avec ces questions.</p>
-
-<div class="question">
-<strong>1. Quel est le résultat de (-5) × 4 ?</strong><br>
-<label><input type="radio" name="g1" value="a"> 20</label><br>
-<label><input type="radio" name="g1" value="b"> -20</label><br>
-<label><input type="radio" name="g1" value="c"> -9</label>
-</div>
-
-<div class="question">
-<strong>2. Combien vaut √81 ?</strong><br>
-<label><input type="radio" name="g2" value="a"> 8</label><br>
-<label><input type="radio" name="g2" value="b"> 9</label><br>
-<label><input type="radio" name="g2" value="c"> 10</label>
-</div>
-
-<div class="question">
-<strong>3. Quel est le résultat de 3² ?</strong><br>
-<label><input type="radio" name="g3" value="a"> 6</label><br>
-<label><input type="radio" name="g3" value="b"> 9</label><br>
-<label><input type="radio" name="g3" value="c"> 12</label>
-</div>
-
-<div class="question">
-<strong>4. Quel est le résultat de 1/3 + 1/3 ?</strong><br>
-<label><input type="radio" name="g4" value="a"> 2/3</label><br>
-<label><input type="radio" name="g4" value="b"> 2/6</label><br>
-<label><input type="radio" name="g4" value="c"> 1/3</label>
-</div>
-
-<div class="question">
-<strong>5. Combien vaut 5 + 2 × 3 ?</strong><br>
-<label><input type="radio" name="g5" value="a"> 21</label><br>
-<label><input type="radio" name="g5" value="b"> 11</label><br>
-<label><input type="radio" name="g5" value="c"> 15</label>
-</div>
-
+<h2>Entraînement général</h2><p>Teste tes connaissances avec ces questions.</p>
+<div class="question"><strong>1. Quel est le résultat de (-5) × 4 ?</strong><br><label><input type="radio" name="g1" value="a"> 20</label><br><label><input type="radio" name="g1" value="b"> -20</label><br><label><input type="radio" name="g1" value="c"> -9</label></div>
+<div class="question"><strong>2. Combien vaut √81 ?</strong><br><label><input type="radio" name="g2" value="a"> 8</label><br><label><input type="radio" name="g2" value="b"> 9</label><br><label><input type="radio" name="g2" value="c"> 10</label></div>
+<div class="question"><strong>3. Quel est le résultat de 3² ?</strong><br><label><input type="radio" name="g3" value="a"> 6</label><br><label><input type="radio" name="g3" value="b"> 9</label><br><label><input type="radio" name="g3" value="c"> 12</label></div>
+<div class="question"><strong>4. Quel est le résultat de 1/3 + 1/3 ?</strong><br><label><input type="radio" name="g4" value="a"> 2/3</label><br><label><input type="radio" name="g4" value="b"> 2/6</label><br><label><input type="radio" name="g4" value="c"> 1/3</label></div>
+<div class="question"><strong>5. Combien vaut 5 + 2 × 3 ?</strong><br><label><input type="radio" name="g5" value="a"> 21</label><br><label><input type="radio" name="g5" value="b"> 11</label><br><label><input type="radio" name="g5" value="c"> 15</label></div>
 <button class="action" onclick="corrigerGeneral()">Corriger mon évaluation</button>
 <p id="resultatGeneral" class="result"></p>
 </section>
 
 <section id="evaluation" class="card">
 <h2>Conseils pour progresser</h2>
-<ul>
-<li>Lis attentivement chaque leçon.</li>
-<li>Reproduis les exemples dans ton cahier.</li>
-<li>Essaie les exercices avant de consulter les corrections.</li>
-<li>Recommence les questions auxquelles tu as mal répondu.</li>
-<li>Travaille régulièrement pour consolider tes connaissances.</li>
-</ul>
+<ul><li>Lis attentivement chaque leçon.</li><li>Reproduis les exemples dans ton cahier.</li><li>Essaie les exercices avant de consulter les corrections.</li><li>Recommence les questions auxquelles tu as mal répondu.</li><li>Travaille régulièrement pour consolider tes connaissances.</li></ul>
 </section>
-
 </main>
-
-<footer>
-<h3 style="color:white">MATHIA</h3>
-<p>La connaissance mathématique à la portée de tous.</p>
-<p>Plateforme éducative - Mali</p>
-</footer>
-
+<footer><h3 style="color:white">MATHIA</h3><p>La connaissance mathématique à la portée de tous.</p><p>Plateforme éducative - Mali</p></footer>
 <script>
-function ouvrir(id) {
-    const element = document.getElementById(id);
-    element.classList.toggle("active");
+function ouvrir(id){
+ const element=document.getElementById(id);
+ if(element) element.classList.toggle("active");
 }
-
-function verifier(nom, bonneReponse, resultatId, explication) {
-    const choix = document.querySelector(
-        'input[name="' + nom + '"]:checked'
-    );
-
-    const resultat = document.getElementById(resultatId);
-
-    if (!choix) {
-        resultat.textContent = "Choisis une réponse avant de vérifier.";
-        resultat.className = "result wrong";
-        return;
-    }
-
-    if (choix.value === bonneReponse) {
-        resultat.textContent = "Bonne réponse ! " + explication;
-        resultat.className = "result correct";
-    } else {
-        resultat.textContent = "Réponse incorrecte. " + explication;
-        resultat.className = "result wrong";
-    }
+function verifier(nom,bonneReponse,resultatId,explication){
+ const choix=document.querySelector('input[name="'+nom+'"]:checked');
+ const resultat=document.getElementById(resultatId);
+ if(!choix){resultat.textContent="Choisis une réponse avant de vérifier.";resultat.className="result wrong";return;}
+ if(choix.value===bonneReponse){resultat.textContent="Bonne réponse ! "+explication;resultat.className="result correct";}
+ else{resultat.textContent="Réponse incorrecte. "+explication;resultat.className="result wrong";}
 }
-
-function corrigerGeneral() {
-    const reponses = {
-        g1:"b",
-        g2:"b",
-        g3:"b",
-        g4:"a",
-        g5:"b"
-    };
-
-    let score = 0;
-    let repondu = 0;
-
-    for (let question in reponses) {
-        const choix = document.querySelector(
-            'input[name="' + question + '"]:checked'
-        );
-
-        if (choix) {
-            repondu++;
-
-            if (choix.value === reponses[question]) {
-                score++;
-            }
-        }
-    }
-
-    const note = score * 4;
-    const resultat = document.getElementById("resultatGeneral");
-
-    resultat.textContent =
-        "Tu as répondu à " + repondu + "/5 questions. " +
-        "Score : " + score + "/5, soit " + note + "/20.";
-
-    if (score >= 3) {
-        resultat.className = "result correct";
-    } else {
-        resultat.className = "result wrong";
-    }
+function corrigerGeneral(){
+ const reponses={g1:"b",g2:"b",g3:"b",g4:"a",g5:"b"};
+ let score=0,repondu=0;
+ for(const question in reponses){
+  const choix=document.querySelector('input[name="'+question+'"]:checked');
+  if(choix){repondu++;if(choix.value===reponses[question])score++;}
+ }
+ const note=score*4;
+ const resultat=document.getElementById("resultatGeneral");
+ resultat.textContent="Tu as répondu à "+repondu+"/5 questions. Score : "+score+"/5, soit "+note+"/20.";
+ resultat.className=score>=3?"result correct":"result wrong";
 }
 </script>
-
 </body>
 </html>
 
