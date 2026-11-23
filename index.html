@@ -4,718 +4,663 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MATHIA - Plateforme éducative</title>
+<title>MATHIA - Apprendre les mathématiques</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f1f5f9;color:#1e293b;line-height:1.7}
-header{background:#123c69;color:white;text-align:center;padding:23px 15px}
-header h1{font-size:32px}
-nav{background:white;padding:14px;display:flex;justify-content:center;flex-wrap:wrap;gap:18px;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px #ddd}
-nav a{color:#123c69;text-decoration:none;font-weight:bold}
-nav a:hover{color:#2563eb}
-.hero{background:linear-gradient(120deg,#123c69,#2563eb);color:white;text-align:center;padding:45px 20px}
-.hero h2{font-size:28px;margin-bottom:12px}
-.container{max-width:1100px;margin:auto;padding:30px 15px}
-.section-title{text-align:center;color:#123c69;margin-bottom:25px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card,.lesson{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 12px #00000012}
-.card h3{color:#1d4ed8;margin-bottom:10px}
-button{background:#2563eb;color:white;border:none;padding:11px 17px;border-radius:7px;cursor:pointer;margin-top:12px;font-size:15px}
-button:hover{background:#123c69}
-.lesson{display:none;margin-top:25px;line-height:1.8}
-.lesson h3{color:#123c69;margin:15px 0}
-.lesson h4{color:#1d4ed8;margin:20px 0 8px}
-.lesson ul,.lesson ol{padding-left:25px}
-.formula{background:#eff6ff;border-left:4px solid #2563eb;padding:13px;margin:13px 0;font-weight:bold}
-.example{background:#f0fdf4;border-left:4px solid #16a34a;padding:15px;margin:15px 0}
-.exercise{background:#fff7ed;padding:17px;margin:18px 0;border-radius:9px}
-.exercise label,.quiz-question label{display:block;margin:8px 0}
-.exercise input,.quiz-question input{margin-right:7px}
-.quiz-question{background:#f8fafc;padding:17px;margin:15px 0;border-radius:9px}
-.result{font-weight:bold;margin-top:12px}
-.badge{background:#dbeafe;color:#1e40af;padding:5px 10px;border-radius:20px;font-size:13px}
-select{padding:10px;border:1px solid #cbd5e1;border-radius:7px;margin:10px}
-footer{background:#123c69;color:white;text-align:center;padding:22px;margin-top:40px}
-hr{margin:20px 0;border:0;border-top:1px solid #ddd}
-@media(max-width:600px){header h1{font-size:26px}.hero h2{font-size:23px}nav{gap:12px}}
+:root {
+    --blue:#123c69;
+    --light:#eef5fc;
+    --green:#15966a;
+    --orange:#f39c32;
+    --dark:#172b4d;
+}
+* {box-sizing:border-box}
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#263238;
+    line-height:1.65;
+}
+header {
+    background:var(--blue);
+    color:white;
+    padding:22px 5%;
+}
+.header-content {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+.logo {font-size:27px;font-weight:bold}
+.logo span {color:#66e0a3}
+nav {display:flex;flex-wrap:wrap;gap:15px}
+nav a {color:white;text-decoration:none;font-weight:bold}
+.hero {
+    background:linear-gradient(120deg,#123c69,#1976a8);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+.hero h1 {font-size:35px;margin:0 0 10px}
+.hero p {max-width:700px;margin:auto}
+.container {max-width:1100px;margin:30px auto;padding:0 18px}
+h2 {color:var(--blue)}
+h3 {color:#176b55}
+.card {
+    background:white;
+    padding:22px;
+    margin:20px 0;
+    border-radius:12px;
+    box-shadow:0 3px 12px #0000000c;
+}
+.lesson-button {
+    width:100%;
+    padding:16px;
+    border:0;
+    background:var(--blue);
+    color:white;
+    font-size:17px;
+    text-align:left;
+    border-radius:8px;
+    cursor:pointer;
+    margin:8px 0;
+}
+.lesson-button:hover {background:#205b91}
+.lesson {display:none;padding:20px;background:white;border-radius:10px;margin-bottom:20px}
+.lesson.active {display:block}
+.formula {
+    background:#edf5ff;
+    border-left:5px solid #2585c7;
+    padding:14px;
+    margin:15px 0;
+    font-weight:bold;
+}
+.example {
+    background:#f0faf4;
+    border-left:5px solid var(--green);
+    padding:15px;
+    margin:15px 0;
+}
+.exercise {
+    background:#fff9eb;
+    border-left:5px solid var(--orange);
+    padding:16px;
+    margin:15px 0;
+    border-radius:5px;
+}
+button.action {
+    background:var(--green);
+    color:white;
+    border:0;
+    padding:10px 17px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+button.action:hover {background:#08734e}
+input[type="radio"] {margin:8px}
+.result {font-weight:bold;margin-top:10px}
+.correct {color:green}
+.wrong {color:#c0392b}
+.question {padding:12px 0;border-bottom:1px solid #ddd}
+select {
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #bbb;
+    max-width:100%;
+}
+footer {
+    background:var(--blue);
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+.small {color:#64748b;font-size:14px}
+ul,ol {padding-left:25px}
+@media(max-width:600px) {
+    .hero h1 {font-size:27px}
+    .card {padding:16px}
+    nav {gap:10px}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>📘 MATHIA</h1>
-<p>La plateforme intelligente d'apprentissage des mathématiques</p>
+<div class="header-content">
+    <div class="logo">MATH<span>IA</span></div>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#cours">Cours</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#evaluation">Évaluation</a>
+    </nav>
+</div>
 </header>
 
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#cours">Cours</a>
-<a href="#exercices">Exercices</a>
-<a href="#evaluation">Évaluation</a>
-<a href="#apropos">À propos</a>
-</nav>
-
 <section class="hero" id="accueil">
-<h2>Bienvenue sur MATHIA</h2>
-<p>Apprenons les mathématiques autrement !</p>
-<p>Programme scolaire du Mali</p>
-<p>Comprendre • Apprendre • S'exercer • Réussir</p>
+    <h1>Bienvenue sur MATHIA</h1>
+    <p>Apprendre les mathématiques autrement : comprendre les cours, s'entraîner et évaluer ses connaissances.</p>
 </section>
 
-<main class="container" id="cours">
+<main class="container">
 
-<h2 class="section-title">📚 Bibliothèque des cours</h2>
+<section class="card">
+    <h2>Choisir sa classe</h2>
+    <p>Sélectionne ton niveau pour accéder aux ressources pédagogiques.</p>
+    <select id="classe">
+        <option value="10e année">10e année</option>
+        <option disabled>9e année - bientôt disponible</option>
+        <option disabled>11e année - bientôt disponible</option>
+        <option disabled>12e année - bientôt disponible</option>
+    </select>
+    <p class="small">D'autres classes seront ajoutées progressivement.</p>
+</section>
 
-<p style="text-align:center">
-<strong>Classe :</strong>
-<select id="classe" onchange="changerClasse()">
-<option value="10e">10e année</option>
-</select>
-</p>
-
-<div class="cards">
-
-<div class="card">
-<h3>📘 Algèbre</h3>
-<p>Ensembles de nombres, calcul numérique, fractions, calcul littéral et équations.</p>
-<button onclick="ouvrirCours('algebre')">Accéder aux chapitres</button>
-</div>
+<section id="cours">
+<h2>Programme de mathématiques - 10e année</h2>
 
 <div class="card">
-<h3>📐 Géométrie</h3>
-<p>Triangles, angles, Pythagore, Thalès et propriétés géométriques.</p>
-<button onclick="ouvrirCours('geometrie')">Accéder au cours</button>
-</div>
+<h3>Algèbre</h3>
 
-<div class="card">
-<h3>📈 Fonctions</h3>
-<p>Images, antécédents, fonctions linéaires et affines.</p>
-<button onclick="ouvrirCours('fonctions')">Accéder au cours</button>
-</div>
+<button class="lesson-button" onclick="ouvrir('chapitre1')">
+    Chapitre 1 : Les ensembles de nombres
+</button>
 
-<div class="card">
-<h3>📊 Statistiques</h3>
-<p>Effectifs, fréquences, moyenne, médiane et étendue.</p>
-<button onclick="ouvrirCours('statistiques')">Accéder au cours</button>
-</div>
+<div class="lesson" id="chapitre1">
+<h2>Chapitre 1 : Les ensembles de nombres</h2>
 
-</div>
-
-<!-- ALGEBRE -->
-
-<div id="algebre" class="lesson">
-
-<span class="badge">10e année • Algèbre • Chapitre 1</span>
-<h3>CHAPITRE 1 : LES ENSEMBLES DE NOMBRES</h3>
-
-<h4>I. Objectifs pédagogiques</h4>
+<h3>1. Objectifs du chapitre</h3>
 <p>À la fin de ce chapitre, l'élève doit être capable de :</p>
 <ul>
 <li>Reconnaître les différents ensembles de nombres.</li>
-<li>Classer un nombre dans un ensemble.</li>
-<li>Utiliser les symboles mathématiques.</li>
+<li>Classer un nombre dans le plus petit ensemble auquel il appartient.</li>
+<li>Utiliser les symboles d'appartenance et d'inclusion.</li>
 <li>Comparer des nombres réels.</li>
-<li>Déterminer si un nombre est rationnel ou irrationnel.</li>
-<li>Représenter et interpréter des intervalles.</li>
 </ul>
 
-<h4>II. Les nombres naturels (ℕ)</h4>
-<p>Les nombres naturels sont les nombres utilisés pour compter. Ils commencent par zéro et continuent indéfiniment.</p>
+<h3>2. Les nombres naturels</h3>
+<p>Les nombres naturels sont les nombres utilisés pour compter.</p>
 <div class="formula">ℕ = {0 ; 1 ; 2 ; 3 ; 4 ; 5 ; ...}</div>
-<p>Exemples : 0, 1, 8, 25, 100 et 1000 appartiennent à ℕ.</p>
-<p>En revanche, -3 et 2,5 n'appartiennent pas à ℕ.</p>
+<p>Exemples : 0, 5, 12 et 250 sont des nombres naturels.</p>
 
-<div class="example">
-<strong>Exemple 1 :</strong>
-<p>Parmi les nombres 5 ; -2 ; 0 ; 8,5 ; 12, identifier les nombres naturels.</p>
-<p><strong>Correction :</strong></p>
-<p>5 ∈ ℕ ; 0 ∈ ℕ ; 12 ∈ ℕ.</p>
-<p>-2 ∉ ℕ et 8,5 ∉ ℕ.</p>
-</div>
-
-<h4>III. Les nombres entiers relatifs (ℤ)</h4>
-<p>Les entiers relatifs comprennent les nombres positifs, les nombres négatifs et zéro.</p>
+<h3>3. Les nombres entiers relatifs</h3>
+<p>Ils comprennent les nombres positifs, les nombres négatifs et zéro.</p>
 <div class="formula">ℤ = {... ; -3 ; -2 ; -1 ; 0 ; 1 ; 2 ; 3 ; ...}</div>
-<p>Exemples : -15, -4, 0, 7 et 125.</p>
+<p>Exemples : -8, -2, 0, 15.</p>
 
-<div class="example">
-<strong>Exemple 2 :</strong>
-<p>Classer : -8 ; 0 ; 14 ; -2,5 ; 100.</p>
-<p><strong>Correction :</strong></p>
-<p>-8 ∈ ℤ ; 0 ∈ ℤ ; 14 ∈ ℤ ; 100 ∈ ℤ.</p>
-<p>-2,5 ∉ ℤ car il n'est pas entier.</p>
-</div>
-
-<h4>IV. Les nombres décimaux (D)</h4>
+<h3>4. Les nombres décimaux</h3>
 <p>Un nombre décimal possède une écriture décimale finie.</p>
-<div class="formula">Exemples : 2,5 ; 3,75 ; -4,125 ; 8 = 8,0.</div>
-<p>Les nombres 1/2 et 3/4 sont aussi décimaux car ils peuvent s'écrire 0,5 et 0,75.</p>
-<p>Attention : 1/3 = 0,333... n'est pas un nombre décimal.</p>
-
+<p>Exemples : 2,5 ; 0,75 ; -3,125 ; 12.</p>
 <div class="example">
-<strong>Exemple 3 :</strong>
-<p>Dire si 0,125 est décimal.</p>
-<p>Oui, car son écriture décimale est finie.</p>
-<p>On peut également écrire 0,125 = 125/1000 = 1/8.</p>
+<strong>Exemple :</strong> 2,75 est décimal car son écriture comporte un nombre fini de chiffres après la virgule.
 </div>
 
-<h4>V. Les nombres rationnels (ℚ)</h4>
-<p>Un nombre rationnel peut s'écrire sous forme d'une fraction de deux entiers dont le dénominateur est non nul.</p>
-<div class="formula">ℚ = {a/b ; a ∈ ℤ et b ∈ ℤ*}</div>
-<p>Exemples : 1/2 ; 3/4 ; -7/5 ; 5/1.</p>
-<p>Tout nombre décimal est rationnel.</p>
+<h3>5. Les nombres rationnels</h3>
+<p>Un nombre rationnel est un nombre qui peut s'écrire sous la forme :</p>
+<div class="formula">a / b avec a ∈ ℤ et b ∈ ℤ, b ≠ 0</div>
+<p>Exemples : 1/2 ; -3/4 ; 5 ; 0,25.</p>
 
+<h3>6. Les nombres irrationnels</h3>
+<p>Un nombre irrationnel ne peut pas s'écrire comme le quotient de deux entiers.</p>
+<p>Exemples : √2, √3 et π.</p>
+
+<h3>7. Les nombres réels</h3>
+<p>L'ensemble des nombres réels regroupe les nombres rationnels et les nombres irrationnels.</p>
+<div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div>
+<p>Les nombres irrationnels appartiennent également à ℝ, mais pas à ℚ.</p>
+
+<h3>8. Exemples corrigés</h3>
 <div class="example">
-<strong>Exemple 4 :</strong>
-<p>Montrer que 0,75 est rationnel.</p>
-<p>0,75 = 75/100.</p>
-<p>En simplifiant par 25 :</p>
-<p>0,75 = 3/4.</p>
-<p>Donc 0,75 ∈ ℚ.</p>
+<strong>Exemple 1 :</strong> Classer 7 dans les ensembles de nombres.<br>
+Correction : 7 appartient à ℕ, ℤ, 𝔻, ℚ et ℝ.
+</div>
+<div class="example">
+<strong>Exemple 2 :</strong> Classer -4.<br>
+Correction : -4 appartient à ℤ, 𝔻, ℚ et ℝ, mais pas à ℕ.
+</div>
+<div class="example">
+<strong>Exemple 3 :</strong> Classer √5.<br>
+Correction : √5 est irrationnel et appartient à ℝ.
 </div>
 
-<h4>VI. Les nombres irrationnels</h4>
-<p>Un nombre irrationnel ne peut pas s'écrire sous la forme d'une fraction de deux entiers.</p>
-<p>Son écriture décimale est infinie et non périodique.</p>
-<div class="formula">Exemples : √2 ; √3 ; π.</div>
-
-<div class="example">
-<strong>Exemple 5 :</strong>
-<p>Classer √4 ; √5 ; √9 et √7.</p>
-<p>√4 = 2 : naturel.</p>
-<p>√5 : irrationnel.</p>
-<p>√9 = 3 : naturel.</p>
-<p>√7 : irrationnel.</p>
+<h3>9. À retenir</h3>
+<ul>
+<li>Tout nombre naturel est un entier relatif.</li>
+<li>Tout entier relatif est un nombre décimal.</li>
+<li>Tout nombre décimal est rationnel.</li>
+<li>Tout nombre rationnel est réel.</li>
+<li>Un nombre irrationnel est réel mais non rationnel.</li>
+</ul>
 </div>
 
-<h4>VII. Les nombres réels (ℝ)</h4>
-<p>L'ensemble des réels comprend les nombres rationnels et les nombres irrationnels.</p>
-<div class="formula">ℝ = ℚ ∪ ensemble des irrationnels</div>
-<p>Exemples : -5 ; 2,5 ; 1/3 ; √2 et π appartiennent à ℝ.</p>
+<button class="lesson-button" onclick="ouvrir('chapitre2')">
+    Chapitre 2 : Opérations sur les nombres réels
+</button>
 
-<h4>VIII. Relations entre les ensembles</h4>
-<div class="formula">ℕ ⊂ ℤ ⊂ D ⊂ ℚ ⊂ ℝ</div>
-<p>Tout nombre naturel est un entier relatif. Tout entier relatif est un nombre décimal. Tout décimal est rationnel. Tout rationnel est réel.</p>
+<div class="lesson" id="chapitre2">
+<h2>Chapitre 2 : Opérations sur les nombres réels</h2>
 
-<div class="example">
-<strong>Exemple 6 :</strong>
-<p>Quel est le plus petit ensemble contenant 12 ?</p>
-<p>12 ∈ ℕ.</p>
-<p>Le plus petit ensemble contenant 12 est donc ℕ.</p>
-</div>
+<h3>1. Objectifs du chapitre</h3>
+<p>À la fin de ce chapitre, l'élève doit pouvoir :</p>
+<ul>
+<li>Effectuer des additions et soustractions de nombres réels.</li>
+<li>Maîtriser les règles de signes.</li>
+<li>Effectuer des multiplications et divisions.</li>
+<li>Calculer avec des fractions.</li>
+<li>Respecter les priorités opératoires.</li>
+<li>Utiliser les puissances et les racines carrées.</li>
+</ul>
 
-<h4>IX. Les symboles mathématiques</h4>
+<h3>2. Addition des nombres réels</h3>
+<p>Pour additionner deux nombres réels, on tient compte de leurs signes.</p>
+
 <div class="formula">
-∈ : appartient à<br>
-∉ : n'appartient pas à<br>
-⊂ : est inclus dans<br>
-⊄ : n'est pas inclus dans<br>
-∪ : réunion<br>
-∩ : intersection
+Deux nombres de même signe : on additionne leurs valeurs absolues et on conserve le signe commun.
 </div>
-<p>Exemples : 5 ∈ ℕ ; -2 ∈ ℤ ; 1/3 ∉ D ; ℕ ⊂ ℤ.</p>
-
-<h4>X. Comparaison des nombres réels</h4>
-<p>On utilise les symboles suivants :</p>
-<div class="formula">
-&lt; : inférieur à<br>
-&gt; : supérieur à<br>
-≤ : inférieur ou égal à<br>
-≥ : supérieur ou égal à
-</div>
-<p>Tout nombre positif est supérieur à tout nombre négatif.</p>
-<p>Entre deux nombres négatifs, celui qui est le plus proche de zéro est le plus grand.</p>
-
 <div class="example">
-<strong>Exemple 7 :</strong>
-<p>Ranger dans l'ordre croissant : -5 ; 3 ; -2 ; 0 ; 7.</p>
-<p><strong>Correction :</strong></p>
-<p>-5 &lt; -2 &lt; 0 &lt; 3 &lt; 7.</p>
+<strong>Exemple 1 :</strong><br>
+(+5) + (+3) = +8<br>
+(-4) + (-6) = -10
 </div>
 
-<h4>XI. Les intervalles</h4>
-<p>Un intervalle est un ensemble de nombres réels compris entre deux bornes.</p>
 <div class="formula">
-[a ; b] : intervalle fermé<br>
-]a ; b[ : intervalle ouvert<br>
-[a ; b[ : fermé à gauche<br>
-]a ; b] : fermé à droite
+Deux nombres de signes contraires : on soustrait leurs valeurs absolues et on conserve le signe du nombre ayant la plus grande valeur absolue.
 </div>
-
 <div class="example">
-<strong>Exemple 8 :</strong>
-<p>Écrire 2 ≤ x &lt; 7 sous forme d'intervalle.</p>
-<p>2 est inclus, 7 est exclu.</p>
-<p><strong>x ∈ [2 ; 7[.</strong></p>
+<strong>Exemple 2 :</strong><br>
+(+9) + (-4) = +5<br>
+(-12) + (+7) = -5
 </div>
 
-<h4>XII. Résumé à retenir</h4>
+<h3>3. Soustraction des nombres réels</h3>
+<p>Soustraire un nombre revient à ajouter son opposé.</p>
+<div class="formula">a - b = a + (-b)</div>
+<div class="example">
+<strong>Exemple 1 :</strong><br>
+8 - 3 = 8 + (-3) = 5<br><br>
+<strong>Exemple 2 :</strong><br>
+-5 - 4 = -5 + (-4) = -9<br><br>
+<strong>Exemple 3 :</strong><br>
+-7 - (-2) = -7 + 2 = -5
+</div>
+
+<h3>4. Multiplication des nombres réels</h3>
+<p>La multiplication obéit aux règles de signes suivantes :</p>
 <div class="formula">
-ℕ : naturels<br>
-ℤ : entiers relatifs<br>
-D : décimaux<br>
-ℚ : rationnels<br>
-ℝ : réels
+(+) × (+) = (+)<br>
+(-) × (-) = (+)<br>
+(+) × (-) = (-)<br>
+(-) × (+) = (-)
 </div>
-<div class="formula">ℕ ⊂ ℤ ⊂ D ⊂ ℚ ⊂ ℝ</div>
+<div class="example">
+<strong>Exemples :</strong><br>
+5 × 3 = 15<br>
+(-4) × (-2) = 8<br>
+(-6) × 3 = -18<br>
+7 × (-2) = -14
+</div>
 
-<h3>XIII. EXERCICES D'APPLICATION</h3>
+<h3>5. Division des nombres réels</h3>
+<p>La division suit les mêmes règles de signes que la multiplication. Le diviseur ne doit jamais être égal à zéro.</p>
+<div class="formula">
+(+) ÷ (+) = (+)<br>
+(-) ÷ (-) = (+)<br>
+(+) ÷ (-) = (-)<br>
+(-) ÷ (+) = (-)
+</div>
+<div class="example">
+<strong>Exemples :</strong><br>
+12 ÷ 3 = 4<br>
+(-20) ÷ (-5) = 4<br>
+(-18) ÷ 3 = -6<br>
+24 ÷ (-6) = -4
+</div>
+
+<h3>6. Calcul avec les fractions</h3>
+<p>Une fraction est une écriture de la forme :</p>
+<div class="formula">a/b avec b ≠ 0</div>
+
+<strong>a) Addition de fractions</strong>
+<p>Lorsque les dénominateurs sont égaux, on additionne les numérateurs.</p>
+<div class="formula">a/c + b/c = (a+b)/c</div>
+<div class="example">
+2/5 + 1/5 = 3/5
+</div>
+<p>Lorsque les dénominateurs sont différents, on les réduit au même dénominateur.</p>
+<div class="example">
+1/2 + 1/3<br>
+= 3/6 + 2/6<br>
+= 5/6
+</div>
+
+<strong>b) Soustraction de fractions</strong>
+<div class="formula">a/c - b/c = (a-b)/c</div>
+<div class="example">
+5/7 - 2/7 = 3/7
+</div>
+
+<strong>c) Multiplication de fractions</strong>
+<div class="formula">(a/b) × (c/d) = (a×c)/(b×d)</div>
+<div class="example">
+2/3 × 4/5 = 8/15
+</div>
+
+<strong>d) Division de fractions</strong>
+<p>Diviser par une fraction revient à multiplier par son inverse.</p>
+<div class="formula">(a/b) ÷ (c/d) = (a/b) × (d/c)</div>
+<div class="example">
+2/3 ÷ 4/5<br>
+= 2/3 × 5/4<br>
+= 10/12<br>
+= 5/6
+</div>
+
+<h3>7. Les priorités opératoires</h3>
+<p>Dans un calcul contenant plusieurs opérations, il faut respecter l'ordre suivant :</p>
+<ol>
+<li>Les calculs entre parenthèses.</li>
+<li>Les puissances et les racines carrées.</li>
+<li>Les multiplications et les divisions, de gauche à droite.</li>
+<li>Les additions et les soustractions, de gauche à droite.</li>
+</ol>
+<div class="example">
+<strong>Exemple 1 :</strong><br>
+A = 5 + 3 × 4<br>
+A = 5 + 12<br>
+<strong>A = 17</strong>
+</div>
+<div class="example">
+<strong>Exemple 2 :</strong><br>
+B = (5 + 3) × 4<br>
+B = 8 × 4<br>
+<strong>B = 32</strong>
+</div>
+<div class="example">
+<strong>Exemple 3 :</strong><br>
+C = 20 - 12 ÷ 3 + 2<br>
+C = 20 - 4 + 2<br>
+C = 16 + 2<br>
+<strong>C = 18</strong>
+</div>
+
+<h3>8. Les puissances</h3>
+<p>Une puissance permet d'écrire plus simplement un produit de facteurs identiques.</p>
+<div class="formula">aⁿ = a × a × ... × a (n facteurs)</div>
+<p>Exemples :</p>
+<ul>
+<li>2³ = 2 × 2 × 2 = 8</li>
+<li>5² = 5 × 5 = 25</li>
+<li>(-3)² = 9</li>
+<li>(-3)³ = -27</li>
+</ul>
+
+<strong>Quelques propriétés importantes :</strong>
+<div class="formula">
+aᵐ × aⁿ = aᵐ⁺ⁿ<br>
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>
+(aᵐ)ⁿ = aᵐˣⁿ<br>
+a⁰ = 1 (a ≠ 0)<br>
+a⁻ⁿ = 1/aⁿ (a ≠ 0)
+</div>
+<div class="example">
+<strong>Exemple :</strong><br>
+2³ × 2² = 2⁵ = 32
+</div>
+
+<h3>9. Les racines carrées</h3>
+<p>La racine carrée d'un nombre positif a est le nombre positif dont le carré est égal à a.</p>
+<div class="formula">√a = b signifie que b² = a, avec a ≥ 0 et b ≥ 0.</div>
+<div class="example">
+√25 = 5 car 5² = 25.<br>
+√49 = 7 car 7² = 49.<br>
+√100 = 10 car 10² = 100.
+</div>
+<p>Propriétés pour a et b positifs :</p>
+<div class="formula">
+√(a × b) = √a × √b<br>
+√(a/b) = √a / √b (b ≠ 0)
+</div>
+<div class="example">
+√(9 × 4) = √9 × √4 = 3 × 2 = 6.
+</div>
+
+<h3>10. Exercices d'application</h3>
 
 <div class="exercise">
-<strong>Exercice 1 : Vrai ou faux</strong>
-<p>5 appartient à ℕ.</p>
-<label><input type="radio" name="a1" value="v"> Vrai</label>
-<label><input type="radio" name="a1" value="f"> Faux</label>
-<button onclick="corrigerExercice('a1','v','r1')">Corriger</button>
+<strong>Exercice 1 : Addition et soustraction</strong>
+<p>Calcule : A = (-8) + 13 - 6.</p>
+<label><input type="radio" name="e1" value="a"> A = -1</label><br>
+<label><input type="radio" name="e1" value="b"> A = 11</label><br>
+<label><input type="radio" name="e1" value="c"> A = -27</label><br>
+<button class="action" onclick="verifier('e1','a','r1','A = -8 + 13 - 6 = 5 - 6 = -1.')">Vérifier</button>
 <p id="r1" class="result"></p>
 </div>
 
 <div class="exercise">
-<strong>Exercice 2</strong>
-<p>-3 appartient à ℕ.</p>
-<label><input type="radio" name="a2" value="v"> Vrai</label>
-<label><input type="radio" name="a2" value="f"> Faux</label>
-<button onclick="corrigerExercice('a2','f','r2')">Corriger</button>
+<strong>Exercice 2 : Multiplication</strong>
+<p>Calcule : B = (-7) × (-3).</p>
+<label><input type="radio" name="e2" value="a"> -21</label><br>
+<label><input type="radio" name="e2" value="b"> 21</label><br>
+<label><input type="radio" name="e2" value="c"> -10</label><br>
+<button class="action" onclick="verifier('e2','b','r2','Le produit de deux nombres négatifs est positif : 7 × 3 = 21.')">Vérifier</button>
 <p id="r2" class="result"></p>
 </div>
 
 <div class="exercise">
-<strong>Exercice 3</strong>
-<p>Le nombre 0,5 appartient à :</p>
-<label><input type="radio" name="a3" value="a"> D</label>
-<label><input type="radio" name="a3" value="b"> Seulement ℕ</label>
-<label><input type="radio" name="a3" value="c"> Aucun ensemble</label>
-<button onclick="corrigerExercice('a3','a','r3')">Corriger</button>
+<strong>Exercice 3 : Fractions</strong>
+<p>Calcule : 1/2 + 1/4.</p>
+<label><input type="radio" name="e3" value="a"> 2/6</label><br>
+<label><input type="radio" name="e3" value="b"> 3/4</label><br>
+<label><input type="radio" name="e3" value="c"> 1/8</label><br>
+<button class="action" onclick="verifier('e3','b','r3','1/2 = 2/4. Donc 2/4 + 1/4 = 3/4.')">Vérifier</button>
 <p id="r3" class="result"></p>
 </div>
 
 <div class="exercise">
-<strong>Exercice 4</strong>
-<p>Le nombre -12 appartient au plus petit ensemble :</p>
-<label><input type="radio" name="a4" value="a"> ℕ</label>
-<label><input type="radio" name="a4" value="b"> ℤ</label>
-<label><input type="radio" name="a4" value="c"> ℚ</label>
-<button onclick="corrigerExercice('a4','b','r4')">Corriger</button>
+<strong>Exercice 4 : Priorités opératoires</strong>
+<p>Calcule : 6 + 2 × 5.</p>
+<label><input type="radio" name="e4" value="a"> 40</label><br>
+<label><input type="radio" name="e4" value="b"> 16</label><br>
+<label><input type="radio" name="e4" value="c"> 30</label><br>
+<button class="action" onclick="verifier('e4','b','r4','On effectue d’abord la multiplication : 6 + 10 = 16.')">Vérifier</button>
 <p id="r4" class="result"></p>
 </div>
 
 <div class="exercise">
-<strong>Exercice 5</strong>
-<p>Quel nombre est irrationnel ?</p>
-<label><input type="radio" name="a5" value="a"> √16</label>
-<label><input type="radio" name="a5" value="b"> √25</label>
-<label><input type="radio" name="a5" value="c"> √7</label>
-<button onclick="corrigerExercice('a5','c','r5')">Corriger</button>
+<strong>Exercice 5 : Puissances</strong>
+<p>Calcule : 2³ × 2².</p>
+<label><input type="radio" name="e5" value="a"> 32</label><br>
+<label><input type="radio" name="e5" value="b"> 16</label><br>
+<label><input type="radio" name="e5" value="c"> 64</label><br>
+<button class="action" onclick="verifier('e5','a','r5','2³ × 2² = 2⁵ = 32.')">Vérifier</button>
 <p id="r5" class="result"></p>
 </div>
 
-<div class="exercise">
-<strong>Exercice 6</strong>
-<p>0,125 est égal à :</p>
-<label><input type="radio" name="a6" value="a"> 1/4</label>
-<label><input type="radio" name="a6" value="b"> 1/8</label>
-<label><input type="radio" name="a6" value="c"> 1/5</label>
-<button onclick="corrigerExercice('a6','b','r6')">Corriger</button>
-<p id="r6" class="result"></p>
+<h3>11. Bilan du chapitre</h3>
+<p>Pour réussir les calculs sur les nombres réels, il faut maîtriser les règles de signes, les fractions, les puissances, les racines carrées et les priorités opératoires.</p>
 </div>
-
-<div class="exercise">
-<strong>Exercice 7</strong>
-<p>Quelle relation est correcte ?</p>
-<label><input type="radio" name="a7" value="a"> -8 &gt; -3</label>
-<label><input type="radio" name="a7" value="b"> -8 &lt; -3</label>
-<label><input type="radio" name="a7" value="c"> -8 = -3</label>
-<button onclick="corrigerExercice('a7','b','r7')">Corriger</button>
-<p id="r7" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 8</strong>
-<p>3 ≤ x &lt; 9 correspond à :</p>
-<label><input type="radio" name="a8" value="a"> ]3 ; 9]</label>
-<label><input type="radio" name="a8" value="b"> [3 ; 9[</label>
-<label><input type="radio" name="a8" value="c"> ]3 ; 9[</label>
-<button onclick="corrigerExercice('a8','b','r8')">Corriger</button>
-<p id="r8" class="result"></p>
-</div>
-
-<h3>XIV. ÉVALUATION DU CHAPITRE</h3>
-<p>10 questions. Chaque bonne réponse rapporte 2 points.</p>
-
-<div class="quiz-question">
-<strong>1. Quel ensemble contient les entiers négatifs ?</strong>
-<label><input type="radio" name="q1" value="a"> ℕ</label>
-<label><input type="radio" name="q1" value="b"> ℤ</label>
-<label><input type="radio" name="q1" value="c"> Aucun</label>
-</div>
-
-<div class="quiz-question">
-<strong>2. 0,25 appartient à :</strong>
-<label><input type="radio" name="q2" value="a"> D</label>
-<label><input type="radio" name="q2" value="b"> Seulement ℕ</label>
-<label><input type="radio" name="q2" value="c"> Aucun</label>
-</div>
-
-<div class="quiz-question">
-<strong>3. Lequel est irrationnel ?</strong>
-<label><input type="radio" name="q3" value="a"> 1/2</label>
-<label><input type="radio" name="q3" value="b"> √3</label>
-<label><input type="radio" name="q3" value="c"> 4</label>
-</div>
-
-<div class="quiz-question">
-<strong>4. Tout nombre naturel appartient à :</strong>
-<label><input type="radio" name="q4" value="a"> ℤ</label>
-<label><input type="radio" name="q4" value="b"> Aucun</label>
-<label><input type="radio" name="q4" value="c"> Seulement D</label>
-</div>
-
-<div class="quiz-question">
-<strong>5. Le plus petit ensemble contenant -15 est :</strong>
-<label><input type="radio" name="q5" value="a"> ℕ</label>
-<label><input type="radio" name="q5" value="b"> ℤ</label>
-<label><input type="radio" name="q5" value="c"> D</label>
-</div>
-
-<div class="quiz-question">
-<strong>6. √49 est égal à :</strong>
-<label><input type="radio" name="q6" value="a"> 6</label>
-<label><input type="radio" name="q6" value="b"> 7</label>
-<label><input type="radio" name="q6" value="c"> 8</label>
-</div>
-
-<div class="quiz-question">
-<strong>7. 3/4 est égal à :</strong>
-<label><input type="radio" name="q7" value="a"> 0,75</label>
-<label><input type="radio" name="q7" value="b"> 0,25</label>
-<label><input type="radio" name="q7" value="c"> 1,25</label>
-</div>
-
-<div class="quiz-question">
-<strong>8. Quel est le plus grand nombre ?</strong>
-<label><input type="radio" name="q8" value="a"> -9</label>
-<label><input type="radio" name="q8" value="b"> -2</label>
-<label><input type="radio" name="q8" value="c"> -15</label>
-</div>
-
-<div class="quiz-question">
-<strong>9. [2 ; 6] contient :</strong>
-<label><input type="radio" name="q9" value="a"> 2 et 6</label>
-<label><input type="radio" name="q9" value="b"> Ni 2 ni 6</label>
-<label><input type="radio" name="q9" value="c"> Seulement 2</label>
-</div>
-
-<div class="quiz-question">
-<strong>10. Le symbole d'appartenance est :</strong>
-<label><input type="radio" name="q10" value="a"> ⊂</label>
-<label><input type="radio" name="q10" value="b"> ∈</label>
-<label><input type="radio" name="q10" value="c"> ∪</label>
-</div>
-
-<button onclick="corrigerQCM()">Terminer l'évaluation</button>
-<button onclick="recommencerQCM()">Recommencer</button>
-<p id="quiz-result" class="result"></p>
 
 </div>
 
-<!-- GEOMETRIE -->
+<div class="card">
+<h3>Géométrie</h3>
+<button class="lesson-button" onclick="ouvrir('geo')">Introduction à la géométrie</button>
+<div class="lesson" id="geo">
+<h3>Notions fondamentales</h3>
+<p>La géométrie étudie les figures, les formes, les longueurs, les angles et les propriétés de l'espace.</p>
+<ul>
+<li>Le point : indique une position.</li>
+<li>La droite : ligne illimitée dans les deux sens.</li>
+<li>Le segment : partie d'une droite limitée par deux points.</li>
+<li>L'angle : ouverture formée par deux demi-droites de même origine.</li>
+<li>Le triangle : polygone à trois côtés.</li>
+</ul>
+<p><strong>Exemple :</strong> La somme des angles d'un triangle est égale à 180°.</p>
+</div>
+</div>
 
-<div id="geometrie" class="lesson">
-<h3>📐 GÉOMÉTRIE</h3>
+<div class="card">
+<h3>Fonctions</h3>
+<button class="lesson-button" onclick="ouvrir('fonctions')">Introduction aux fonctions</button>
+<div class="lesson" id="fonctions">
+<h3>Définition</h3>
+<p>Une fonction associe à chaque nombre x de son ensemble de définition un unique nombre appelé image de x.</p>
+<div class="formula">f : x → f(x)</div>
+<p><strong>Exemple :</strong> Soit f(x) = 2x + 3.</p>
+<p>L'image de 2 est f(2) = 2 × 2 + 3 = 7.</p>
+<p>L'image de 5 est f(5) = 2 × 5 + 3 = 13.</p>
+</div>
+</div>
 
-<h4>1. Définition du triangle</h4>
-<p>Un triangle est un polygone possédant trois côtés, trois sommets et trois angles.</p>
-
-<h4>2. Somme des angles</h4>
-<div class="formula">A + B + C = 180°</div>
+<div class="card">
+<h3>Statistiques</h3>
+<button class="lesson-button" onclick="ouvrir('stats')">Introduction aux statistiques</button>
+<div class="lesson" id="stats">
+<h3>Définition</h3>
+<p>Les statistiques permettent de collecter, organiser, représenter et analyser des données.</p>
+<p><strong>Moyenne :</strong> somme des valeurs divisée par l'effectif total.</p>
+<div class="formula">Moyenne = Somme des valeurs / Effectif total</div>
 <div class="example">
-Exemple : 60° + 70° + 50° = 180°.
-</div>
-
-<h4>3. Le théorème de Pythagore</h4>
-<p>Dans un triangle rectangle, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés.</p>
-<div class="formula">BC² = AB² + AC²</div>
-<div class="example">
-AB = 3 cm et AC = 4 cm.<br>
-BC² = 3² + 4² = 9 + 16 = 25.<br>
-BC = √25 = 5 cm.
-</div>
-
-<h4>4. Théorème de Thalès</h4>
-<p>Lorsque deux droites sécantes sont coupées par deux droites parallèles, les longueurs correspondantes sont proportionnelles.</p>
-<div class="formula">AM/AB = AN/AC = MN/BC</div>
-
-<h4>5. Exercice</h4>
-<div class="exercise">
-<p>Un triangle rectangle possède deux côtés de 6 cm et 8 cm. Quelle est son hypoténuse ?</p>
-<label><input type="radio" name="geo" value="a"> 10 cm</label>
-<label><input type="radio" name="geo" value="b"> 12 cm</label>
-<label><input type="radio" name="geo" value="c"> 14 cm</label>
-<button onclick="corrigerExercice('geo','a','geo-result')">Corriger</button>
-<p id="geo-result" class="result"></p>
+Exemple : 10, 12 et 14.<br>
+Moyenne = (10 + 12 + 14) / 3 = 12.
 </div>
 </div>
+</div>
+</section>
 
-<!-- FONCTIONS -->
+<section id="exercices" class="card">
+<h2>Entraînement général</h2>
+<p>Teste tes connaissances avec ces questions.</p>
 
-<div id="fonctions" class="lesson">
-<h3>📈 FONCTIONS MATHÉMATIQUES</h3>
-
-<h4>1. Définition</h4>
-<p>Une fonction associe à chaque valeur x de son domaine une unique valeur f(x).</p>
-
-<h4>2. Image d'un nombre</h4>
-<p>L'image d'un nombre est le résultat obtenu en calculant la fonction pour cette valeur.</p>
-<div class="example">
-Soit f(x) = 2x + 3.<br>
-f(4) = 2 × 4 + 3 = 11.
+<div class="question">
+<strong>1. Quel est le résultat de (-5) × 4 ?</strong><br>
+<label><input type="radio" name="g1" value="a"> 20</label><br>
+<label><input type="radio" name="g1" value="b"> -20</label><br>
+<label><input type="radio" name="g1" value="c"> -9</label>
 </div>
 
-<h4>3. Antécédent</h4>
-<p>L'antécédent de y est un nombre x tel que f(x) = y.</p>
-<div class="example">
-f(x) = 2x + 3.<br>
-Cherchons l'antécédent de 11.<br>
-2x + 3 = 11.<br>
-2x = 8.<br>
-x = 4.
+<div class="question">
+<strong>2. Combien vaut √81 ?</strong><br>
+<label><input type="radio" name="g2" value="a"> 8</label><br>
+<label><input type="radio" name="g2" value="b"> 9</label><br>
+<label><input type="radio" name="g2" value="c"> 10</label>
 </div>
 
-<h4>4. Fonction affine</h4>
-<div class="formula">f(x) = ax + b</div>
-<p>a est le coefficient directeur et b l'ordonnée à l'origine.</p>
-
-<h4>5. Fonction linéaire</h4>
-<div class="formula">f(x) = ax</div>
-<p>Sa représentation graphique est une droite passant par l'origine.</p>
-
-<h4>6. Exercice</h4>
-<div class="exercise">
-<p>Soit f(x) = 3x + 2. Calculer f(2).</p>
-<label><input type="radio" name="fon" value="a"> 6</label>
-<label><input type="radio" name="fon" value="b"> 8</label>
-<label><input type="radio" name="fon" value="c"> 10</label>
-<button onclick="corrigerExercice('fon','b','fon-result')">Corriger</button>
-<p id="fon-result" class="result"></p>
-</div>
+<div class="question">
+<strong>3. Quel est le résultat de 3² ?</strong><br>
+<label><input type="radio" name="g3" value="a"> 6</label><br>
+<label><input type="radio" name="g3" value="b"> 9</label><br>
+<label><input type="radio" name="g3" value="c"> 12</label>
 </div>
 
-<!-- STATISTIQUES -->
-
-<div id="statistiques" class="lesson">
-<h3>📊 STATISTIQUES</h3>
-
-<h4>1. Définition</h4>
-<p>La statistique est une branche des mathématiques qui permet de collecter, organiser, analyser et interpréter des données.</p>
-
-<h4>2. Effectif</h4>
-<p>L'effectif est le nombre de fois qu'une valeur apparaît dans une série statistique.</p>
-
-<h4>3. Fréquence</h4>
-<div class="formula">Fréquence = Effectif / Effectif total</div>
-<p>Le pourcentage est égal à la fréquence multipliée par 100.</p>
-
-<h4>4. Moyenne</h4>
-<div class="formula">Moyenne = Somme des valeurs / Nombre de valeurs</div>
-<div class="example">
-Notes : 10 ; 12 ; 14 ; 16.<br>
-Moyenne = (10 + 12 + 14 + 16)/4 = 13.
+<div class="question">
+<strong>4. Quel est le résultat de 1/3 + 1/3 ?</strong><br>
+<label><input type="radio" name="g4" value="a"> 2/3</label><br>
+<label><input type="radio" name="g4" value="b"> 2/6</label><br>
+<label><input type="radio" name="g4" value="c"> 1/3</label>
 </div>
 
-<h4>5. Médiane</h4>
-<p>La médiane est la valeur qui partage une série ordonnée en deux groupes de même effectif, selon la convention usuelle de calcul.</p>
-<div class="example">
-Série : 4 ; 6 ; 8 ; 10 ; 12.<br>
-La médiane est 8.
+<div class="question">
+<strong>5. Combien vaut 5 + 2 × 3 ?</strong><br>
+<label><input type="radio" name="g5" value="a"> 21</label><br>
+<label><input type="radio" name="g5" value="b"> 11</label><br>
+<label><input type="radio" name="g5" value="c"> 15</label>
 </div>
 
-<h4>6. Étendue</h4>
-<div class="formula">Étendue = Valeur maximale - Valeur minimale</div>
-<div class="example">
-Série : 5 ; 8 ; 12 ; 15.<br>
-Étendue = 15 - 5 = 10.
-</div>
+<button class="action" onclick="corrigerGeneral()">Corriger mon évaluation</button>
+<p id="resultatGeneral" class="result"></p>
+</section>
 
-<h4>7. Exercice</h4>
-<div class="exercise">
-<p>Calculer la moyenne de 8, 10 et 12.</p>
-<label><input type="radio" name="stat" value="a"> 9</label>
-<label><input type="radio" name="stat" value="b"> 10</label>
-<label><input type="radio" name="stat" value="c"> 12</label>
-<button onclick="corrigerExercice('stat','b','stat-result')">Corriger</button>
-<p id="stat-result" class="result"></p>
-</div>
-</div>
+<section id="evaluation" class="card">
+<h2>Conseils pour progresser</h2>
+<ul>
+<li>Lis attentivement chaque leçon.</li>
+<li>Reproduis les exemples dans ton cahier.</li>
+<li>Essaie les exercices avant de consulter les corrections.</li>
+<li>Recommence les questions auxquelles tu as mal répondu.</li>
+<li>Travaille régulièrement pour consolider tes connaissances.</li>
+</ul>
+</section>
 
 </main>
 
-<section class="container" id="exercices">
-<h2 class="section-title">🧠 Espace exercices</h2>
-<div class="card">
-<h3>Comment progresser ?</h3>
-<p>Étudie chaque chapitre, recopie les exemples dans ton cahier et essaie de résoudre les exercices sans regarder les corrections.</p>
-<p>Reviens ensuite vérifier tes réponses.</p>
-</div>
-</section>
-
-<section class="container" id="evaluation">
-<h2 class="section-title">🏆 Évaluation générale</h2>
-<div class="card">
-<h3>Test de mathématiques – 10e année</h3>
-<p>5 questions, note sur 20.</p>
-
-<div class="quiz-question">
-<strong>1. Résoudre 2x + 6 = 14.</strong>
-<label><input type="radio" name="g1" value="a"> x = 3</label>
-<label><input type="radio" name="g1" value="b"> x = 4</label>
-<label><input type="radio" name="g1" value="c"> x = 5</label>
-</div>
-
-<div class="quiz-question">
-<strong>2. La somme des angles d'un triangle vaut :</strong>
-<label><input type="radio" name="g2" value="a"> 90°</label>
-<label><input type="radio" name="g2" value="b"> 180°</label>
-<label><input type="radio" name="g2" value="c"> 360°</label>
-</div>
-
-<div class="quiz-question">
-<strong>3. Si f(x) = 2x + 1, alors f(3) vaut :</strong>
-<label><input type="radio" name="g3" value="a"> 5</label>
-<label><input type="radio" name="g3" value="b"> 6</label>
-<label><input type="radio" name="g3" value="c"> 7</label>
-</div>
-
-<div class="quiz-question">
-<strong>4. La moyenne de 4, 8 et 12 est :</strong>
-<label><input type="radio" name="g4" value="a"> 8</label>
-<label><input type="radio" name="g4" value="b"> 10</label>
-<label><input type="radio" name="g4" value="c"> 12</label>
-</div>
-
-<div class="quiz-question">
-<strong>5. L'hypoténuse est :</strong>
-<label><input type="radio" name="g5" value="a"> Le plus petit côté</label>
-<label><input type="radio" name="g5" value="b"> Le côté opposé à l'angle droit</label>
-<label><input type="radio" name="g5" value="c"> Toujours un côté de 5 cm</label>
-</div>
-
-<button onclick="corrigerGeneral()">Terminer</button>
-<button onclick="recommencerGeneral()">Recommencer</button>
-<p id="general-result" class="result"></p>
-</div>
-</section>
-
-<section class="container" id="apropos">
-<h2 class="section-title">À propos de MATHIA</h2>
-<div class="card">
-<p>MATHIA est une plateforme éducative conçue pour faciliter l'apprentissage des mathématiques.</p>
-<p>Notre objectif est de rendre les mathématiques accessibles, pratiques et interactives pour les élèves du Mali.</p>
-<p><strong>Apprendre aujourd'hui, réussir demain !</strong></p>
-</div>
-</section>
-
 <footer>
-<p>© 2026 MATHIA - Tous droits réservés.</p>
-<p>Apprendre aujourd'hui, réussir demain !</p>
+    <h3 style="color:white">MATHIA</h3>
+    <p>La connaissance mathématique à la portée de tous.</p>
+    <p>Plateforme éducative - Mali</p>
 </footer>
 
 <script>
-function ouvrirCours(id){
-document.querySelectorAll('.lesson').forEach(c=>{
-c.style.display='none';
-});
-const cours=document.getElementById(id);
-cours.style.display='block';
-cours.scrollIntoView({behavior:'smooth',block:'start'});
+function ouvrir(id) {
+    const element = document.getElementById(id);
+    element.classList.toggle("active");
 }
 
-function changerClasse(){
-alert("Les contenus de la 10e année sont actuellement disponibles. Les autres classes seront ajoutées progressivement.");
+function verifier(nom, bonneReponse, resultatId, explication) {
+    const choix = document.querySelector('input[name="' + nom + '"]:checked');
+    const resultat = document.getElementById(resultatId);
+
+    if (!choix) {
+        resultat.textContent = "Choisis une réponse avant de vérifier.";
+        resultat.className = "result wrong";
+        return;
+    }
+
+    if (choix.value === bonneReponse) {
+        resultat.textContent = "Bonne réponse ! " + explication;
+        resultat.className = "result correct";
+    } else {
+        resultat.textContent = "Réponse incorrecte. " + explication;
+        resultat.className = "result wrong";
+    }
 }
 
-function corrigerExercice(nom,bonne,id){
-const choix=document.querySelector('input[name="'+nom+'"]:checked');
-const resultat=document.getElementById(id);
+function corrigerGeneral() {
+    const reponses = {
+        g1:"b",
+        g2:"b",
+        g3:"b",
+        g4:"a",
+        g5:"b"
+    };
 
-if(!choix){
-resultat.textContent="Choisis d'abord une réponse.";
-resultat.style.color="orange";
-return;
-}
+    let score = 0;
+    let repondu = 0;
 
-if(choix.value===bonne){
-resultat.textContent="Bravo ! Bonne réponse. Continue ainsi !";
-resultat.style.color="green";
-}else{
-resultat.textContent="Réponse incorrecte. Reprends le raisonnement et réessaie.";
-resultat.style.color="red";
-}
-}
+    for (let question in reponses) {
+        const choix = document.querySelector('input[name="' + question + '"]:checked');
+        if (choix) {
+            repondu++;
+            if (choix.value === reponses[question]) {
+                score++;
+            }
+        }
+    }
 
-function corrigerQCM(){
-const reponses={q1:"b",q2:"a",q3:"b",q4:"a",q5:"b",q6:"b",q7:"a",q8:"b",q9:"a",q10:"b"};
-let score=0;
-let total=0;
+    const note = score * 4;
+    const resultat = document.getElementById("resultatGeneral");
 
-for(const q in reponses){
-const choix=document.querySelector('input[name="'+q+'"]:checked');
-if(choix){
-total++;
-if(choix.value===reponses[q])score+=2;
-}
-}
+    resultat.textContent =
+        "Tu as répondu à " + repondu + "/5 questions. " +
+        "Score : " + score + "/5, soit " + note + "/20.";
 
-const resultat=document.getElementById("quiz-result");
-
-if(total<10){
-resultat.textContent="Tu as répondu à "+total+" questions sur 10. Réponds à toutes les questions.";
-resultat.style.color="orange";
-return;
-}
-
-resultat.innerHTML="Résultat : "+score+"/20<br>"+(score>=16?"Excellent travail ! 🎉":score>=10?"Bien ! Continue tes efforts.":"Reprends le cours et entraîne-toi davantage.");
-resultat.style.color=score>=10?"green":"red";
-}
-
-function recommencerQCM(){
-document.querySelectorAll('#algebre input[type="radio"]').forEach(i=>i.checked=false);
-document.getElementById("quiz-result").textContent="";
-}
-
-function corrigerGeneral(){
-const reponses={g1:"b",g2:"b",g3:"c",g4:"a",g5:"b"};
-let score=0,total=0;
-
-for(const q in reponses){
-const choix=document.querySelector('input[name="'+q+'"]:checked');
-if(choix){
-total++;
-if(choix.value===reponses[q])score+=4;
-}
-}
-
-const resultat=document.getElementById("general-result");
-
-if(total<5){
-resultat.textContent="Tu as répondu à "+total+" questions sur 5. Réponds à toutes les questions.";
-resultat.style.color="orange";
-return;
-}
-
-resultat.innerHTML="Ta note : "+score+"/20<br>"+(score>=16?"Excellent ! 🎉":score>=10?"Bien ! Continue à travailler.":"Ne te décourage pas, révise tes cours.");
-resultat.style.color=score>=10?"green":"red";
-}
-
-function recommencerGeneral(){
-document.querySelectorAll('#evaluation input[type="radio"]').forEach(i=>i.checked=false);
-document.getElementById("general-result").textContent="";
+    if (score >= 3) {
+        resultat.className = "result correct";
+    } else {
+        resultat.className = "result wrong";
+    }
 }
 </script>
 
 </body>
 </html>
+
 
 
 
