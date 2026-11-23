@@ -38,7 +38,6 @@ header {
 .logo span {color:#66e0a3}
 nav {display:flex;flex-wrap:wrap;gap:15px}
 nav a {color:white;text-decoration:none;font-weight:bold}
-nav a:hover {color:#66e0a3}
 .hero {
     background:linear-gradient(120deg,#123c69,#1976a8);
     color:white;
@@ -70,7 +69,13 @@ h3 {color:#176b55}
     margin:8px 0;
 }
 .lesson-button:hover {background:#205b91}
-.lesson {display:none;padding:20px;background:white;border-radius:10px;margin-bottom:20px}
+.lesson {
+    display:none;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    margin-bottom:20px;
+}
 .lesson.active {display:block}
 .formula {
     background:#edf5ff;
@@ -113,6 +118,24 @@ select {
     border:1px solid #bbb;
     max-width:100%;
 }
+table {
+    border-collapse:collapse;
+    width:100%;
+    margin:15px 0;
+}
+th,td {
+    border:1px solid #bbb;
+    padding:10px;
+    text-align:center;
+}
+th {background:#edf5ff}
+.graph {
+    background:white;
+    border:1px solid #ddd;
+    padding:10px;
+    border-radius:8px;
+    overflow-x:auto;
+}
 footer {
     background:var(--blue);
     color:white;
@@ -122,13 +145,10 @@ footer {
 }
 .small {color:#64748b;font-size:14px}
 ul,ol {padding-left:25px}
-
 @media(max-width:600px) {
     .hero h1 {font-size:27px}
     .card {padding:16px}
     nav {gap:10px}
-    .lesson {padding:12px}
-    .lesson-button {font-size:15px}
 }
 </style>
 </head>
@@ -172,305 +192,177 @@ ul,ol {padding-left:25px}
 <div class="card">
 <h3>Algèbre</h3>
 
-<!-- CHAPITRE 1 -->
-
 <button class="lesson-button" onclick="ouvrir('chapitre1')">
-    Chapitre 1 : Les ensembles de nombres
+Chapitre 1 : Les ensembles de nombres
 </button>
 
 <div class="lesson" id="chapitre1">
-
 <h2>Chapitre 1 : Les ensembles de nombres</h2>
 
-<h3>1. Objectifs du chapitre</h3>
-<p>À la fin de ce chapitre, l'élève doit être capable de :</p>
+<h3>1. Objectifs</h3>
 <ul>
 <li>Reconnaître les différents ensembles de nombres.</li>
-<li>Classer un nombre dans le plus petit ensemble auquel il appartient.</li>
+<li>Classer un nombre dans un ensemble.</li>
 <li>Utiliser les symboles d'appartenance et d'inclusion.</li>
 <li>Comparer des nombres réels.</li>
 </ul>
 
 <h3>2. Les nombres naturels</h3>
-<p>Les nombres naturels sont les nombres utilisés pour compter.</p>
+<p>Les nombres naturels sont utilisés pour compter.</p>
 <div class="formula">ℕ = {0 ; 1 ; 2 ; 3 ; 4 ; 5 ; ...}</div>
-<p>Exemples : 0, 5, 12 et 250 sont des nombres naturels.</p>
 
 <h3>3. Les nombres entiers relatifs</h3>
-<p>Ils comprennent les nombres positifs, les nombres négatifs et zéro.</p>
+<p>Ils comprennent les nombres positifs, négatifs et zéro.</p>
 <div class="formula">ℤ = {... ; -3 ; -2 ; -1 ; 0 ; 1 ; 2 ; 3 ; ...}</div>
-<p>Exemples : -8, -2, 0, 15.</p>
 
 <h3>4. Les nombres décimaux</h3>
 <p>Un nombre décimal possède une écriture décimale finie.</p>
 <p>Exemples : 2,5 ; 0,75 ; -3,125 ; 12.</p>
-<div class="example">
-<strong>Exemple :</strong> 2,75 est décimal car son écriture comporte un nombre fini de chiffres après la virgule.
-</div>
 
 <h3>5. Les nombres rationnels</h3>
-<p>Un nombre rationnel est un nombre qui peut s'écrire sous la forme :</p>
-<div class="formula">a / b avec a ∈ ℤ et b ∈ ℤ, b ≠ 0</div>
-<p>Exemples : 1/2 ; -3/4 ; 5 ; 0,25.</p>
+<p>Un nombre rationnel peut s'écrire sous la forme :</p>
+<div class="formula">a/b avec a ∈ ℤ et b ∈ ℤ, b ≠ 0</div>
 
 <h3>6. Les nombres irrationnels</h3>
-<p>Un nombre irrationnel ne peut pas s'écrire comme le quotient de deux entiers.</p>
+<p>Un nombre irrationnel ne peut pas s'écrire comme quotient de deux entiers.</p>
 <p>Exemples : √2, √3 et π.</p>
 
 <h3>7. Les nombres réels</h3>
-<p>L'ensemble des nombres réels regroupe les nombres rationnels et les nombres irrationnels.</p>
 <div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div>
-<p>Les nombres irrationnels appartiennent également à ℝ, mais pas à ℚ.</p>
+<p>Les nombres réels regroupent les nombres rationnels et irrationnels.</p>
 
 <h3>8. Exemples corrigés</h3>
 <div class="example">
-<strong>Exemple 1 :</strong> Classer 7 dans les ensembles de nombres.<br>
-Correction : 7 appartient à ℕ, ℤ, 𝔻, ℚ et ℝ.
+7 appartient à ℕ, ℤ, 𝔻, ℚ et ℝ.
 </div>
 <div class="example">
-<strong>Exemple 2 :</strong> Classer -4.<br>
-Correction : -4 appartient à ℤ, 𝔻, ℚ et ℝ, mais pas à ℕ.
+-4 appartient à ℤ, 𝔻, ℚ et ℝ, mais pas à ℕ.
 </div>
 <div class="example">
-<strong>Exemple 3 :</strong> Classer √5.<br>
-Correction : √5 est irrationnel et appartient à ℝ.
+√5 est irrationnel et appartient à ℝ.
 </div>
 
 <h3>9. À retenir</h3>
 <ul>
-<li>Tout nombre naturel est un entier relatif.</li>
-<li>Tout entier relatif est un nombre décimal.</li>
-<li>Tout nombre décimal est rationnel.</li>
-<li>Tout nombre rationnel est réel.</li>
-<li>Un nombre irrationnel est réel mais non rationnel.</li>
+<li>Tout naturel est un entier relatif.</li>
+<li>Tout entier relatif est décimal.</li>
+<li>Tout décimal est rationnel.</li>
+<li>Tout rationnel est réel.</li>
 </ul>
-
 </div>
 
-<!-- CHAPITRE 2 -->
-
 <button class="lesson-button" onclick="ouvrir('chapitre2')">
-    Chapitre 2 : Opérations sur les nombres réels
+Chapitre 2 : Opérations sur les nombres réels
 </button>
 
 <div class="lesson" id="chapitre2">
-
 <h2>Chapitre 2 : Opérations sur les nombres réels</h2>
 
-<h3>1. Objectifs du chapitre</h3>
-<p>À la fin de ce chapitre, l'élève doit pouvoir :</p>
-<ul>
-<li>Effectuer des additions et soustractions de nombres réels.</li>
-<li>Maîtriser les règles de signes.</li>
-<li>Effectuer des multiplications et divisions.</li>
-<li>Calculer avec des fractions.</li>
-<li>Respecter les priorités opératoires.</li>
-<li>Utiliser les puissances et les racines carrées.</li>
-</ul>
-
-<h3>2. Addition des nombres réels</h3>
-<p>Pour additionner deux nombres réels, on tient compte de leurs signes.</p>
-
-<div class="formula">
-Deux nombres de même signe : on additionne leurs valeurs absolues et on conserve le signe commun.
-</div>
-
+<h3>1. Addition</h3>
+<p>Deux nombres de même signe : on additionne leurs valeurs absolues et on conserve le signe.</p>
 <div class="example">
-<strong>Exemple 1 :</strong><br>
-(+5) + (+3) = +8<br>
-(-4) + (-6) = -10
+(-4) + (-6) = -10<br>
+(+5) + (+3) = +8
 </div>
-
-<div class="formula">
-Deux nombres de signes contraires : on soustrait leurs valeurs absolues et on conserve le signe du nombre ayant la plus grande valeur absolue.
-</div>
-
+<p>Deux nombres de signes contraires : on soustrait les valeurs absolues et on conserve le signe du plus grand.</p>
 <div class="example">
-<strong>Exemple 2 :</strong><br>
 (+9) + (-4) = +5<br>
 (-12) + (+7) = -5
 </div>
 
-<h3>3. Soustraction des nombres réels</h3>
-<p>Soustraire un nombre revient à ajouter son opposé.</p>
+<h3>2. Soustraction</h3>
 <div class="formula">a - b = a + (-b)</div>
-
 <div class="example">
-<strong>Exemple 1 :</strong><br>
-8 - 3 = 8 + (-3) = 5<br><br>
-<strong>Exemple 2 :</strong><br>
--5 - 4 = -5 + (-4) = -9<br><br>
-<strong>Exemple 3 :</strong><br>
--7 - (-2) = -7 + 2 = -5
+8 - 3 = 5<br>
+-5 - 4 = -9<br>
+-7 - (-2) = -5
 </div>
 
-<h3>4. Multiplication des nombres réels</h3>
-<p>La multiplication obéit aux règles de signes suivantes :</p>
-
+<h3>3. Multiplication</h3>
 <div class="formula">
 (+) × (+) = (+)<br>
 (-) × (-) = (+)<br>
 (+) × (-) = (-)<br>
 (-) × (+) = (-)
 </div>
-
 <div class="example">
-<strong>Exemples :</strong><br>
-5 × 3 = 15<br>
 (-4) × (-2) = 8<br>
-(-6) × 3 = -18<br>
-7 × (-2) = -14
+(-6) × 3 = -18
 </div>
 
-<h3>5. Division des nombres réels</h3>
-<p>La division suit les mêmes règles de signes que la multiplication. Le diviseur ne doit jamais être égal à zéro.</p>
-
-<div class="formula">
-(+) ÷ (+) = (+)<br>
-(-) ÷ (-) = (+)<br>
-(+) ÷ (-) = (-)<br>
-(-) ÷ (+) = (-)
-</div>
-
+<h3>4. Division</h3>
+<p>La division suit les mêmes règles de signes que la multiplication. Le diviseur doit être non nul.</p>
 <div class="example">
-<strong>Exemples :</strong><br>
 12 ÷ 3 = 4<br>
 (-20) ÷ (-5) = 4<br>
-(-18) ÷ 3 = -6<br>
-24 ÷ (-6) = -4
+(-18) ÷ 3 = -6
 </div>
 
-<h3>6. Calcul avec les fractions</h3>
-<p>Une fraction est une écriture de la forme :</p>
-<div class="formula">a/b avec b ≠ 0</div>
-
-<strong>a) Addition de fractions</strong>
-<p>Lorsque les dénominateurs sont égaux, on additionne les numérateurs.</p>
+<h3>5. Fractions</h3>
 <div class="formula">a/c + b/c = (a+b)/c</div>
-
 <div class="example">
-2/5 + 1/5 = 3/5
+1/2 + 1/3 = 3/6 + 2/6 = 5/6
 </div>
 
-<p>Lorsque les dénominateurs sont différents, on les réduit au même dénominateur.</p>
-
-<div class="example">
-1/2 + 1/3<br>
-= 3/6 + 2/6<br>
-= 5/6
-</div>
-
-<strong>b) Soustraction de fractions</strong>
-<div class="formula">a/c - b/c = (a-b)/c</div>
-<div class="example">5/7 - 2/7 = 3/7</div>
-
-<strong>c) Multiplication de fractions</strong>
 <div class="formula">(a/b) × (c/d) = (a×c)/(b×d)</div>
 <div class="example">2/3 × 4/5 = 8/15</div>
 
-<strong>d) Division de fractions</strong>
-<p>Diviser par une fraction revient à multiplier par son inverse.</p>
-<div class="formula">(a/b) ÷ (c/d) = (a/b) × (d/c)</div>
-
+<p>Pour diviser par une fraction, on multiplie par son inverse.</p>
 <div class="example">
-2/3 ÷ 4/5<br>
-= 2/3 × 5/4<br>
-= 10/12<br>
-= 5/6
+2/3 ÷ 4/5 = 2/3 × 5/4 = 5/6
 </div>
 
-<h3>7. Les priorités opératoires</h3>
-<p>Dans un calcul contenant plusieurs opérations, il faut respecter l'ordre suivant :</p>
+<h3>6. Priorités opératoires</h3>
 <ol>
-<li>Les calculs entre parenthèses.</li>
-<li>Les puissances et les racines carrées.</li>
-<li>Les multiplications et les divisions, de gauche à droite.</li>
-<li>Les additions et les soustractions, de gauche à droite.</li>
+<li>Parenthèses.</li>
+<li>Puissances et racines.</li>
+<li>Multiplications et divisions.</li>
+<li>Additions et soustractions.</li>
 </ol>
-
 <div class="example">
-<strong>Exemple 1 :</strong><br>
 A = 5 + 3 × 4<br>
 A = 5 + 12<br>
-<strong>A = 17</strong>
+A = 17
 </div>
 
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-B = (5 + 3) × 4<br>
-B = 8 × 4<br>
-<strong>B = 32</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 3 :</strong><br>
-C = 20 - 12 ÷ 3 + 2<br>
-C = 20 - 4 + 2<br>
-C = 16 + 2<br>
-<strong>C = 18</strong>
-</div>
-
-<h3>8. Les puissances</h3>
-<p>Une puissance permet d'écrire plus simplement un produit de facteurs identiques.</p>
+<h3>7. Puissances</h3>
 <div class="formula">aⁿ = a × a × ... × a (n facteurs)</div>
-
-<p>Exemples :</p>
 <ul>
-<li>2³ = 2 × 2 × 2 = 8</li>
-<li>5² = 5 × 5 = 25</li>
+<li>2³ = 8</li>
+<li>5² = 25</li>
 <li>(-3)² = 9</li>
 <li>(-3)³ = -27</li>
 </ul>
-
-<strong>Quelques propriétés importantes :</strong>
 <div class="formula">
 aᵐ × aⁿ = aᵐ⁺ⁿ<br>
 aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>
 (aᵐ)ⁿ = aᵐˣⁿ<br>
-a⁰ = 1 (a ≠ 0)<br>
-a⁻ⁿ = 1/aⁿ (a ≠ 0)
+a⁰ = 1 (a ≠ 0)
 </div>
 
+<h3>8. Racines carrées</h3>
+<div class="formula">√a = b signifie b² = a, avec a ≥ 0 et b ≥ 0.</div>
 <div class="example">
-<strong>Exemple :</strong><br>
-2³ × 2² = 2⁵ = 32
+√25 = 5<br>
+√49 = 7<br>
+√100 = 10
 </div>
 
-<h3>9. Les racines carrées</h3>
-<p>La racine carrée d'un nombre positif a est le nombre positif dont le carré est égal à a.</p>
-<div class="formula">√a = b signifie que b² = a, avec a ≥ 0 et b ≥ 0.</div>
-
-<div class="example">
-√25 = 5 car 5² = 25.<br>
-√49 = 7 car 7² = 49.<br>
-√100 = 10 car 10² = 100.
-</div>
-
-<p>Propriétés pour a et b positifs :</p>
-<div class="formula">
-√(a × b) = √a × √b<br>
-√(a/b) = √a / √b (b ≠ 0)
-</div>
-
-<div class="example">
-√(9 × 4) = √9 × √4 = 3 × 2 = 6.
-</div>
-
-<h3>10. Exercices d'application</h3>
+<h3>9. Exercices corrigés</h3>
 
 <div class="exercise">
-<strong>Exercice 1 : Addition et soustraction</strong>
-<p>Calcule : A = (-8) + 13 - 6.</p>
-<label><input type="radio" name="e1" value="a"> A = -1</label><br>
-<label><input type="radio" name="e1" value="b"> A = 11</label><br>
-<label><input type="radio" name="e1" value="c"> A = -27</label><br>
+<strong>Exercice 1 :</strong>
+<p>Calcule A = (-8) + 13 - 6.</p>
+<label><input type="radio" name="e1" value="a"> -1</label><br>
+<label><input type="radio" name="e1" value="b"> 11</label><br>
+<label><input type="radio" name="e1" value="c"> -27</label><br>
 <button class="action" onclick="verifier('e1','a','r1','A = -8 + 13 - 6 = 5 - 6 = -1.')">Vérifier</button>
 <p id="r1" class="result"></p>
 </div>
 
 <div class="exercise">
-<strong>Exercice 2 : Multiplication</strong>
-<p>Calcule : B = (-7) × (-3).</p>
+<strong>Exercice 2 :</strong>
+<p>Calcule (-7) × (-3).</p>
 <label><input type="radio" name="e2" value="a"> -21</label><br>
 <label><input type="radio" name="e2" value="b"> 21</label><br>
 <label><input type="radio" name="e2" value="c"> -10</label><br>
@@ -479,8 +371,8 @@ a⁻ⁿ = 1/aⁿ (a ≠ 0)
 </div>
 
 <div class="exercise">
-<strong>Exercice 3 : Fractions</strong>
-<p>Calcule : 1/2 + 1/4.</p>
+<strong>Exercice 3 :</strong>
+<p>Calcule 1/2 + 1/4.</p>
 <label><input type="radio" name="e3" value="a"> 2/6</label><br>
 <label><input type="radio" name="e3" value="b"> 3/4</label><br>
 <label><input type="radio" name="e3" value="c"> 1/8</label><br>
@@ -489,342 +381,369 @@ a⁻ⁿ = 1/aⁿ (a ≠ 0)
 </div>
 
 <div class="exercise">
-<strong>Exercice 4 : Priorités opératoires</strong>
-<p>Calcule : 6 + 2 × 5.</p>
+<strong>Exercice 4 :</strong>
+<p>Calcule 6 + 2 × 5.</p>
 <label><input type="radio" name="e4" value="a"> 40</label><br>
 <label><input type="radio" name="e4" value="b"> 16</label><br>
 <label><input type="radio" name="e4" value="c"> 30</label><br>
-<button class="action" onclick="verifier('e4','b','r4','On effectue d’abord la multiplication : 6 + 10 = 16.')">Vérifier</button>
+<button class="action" onclick="verifier('e4','b','r4','On effectue la multiplication : 6 + 10 = 16.')">Vérifier</button>
 <p id="r4" class="result"></p>
 </div>
 
 <div class="exercise">
-<strong>Exercice 5 : Puissances</strong>
-<p>Calcule : 2³ × 2².</p>
+<strong>Exercice 5 :</strong>
+<p>Calcule 2³ × 2².</p>
 <label><input type="radio" name="e5" value="a"> 32</label><br>
 <label><input type="radio" name="e5" value="b"> 16</label><br>
 <label><input type="radio" name="e5" value="c"> 64</label><br>
 <button class="action" onclick="verifier('e5','a','r5','2³ × 2² = 2⁵ = 32.')">Vérifier</button>
 <p id="r5" class="result"></p>
 </div>
-
-<h3>11. Bilan du chapitre</h3>
-<p>Pour réussir les calculs sur les nombres réels, il faut maîtriser les règles de signes, les fractions, les puissances, les racines carrées et les priorités opératoires.</p>
-
 </div>
-
-<!-- CHAPITRE 3 -->
-
-<button class="lesson-button" onclick="ouvrir('chapitre3')">
-    Chapitre 3 : Le calcul littéral
-</button>
-
-<div class="lesson" id="chapitre3">
-
-<h2>Chapitre 3 : Le calcul littéral</h2>
-
-<h3>1. Objectifs du chapitre</h3>
-<p>À la fin de ce chapitre, l'élève doit être capable de :</p>
-<ul>
-<li>Comprendre une expression littérale.</li>
-<li>Calculer la valeur numérique d'une expression.</li>
-<li>Réduire une expression littérale.</li>
-<li>Développer une expression.</li>
-<li>Factoriser une expression.</li>
-<li>Utiliser les identités remarquables.</li>
-</ul>
-
-<h3>2. Qu'est-ce qu'une expression littérale ?</h3>
-<p>Une expression littérale est une expression mathématique qui contient des nombres, des lettres et des opérations.</p>
-<p>Les lettres représentent des nombres dont la valeur peut varier.</p>
-
-<div class="formula">A = 3x + 5</div>
-
-<p>Dans cette expression :</p>
-<ul>
-<li>x est une variable.</li>
-<li>3 est le coefficient de x.</li>
-<li>5 est un nombre constant.</li>
-</ul>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-Si x = 2, alors :<br>
-A = 3 × 2 + 5<br>
-A = 6 + 5<br>
-<strong>A = 11</strong>
-</div>
-
-<h3>3. Calculer la valeur numérique</h3>
-<p>Calculer la valeur numérique d'une expression consiste à remplacer les lettres par leurs valeurs et à effectuer les opérations.</p>
-
-<div class="example">
-<strong>Exemple 1 :</strong><br>
-Soit A = 2x + 7.<br>
-Calculons A pour x = 4.<br><br>
-A = 2 × 4 + 7<br>
-A = 8 + 7<br>
-<strong>A = 15</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-Soit B = 3x - 2y.<br>
-Pour x = 5 et y = 3 :<br><br>
-B = 3 × 5 - 2 × 3<br>
-B = 15 - 6<br>
-<strong>B = 9</strong>
-</div>
-
-<h3>4. Réduire une expression littérale</h3>
-<p>Réduire une expression consiste à regrouper les termes semblables.</p>
-<p>On peut additionner ou soustraire les termes qui contiennent la même partie littérale avec les mêmes exposants.</p>
-
-<div class="formula">
-3x + 5x = 8x<br>
-7a - 2a = 5a<br>
-4x + 3 + 2x = 6x + 3
-</div>
-
-<div class="example">
-<strong>Exemple 1 :</strong><br>
-A = 5x + 3x - 2x<br><br>
-A = (5 + 3 - 2)x<br>
-<strong>A = 6x</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-B = 4a + 3b - 2a + 5b<br><br>
-B = 4a - 2a + 3b + 5b<br>
-B = 2a + 8b<br>
-<strong>B = 2a + 8b</strong>
-</div>
-
-<h3>5. Supprimer les parenthèses</h3>
-<p>Pour supprimer les parenthèses, on applique les règles suivantes :</p>
-
-<div class="formula">
-+(a + b) = a + b<br>
-+(a - b) = a - b<br>
--(a + b) = -a - b<br>
--(a - b) = -a + b
-</div>
-
-<div class="example">
-<strong>Exemple 1 :</strong><br>
-A = 5 + (3x - 2)<br>
-A = 5 + 3x - 2<br>
-<strong>A = 3x + 3</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-B = 8 - (2x + 3)<br>
-B = 8 - 2x - 3<br>
-<strong>B = 5 - 2x</strong>
-</div>
-
-<h3>6. La distributivité simple</h3>
-<p>La distributivité permet de transformer un produit en une somme ou une différence.</p>
-
-<div class="formula">
-a(b + c) = ab + ac<br>
-a(b - c) = ab - ac
-</div>
-
-<div class="example">
-<strong>Exemple 1 :</strong><br>
-A = 3(x + 4)<br>
-A = 3 × x + 3 × 4<br>
-<strong>A = 3x + 12</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-B = 5(2x - 3)<br>
-B = 5 × 2x - 5 × 3<br>
-<strong>B = 10x - 15</strong>
-</div>
-
-<h3>7. La double distributivité</h3>
-<p>La double distributivité consiste à multiplier chaque terme de la première parenthèse par chaque terme de la deuxième.</p>
-
-<div class="formula">
-(a + b)(c + d) = ac + ad + bc + bd
-</div>
-
-<div class="example">
-<strong>Exemple :</strong><br>
-A = (x + 2)(x + 3)<br><br>
-A = x × x + x × 3 + 2 × x + 2 × 3<br>
-A = x² + 3x + 2x + 6<br>
-<strong>A = x² + 5x + 6</strong>
-</div>
-
-<h3>8. La factorisation</h3>
-<p>Factoriser une expression consiste à transformer une somme ou une différence en un produit de facteurs.</p>
-
-<div class="formula">
-ab + ac = a(b + c)<br>
-ab - ac = a(b - c)
-</div>
-
-<div class="example">
-<strong>Exemple 1 :</strong><br>
-A = 3x + 12<br><br>
-Le facteur commun est 3.<br>
-A = 3 × x + 3 × 4<br>
-<strong>A = 3(x + 4)</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-B = 5x - 15<br><br>
-Le facteur commun est 5.<br>
-<strong>B = 5(x - 3)</strong>
-</div>
-
-<h3>9. Les identités remarquables</h3>
-<p>Il existe trois identités remarquables fondamentales à connaître.</p>
-
-<div class="formula">
-(a + b)² = a² + 2ab + b²
-</div>
-
-<div class="formula">
-(a - b)² = a² - 2ab + b²
-</div>
-
-<div class="formula">
-(a + b)(a - b) = a² - b²
-</div>
-
-<div class="example">
-<strong>Exemple 1 :</strong><br>
-(x + 3)²<br>
-= x² + 2 × x × 3 + 3²<br>
-<strong>= x² + 6x + 9</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 2 :</strong><br>
-(x - 4)²<br>
-= x² - 2 × x × 4 + 4²<br>
-<strong>= x² - 8x + 16</strong>
-</div>
-
-<div class="example">
-<strong>Exemple 3 :</strong><br>
-(x + 5)(x - 5)<br>
-= x² - 5²<br>
-<strong>= x² - 25</strong>
-</div>
-
-<h3>10. Exercices d'application</h3>
-
-<div class="exercise">
-<strong>Exercice 1 : Valeur numérique</strong>
-<p>Soit A = 3x + 4. Calcule A pour x = 2.</p>
-<label><input type="radio" name="l31" value="a"> 8</label><br>
-<label><input type="radio" name="l31" value="b"> 10</label><br>
-<label><input type="radio" name="l31" value="c"> 12</label><br>
-<button class="action" onclick="verifier('l31','b','lr31','A = 3 × 2 + 4 = 6 + 4 = 10.')">Vérifier</button>
-<p id="lr31" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 2 : Réduction</strong>
-<p>Réduis : 5x + 3x - 2x.</p>
-<label><input type="radio" name="l32" value="a"> 6x</label><br>
-<label><input type="radio" name="l32" value="b"> 10x</label><br>
-<label><input type="radio" name="l32" value="c"> 8x</label><br>
-<button class="action" onclick="verifier('l32','a','lr32','5x + 3x - 2x = (5 + 3 - 2)x = 6x.')">Vérifier</button>
-<p id="lr32" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 3 : Distributivité</strong>
-<p>Développe : 4(x + 3).</p>
-<label><input type="radio" name="l33" value="a"> 4x + 3</label><br>
-<label><input type="radio" name="l33" value="b"> 4x + 12</label><br>
-<label><input type="radio" name="l33" value="c"> 7x</label><br>
-<button class="action" onclick="verifier('l33','b','lr33','4(x + 3) = 4x + 12.')">Vérifier</button>
-<p id="lr33" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 4 : Factorisation</strong>
-<p>Factorise : 6x + 18.</p>
-<label><input type="radio" name="l34" value="a"> 6(x + 3)</label><br>
-<label><input type="radio" name="l34" value="b"> 3(x + 6)</label><br>
-<label><input type="radio" name="l34" value="c"> 6(x + 18)</label><br>
-<button class="action" onclick="verifier('l34','a','lr34','Le facteur commun est 6 : 6x + 18 = 6(x + 3).')">Vérifier</button>
-<p id="lr34" class="result"></p>
-</div>
-
-<div class="exercise">
-<strong>Exercice 5 : Identité remarquable</strong>
-<p>Développe : (x + 2)².</p>
-<label><input type="radio" name="l35" value="a"> x² + 4</label><br>
-<label><input type="radio" name="l35" value="b"> x² + 2x + 4</label><br>
-<label><input type="radio" name="l35" value="c"> x² + 4x + 4</label><br>
-<button class="action" onclick="verifier('l35','c','lr35','(x + 2)² = x² + 2 × x × 2 + 2² = x² + 4x + 4.')">Vérifier</button>
-<p id="lr35" class="result"></p>
-</div>
-
-<h3>11. Bilan du chapitre</h3>
-<p>Le calcul littéral est indispensable pour résoudre les problèmes mathématiques. Il permet de manipuler des expressions contenant des lettres, de développer, de réduire et de factoriser.</p>
-
-<div class="example">
-<strong>Conseil :</strong> Apprends les trois identités remarquables par cœur et entraîne-toi régulièrement à développer et factoriser des expressions.
-</div>
-
-</div>
-
 </div>
 
 <!-- GEOMETRIE -->
 
 <div class="card">
 <h3>Géométrie</h3>
-
-<button class="lesson-button" onclick="ouvrir('geo')">
-Introduction à la géométrie
-</button>
-
+<button class="lesson-button" onclick="ouvrir('geo')">Introduction à la géométrie</button>
 <div class="lesson" id="geo">
 <h3>Notions fondamentales</h3>
-<p>La géométrie étudie les figures, les formes, les longueurs, les angles et les propriétés de l'espace.</p>
+<p>La géométrie étudie les figures, les formes, les longueurs, les angles et l'espace.</p>
 <ul>
 <li>Le point : indique une position.</li>
 <li>La droite : ligne illimitée dans les deux sens.</li>
 <li>Le segment : partie d'une droite limitée par deux points.</li>
-<li>L'angle : ouverture formée par deux demi-droites de même origine.</li>
+<li>L'angle : ouverture formée par deux demi-droites.</li>
 <li>Le triangle : polygone à trois côtés.</li>
 </ul>
-<p><strong>Exemple :</strong> La somme des angles d'un triangle est égale à 180°.</p>
+<div class="formula">Somme des angles d'un triangle = 180°</div>
 </div>
 </div>
 
-<!-- FONCTIONS -->
+<!-- FONCTIONS : COURS DEVELOPPE -->
 
 <div class="card">
 <h3>Fonctions</h3>
 
 <button class="lesson-button" onclick="ouvrir('fonctions')">
-Introduction aux fonctions
+Chapitre : Généralités sur les fonctions
 </button>
 
 <div class="lesson" id="fonctions">
-<h3>Définition</h3>
-<p>Une fonction associe à chaque nombre x de son ensemble de définition un unique nombre appelé image de x.</p>
 
-<div class="formula">f : x → f(x)</div>
+<h2>Chapitre : Généralités sur les fonctions</h2>
 
-<p><strong>Exemple :</strong> Soit f(x) = 2x + 3.</p>
-<p>L'image de 2 est f(2) = 2 × 2 + 3 = 7.</p>
-<p>L'image de 5 est f(5) = 2 × 5 + 3 = 13.</p>
+<h3>1. Objectifs du chapitre</h3>
+<p>À la fin de ce chapitre, l'élève doit être capable de :</p>
+<ul>
+<li>Définir une fonction numérique.</li>
+<li>Calculer l'image d'un nombre.</li>
+<li>Déterminer un antécédent.</li>
+<li>Construire un tableau de valeurs.</li>
+<li>Lire une représentation graphique.</li>
+<li>Reconnaître une fonction linéaire et une fonction affine.</li>
+</ul>
+
+<h3>2. Définition d'une fonction</h3>
+<p>Une fonction numérique est une relation qui associe à chaque nombre x de son ensemble de définition un unique nombre appelé image de x.</p>
+
+<div class="formula">
+f : x → f(x)
+</div>
+
+<p>Le nombre x est appelé antécédent et le nombre f(x) est son image.</p>
+
+<div class="example">
+<strong>Exemple :</strong><br>
+Soit la fonction f définie par :<br>
+f(x) = 2x + 3.<br><br>
+Cette fonction associe à chaque nombre x le nombre 2x + 3.
+</div>
+
+<h3>3. Calcul de l'image d'un nombre</h3>
+<p>Pour calculer l'image d'un nombre, on remplace x par ce nombre dans l'expression de la fonction.</p>
+
+<div class="example">
+<strong>Exemple :</strong><br>
+Soit f(x) = 2x + 3.<br><br>
+Calculons l'image de 4.<br>
+f(4) = 2 × 4 + 3<br>
+f(4) = 8 + 3<br>
+<strong>f(4) = 11</strong><br><br>
+L'image de 4 est donc 11.
+</div>
+
+<div class="example">
+<strong>Deuxième exemple :</strong><br>
+Soit g(x) = x² - 5.<br><br>
+Calculons g(3).<br>
+g(3) = 3² - 5<br>
+g(3) = 9 - 5<br>
+<strong>g(3) = 4</strong>
+</div>
+
+<h3>4. Détermination d'un antécédent</h3>
+<p>Déterminer un antécédent d'un nombre consiste à rechercher la valeur de x dont l'image est ce nombre.</p>
+
+<div class="example">
+<strong>Exemple :</strong><br>
+Soit f(x) = 2x + 3.<br>
+Cherchons l'antécédent de 13.<br><br>
+On pose :<br>
+2x + 3 = 13<br>
+2x = 13 - 3<br>
+2x = 10<br>
+x = 10/2<br>
+<strong>x = 5</strong><br><br>
+L'antécédent de 13 est 5.
+</div>
+
+<div class="formula">
+Pour trouver un antécédent, on résout l'équation f(x) = nombre recherché.
+</div>
+
+<h3>5. Tableau de valeurs</h3>
+<p>Un tableau de valeurs permet de présenter plusieurs nombres et leurs images.</p>
+
+<p>Considérons la fonction :</p>
+<div class="formula">f(x) = 2x + 1</div>
+
+<p>Calculons les images de -2, -1, 0, 1 et 2.</p>
+
+<table>
+<tr>
+<th>x</th>
+<td>-2</td>
+<td>-1</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<th>f(x)</th>
+<td>-3</td>
+<td>-1</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+</tr>
+</table>
+
+<div class="example">
+<strong>Vérification :</strong><br>
+f(-2) = 2 × (-2) + 1 = -3<br>
+f(0) = 2 × 0 + 1 = 1<br>
+f(2) = 2 × 2 + 1 = 5
+</div>
+
+<h3>6. Représentation graphique d'une fonction</h3>
+<p>La représentation graphique d'une fonction est l'ensemble des points de coordonnées (x ; f(x)) dans un repère.</p>
+
+<p>Pour tracer une fonction :</p>
+<ol>
+<li>Construire un tableau de valeurs.</li>
+<li>Tracer un repère avec deux axes perpendiculaires.</li>
+<li>Placer les points de coordonnées (x ; f(x)).</li>
+<li>Relier les points lorsque la courbe le permet.</li>
+</ol>
+
+<div class="example">
+<strong>Exemple :</strong><br>
+Pour f(x) = 2x + 1, on obtient les points :<br>
+A(-2 ; -3), B(-1 ; -1), C(0 ; 1), D(1 ; 3) et E(2 ; 5).<br><br>
+Ces points sont alignés. La représentation graphique est une droite.
+</div>
+
+<div class="graph">
+<svg viewBox="0 0 340 280" width="100%" role="img" aria-label="Graphique de la fonction f de x égale 2x plus 1">
+<defs>
+<pattern id="grille" width="30" height="30" patternUnits="userSpaceOnUse">
+<path d="M 30 0 L 0 0 0 30" fill="none" stroke="#dce3eb" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="20" y="10" width="300" height="240" fill="url(#grille)"/>
+<line x1="20" y1="160" x2="320" y2="160" stroke="#263238" stroke-width="2"/>
+<line x1="170" y1="10" x2="170" y2="250" stroke="#263238" stroke-width="2"/>
+<text x="310" y="177" font-size="12">x</text>
+<text x="180" y="18" font-size="12">y</text>
+<line x1="80" y1="250" x2="260" y2="10" stroke="#15966a" stroke-width="3"/>
+<circle cx="110" cy="220" r="4" fill="#123c69"/>
+<circle cx="140" cy="190" r="4" fill="#123c69"/>
+<circle cx="170" cy="160" r="4" fill="#123c69"/>
+<circle cx="200" cy="130" r="4" fill="#123c69"/>
+<circle cx="230" cy="100" r="4" fill="#123c69"/>
+<text x="175" y="155" font-size="10">1</text>
+<text x="205" y="125" font-size="10">3</text>
+<text x="235" y="95" font-size="10">5</text>
+<text x="95" y="235" font-size="10">-3</text>
+<text x="125" y="205" font-size="10">-1</text>
+</svg>
+<p class="small">Illustration de la droite représentant f(x) = 2x + 1.</p>
+</div>
+
+<h3>7. Fonction linéaire</h3>
+<p>Une fonction linéaire est une fonction définie par une expression de la forme :</p>
+
+<div class="formula">
+f(x) = ax
+</div>
+
+<p>Le nombre a est appelé coefficient de proportionnalité.</p>
+
+<div class="example">
+<strong>Exemple :</strong><br>
+f(x) = 3x.<br><br>
+f(2) = 3 × 2 = 6<br>
+f(4) = 3 × 4 = 12<br>
+f(-2) = 3 × (-2) = -6
+</div>
+
+<p><strong>Propriété :</strong> La représentation graphique d'une fonction linéaire est une droite qui passe par l'origine du repère.</p>
+
+<h3>8. Fonction affine</h3>
+<p>Une fonction affine est une fonction définie par :</p>
+
+<div class="formula">
+f(x) = ax + b
+</div>
+
+<ul>
+<li>a est le coefficient directeur.</li>
+<li>b est l'ordonnée à l'origine.</li>
+</ul>
+
+<div class="example">
+<strong>Exemple :</strong><br>
+Soit f(x) = 2x + 3.<br><br>
+Le coefficient directeur est a = 2.<br>
+L'ordonnée à l'origine est b = 3.<br><br>
+f(1) = 2 × 1 + 3 = 5<br>
+f(2) = 2 × 2 + 3 = 7
+</div>
+
+<p><strong>Propriété :</strong> La représentation graphique d'une fonction affine est une droite.</p>
+
+<h3>9. Différence entre fonction linéaire et fonction affine</h3>
+
+<table>
+<tr>
+<th>Fonction linéaire</th>
+<th>Fonction affine</th>
+</tr>
+<tr>
+<td>f(x) = ax</td>
+<td>f(x) = ax + b</td>
+</tr>
+<tr>
+<td>b = 0</td>
+<td>b peut être non nul</td>
+</tr>
+<tr>
+<td>Passe par l'origine</td>
+<td>Ne passe pas nécessairement par l'origine</td>
+</tr>
+<tr>
+<td>Exemple : 3x</td>
+<td>Exemple : 3x + 2</td>
+</tr>
+</table>
+
+<h3>10. Applications dans la vie courante</h3>
+
+<p>Les fonctions permettent de modéliser de nombreuses situations.</p>
+
+<div class="example">
+<strong>Exemple 1 : Achat de cahiers</strong><br>
+Un cahier coûte 500 FCFA.<br>
+Si x représente le nombre de cahiers achetés, le prix total est :<br><br>
+P(x) = 500x<br><br>
+Pour 4 cahiers :<br>
+P(4) = 500 × 4 = 2 000 FCFA.
+</div>
+
+<div class="example">
+<strong>Exemple 2 : Transport</strong><br>
+Un conducteur demande 500 FCFA de prise en charge et 200 FCFA par kilomètre.<br><br>
+Le prix du trajet est :<br>
+P(x) = 200x + 500<br><br>
+Pour 5 kilomètres :<br>
+P(5) = 200 × 5 + 500<br>
+<strong>P(5) = 1 500 FCFA.</strong>
+</div>
+
+<h3>11. Exercices d'application corrigés</h3>
+
+<div class="exercise">
+<strong>Exercice 1 : Calcul d'image</strong>
+<p>Soit f(x) = 3x + 2. Quelle est l'image de 4 ?</p>
+<label><input type="radio" name="f1" value="a"> 10</label><br>
+<label><input type="radio" name="f1" value="b"> 14</label><br>
+<label><input type="radio" name="f1" value="c"> 20</label><br>
+<button class="action" onclick="verifier('f1','b','fr1','f(4) = 3 × 4 + 2 = 14.')">Vérifier</button>
+<p id="fr1" class="result"></p>
+</div>
+
+<div class="exercise">
+<strong>Exercice 2 : Calcul d'image</strong>
+<p>Soit g(x) = x² - 4. Calcule g(3).</p>
+<label><input type="radio" name="f2" value="a"> 5</label><br>
+<label><input type="radio" name="f2" value="b"> 13</label><br>
+<label><input type="radio" name="f2" value="c"> 9</label><br>
+<button class="action" onclick="verifier('f2','a','fr2','g(3) = 3² - 4 = 9 - 4 = 5.')">Vérifier</button>
+<p id="fr2" class="result"></p>
+</div>
+
+<div class="exercise">
+<strong>Exercice 3 : Recherche d'antécédent</strong>
+<p>Soit f(x) = 2x + 4. Quel est l'antécédent de 10 ?</p>
+<label><input type="radio" name="f3" value="a"> 2</label><br>
+<label><input type="radio" name="f3" value="b"> 3</label><br>
+<label><input type="radio" name="f3" value="c"> 7</label><br>
+<button class="action" onclick="verifier('f3','b','fr3','2x + 4 = 10, donc 2x = 6 et x = 3.')">Vérifier</button>
+<p id="fr3" class="result"></p>
+</div>
+
+<div class="exercise">
+<strong>Exercice 4 : Fonction linéaire</strong>
+<p>Quelle expression définit une fonction linéaire ?</p>
+<label><input type="radio" name="f4" value="a"> f(x) = 2x + 5</label><br>
+<label><input type="radio" name="f4" value="b"> f(x) = x²</label><br>
+<label><input type="radio" name="f4" value="c"> f(x) = 5x</label><br>
+<button class="action" onclick="verifier('f4','c','fr4','Une fonction linéaire est de la forme f(x) = ax.')">Vérifier</button>
+<p id="fr4" class="result"></p>
+</div>
+
+<div class="exercise">
+<strong>Exercice 5 : Fonction affine</strong>
+<p>Dans f(x) = 4x + 7, quelle est l'ordonnée à l'origine ?</p>
+<label><input type="radio" name="f5" value="a"> 4</label><br>
+<label><input type="radio" name="f5" value="b"> 7</label><br>
+<label><input type="radio" name="f5" value="c"> 11</label><br>
+<button class="action" onclick="verifier('f5','b','fr5','Dans f(x) = ax + b, l’ordonnée à l’origine est b = 7.')">Vérifier</button>
+<p id="fr5" class="result"></p>
+</div>
+
+<div class="exercise">
+<strong>Exercice 6 : Tableau de valeurs</strong>
+<p>Soit f(x) = 2x - 1. Calcule f(3).</p>
+<label><input type="radio" name="f6" value="a"> 5</label><br>
+<label><input type="radio" name="f6" value="b"> 6</label><br>
+<label><input type="radio" name="f6" value="c"> 7</label><br>
+<button class="action" onclick="verifier('f6','a','fr6','f(3) = 2 × 3 - 1 = 5.')">Vérifier</button>
+<p id="fr6" class="result"></p>
+</div>
+
+<h3>12. Bilan du chapitre</h3>
+<ul>
+<li>Une fonction associe un nombre à un autre.</li>
+<li>L'image se calcule en remplaçant x par sa valeur.</li>
+<li>L'antécédent se trouve en résolvant une équation.</li>
+<li>Une fonction linéaire est de la forme ax.</li>
+<li>Une fonction affine est de la forme ax + b.</li>
+<li>Le graphique d'une fonction affine est une droite.</li>
+</ul>
+
 </div>
 </div>
 
@@ -832,21 +751,11 @@ Introduction aux fonctions
 
 <div class="card">
 <h3>Statistiques</h3>
-
-<button class="lesson-button" onclick="ouvrir('stats')">
-Introduction aux statistiques
-</button>
-
+<button class="lesson-button" onclick="ouvrir('stats')">Introduction aux statistiques</button>
 <div class="lesson" id="stats">
 <h3>Définition</h3>
 <p>Les statistiques permettent de collecter, organiser, représenter et analyser des données.</p>
-
-<p><strong>Moyenne :</strong> somme des valeurs divisée par l'effectif total.</p>
-
-<div class="formula">
-Moyenne = Somme des valeurs / Effectif total
-</div>
-
+<div class="formula">Moyenne = Somme des valeurs / Effectif total</div>
 <div class="example">
 Exemple : 10, 12 et 14.<br>
 Moyenne = (10 + 12 + 14) / 3 = 12.
@@ -856,7 +765,7 @@ Moyenne = (10 + 12 + 14) / 3 = 12.
 
 </section>
 
-<!-- EXERCICES GENERAUX -->
+<!-- ENTRAINEMENT GENERAL -->
 
 <section id="exercices" class="card">
 <h2>Entraînement général</h2>
@@ -897,18 +806,12 @@ Moyenne = (10 + 12 + 14) / 3 = 12.
 <label><input type="radio" name="g5" value="c"> 15</label>
 </div>
 
-<button class="action" onclick="corrigerGeneral()">
-Corriger mon évaluation
-</button>
-
+<button class="action" onclick="corrigerGeneral()">Corriger mon évaluation</button>
 <p id="resultatGeneral" class="result"></p>
 </section>
 
-<!-- EVALUATION -->
-
 <section id="evaluation" class="card">
 <h2>Conseils pour progresser</h2>
-
 <ul>
 <li>Lis attentivement chaque leçon.</li>
 <li>Reproduis les exemples dans ton cahier.</li>
@@ -927,14 +830,12 @@ Corriger mon évaluation
 </footer>
 
 <script>
-
 function ouvrir(id) {
     const element = document.getElementById(id);
     element.classList.toggle("active");
 }
 
 function verifier(nom, bonneReponse, resultatId, explication) {
-
     const choix = document.querySelector(
         'input[name="' + nom + '"]:checked'
     );
@@ -942,31 +843,21 @@ function verifier(nom, bonneReponse, resultatId, explication) {
     const resultat = document.getElementById(resultatId);
 
     if (!choix) {
-        resultat.textContent =
-            "Choisis une réponse avant de vérifier.";
-
+        resultat.textContent = "Choisis une réponse avant de vérifier.";
         resultat.className = "result wrong";
         return;
     }
 
     if (choix.value === bonneReponse) {
-
-        resultat.textContent =
-            "Bonne réponse ! " + explication;
-
+        resultat.textContent = "Bonne réponse ! " + explication;
         resultat.className = "result correct";
-
     } else {
-
-        resultat.textContent =
-            "Réponse incorrecte. " + explication;
-
+        resultat.textContent = "Réponse incorrecte. " + explication;
         resultat.className = "result wrong";
     }
 }
 
 function corrigerGeneral() {
-
     const reponses = {
         g1:"b",
         g2:"b",
@@ -979,13 +870,11 @@ function corrigerGeneral() {
     let repondu = 0;
 
     for (let question in reponses) {
-
         const choix = document.querySelector(
             'input[name="' + question + '"]:checked'
         );
 
         if (choix) {
-
             repondu++;
 
             if (choix.value === reponses[question]) {
@@ -995,9 +884,7 @@ function corrigerGeneral() {
     }
 
     const note = score * 4;
-
-    const resultat =
-        document.getElementById("resultatGeneral");
+    const resultat = document.getElementById("resultatGeneral");
 
     resultat.textContent =
         "Tu as répondu à " + repondu + "/5 questions. " +
@@ -1009,11 +896,11 @@ function corrigerGeneral() {
         resultat.className = "result wrong";
     }
 }
-
 </script>
 
 </body>
 </html>
+
 
 
 
