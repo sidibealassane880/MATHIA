@@ -9,275 +9,102 @@
 
 <style>
 :root{
-    --blue:#123c69;
-    --light:#eef5fc;
-    --green:#15966a;
-    --orange:#f39c32;
-    --dark:#172b4d;
-    --white:#ffffff;
-    --gray:#64748b;
-    --red:#dc3545;
+ --blue:#123c69;--light:#eef5fc;--green:#15966a;
+ --orange:#f39c32;--dark:#172b4d;--white:#fff;
+ --gray:#64748b;--red:#dc3545;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f3f7fc;
-    color:var(--dark);
-    line-height:1.6;
+ margin:0;font-family:Arial,Helvetica,sans-serif;
+ background:#f3f7fc;color:var(--dark);line-height:1.6;
 }
 header{
-    background:var(--blue);
-    color:white;
-    padding:15px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:12px;
+ background:var(--blue);color:white;padding:14px 5%;
+ display:flex;justify-content:space-between;align-items:center;
+ flex-wrap:wrap;gap:12px;position:sticky;top:0;z-index:10;
 }
-.logo{
-    font-size:27px;
-    font-weight:bold;
-    letter-spacing:1px;
-}
+.logo{font-size:27px;font-weight:bold;letter-spacing:1px}
 .logo span{color:#65e6ad}
-nav{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-}
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:8px 12px;
-    border-radius:6px;
-    font-size:14px;
-}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:8px 10px;border-radius:6px;font-size:14px}
 nav a:hover{background:#ffffff25}
 .hero{
-    background:linear-gradient(120deg,#123c69,#176b87);
-    color:white;
-    padding:55px 7%;
-    text-align:center;
+ background:linear-gradient(120deg,#123c69,#176b87);
+ color:white;padding:48px 7%;text-align:center;
 }
-.hero h1{
-    font-size:36px;
-    margin:0 0 12px;
-}
-.hero p{
-    max-width:700px;
-    margin:auto;
-    font-size:17px;
-}
-.container{
-    width:92%;
-    max-width:1150px;
-    margin:25px auto;
-}
+.hero h1{font-size:35px;margin:0 0 10px}
+.hero p{max-width:700px;margin:auto;font-size:17px}
+.container{width:92%;max-width:1150px;margin:25px auto}
 .card{
-    background:white;
-    border-radius:13px;
-    padding:23px;
-    margin-bottom:22px;
-    box-shadow:0 3px 14px #172b4d12;
+ background:white;border-radius:13px;padding:23px;
+ margin-bottom:22px;box-shadow:0 3px 14px #172b4d12;
 }
 h2{color:var(--blue)}
 h3{color:#176b87}
-.intro{
-    color:var(--gray);
-    font-size:15px;
-}
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
-}
-.subject{
-    background:var(--light);
-    padding:18px;
-    border-radius:10px;
-    border-left:5px solid var(--green);
-}
+.intro{color:var(--gray);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.subject{background:var(--light);padding:17px;border-radius:10px;border-left:5px solid var(--green)}
 .subject h3{margin-top:0}
 button,.btn{
-    border:none;
-    background:var(--blue);
-    color:white;
-    padding:11px 17px;
-    border-radius:7px;
-    cursor:pointer;
-    font-size:14px;
-    margin:5px 3px;
+ border:0;background:var(--blue);color:white;padding:11px 16px;
+ border-radius:7px;cursor:pointer;font-size:14px;margin:5px 3px;
 }
-button:hover,.btn:hover{opacity:.88}
+button:hover{opacity:.88}
 .green{background:var(--green)}
 .orange{background:var(--orange);color:#172b4d}
 .red{background:var(--red)}
-.lesson{
-    border:1px solid #dce6f1;
-    border-radius:10px;
-    margin:12px 0;
-    overflow:hidden;
+input,select{
+ padding:11px;border:1px solid #cbd5e1;border-radius:7px;
+ font-size:15px;max-width:100%;
 }
-.lesson-title{
-    padding:15px;
-    background:#f0f6fc;
-    cursor:pointer;
-    font-weight:bold;
-    color:var(--blue);
-}
-.lesson-content{
-    display:none;
-    padding:20px;
-    background:white;
-}
-.lesson-content.active{display:block}
-.formula{
-    background:#e9f7f1;
-    border-left:4px solid var(--green);
-    padding:13px;
-    margin:13px 0;
-    font-weight:bold;
-    border-radius:5px;
-}
-.example{
-    background:#fff6e8;
-    border-left:4px solid var(--orange);
-    padding:13px;
-    margin:13px 0;
-    border-radius:5px;
-}
-.exercise{
-    background:#f6f8fb;
-    border:1px solid #e0e7ef;
-    padding:15px;
-    border-radius:9px;
-    margin:15px 0;
-}
-.exercise label{
-    display:block;
-    margin:7px 0;
-    cursor:pointer;
-}
-.result{
-    margin-top:10px;
-    font-weight:bold;
-}
-table{
-    border-collapse:collapse;
-    width:100%;
-    margin:12px 0;
-}
-th,td{
-    border:1px solid #ccd8e5;
-    padding:9px;
-    text-align:center;
-}
-th{background:#eaf2fa}
-.note{
-    background:#fff8e8;
-    padding:14px;
-    border-radius:8px;
-}
-select,input{
-    padding:11px;
-    border:1px solid #cbd5e1;
-    border-radius:7px;
-    font-size:15px;
-    max-width:100%;
-}
+input[type="search"]{width:100%;margin:10px 0}
 select{width:100%}
-footer{
-    text-align:center;
-    padding:25px;
-    background:var(--blue);
-    color:white;
-    margin-top:35px;
+.lesson{border:1px solid #dce6f1;border-radius:10px;margin:12px 0;overflow:hidden}
+.lesson-title{
+ padding:14px;background:#f0f6fc;cursor:pointer;
+ font-weight:bold;color:var(--blue);
 }
-
-/* EVALUATIONS */
-.eval-options{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:12px;
-    margin:18px 0;
+.lesson-title:hover{background:#e3eef9}
+.lesson-content{display:none;padding:18px;background:white}
+.lesson-content.active{display:block}
+.formula,.example,.note{
+ padding:13px;margin:13px 0;border-radius:7px;
 }
-.eval-option{
-    padding:17px;
-    background:#eef5fc;
-    border:1px solid #d8e5f2;
-    border-radius:10px;
-    text-align:center;
+.formula{background:#e9f7f1;border-left:4px solid var(--green);font-weight:bold}
+.example{background:#fff6e8;border-left:4px solid var(--orange)}
+.note{background:#fff8e8}
+.exercise,.question{
+ background:#f6f8fb;border:1px solid #e0e7ef;
+ padding:15px;border-radius:9px;margin:14px 0;
 }
-.eval-option h3{margin:5px}
-.eval-option button{width:100%}
-#examArea{display:none}
-.exam-top{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:12px;
-    align-items:center;
-    background:#eef5fc;
-    padding:15px;
-    border-radius:9px;
-    margin:15px 0;
-}
-.timer{
-    font-size:21px;
-    font-weight:bold;
-    color:var(--red);
-}
-.question{
-    padding:17px;
-    margin:14px 0;
-    border:1px solid #dce5ef;
-    border-radius:9px;
-    background:#fff;
-}
-.question h4{margin-top:0}
-.question label{
-    display:block;
-    padding:7px;
-    cursor:pointer;
-    border-radius:5px;
-}
-.question label:hover{background:#eef5fc}
-.question input{margin-right:8px}
-#examResult{
-    display:none;
-    padding:20px;
-    border-radius:10px;
-    background:#e9f7f1;
-    margin-top:20px;
-}
-.score{
-    font-size:35px;
-    color:var(--green);
-    font-weight:bold;
-}
-.correction{
-    border-top:1px solid #d7e3ed;
-    padding:12px 0;
-}
+.exercise label,.question label{display:block;margin:7px 0;cursor:pointer}
+.result{margin-top:10px;font-weight:bold}
 .correct{color:var(--green);font-weight:bold}
 .incorrect{color:var(--red);font-weight:bold}
-.history-item{
-    background:#f1f5f9;
-    border-radius:7px;
-    padding:12px;
-    margin:9px 0;
-}
-.empty{color:var(--gray);font-style:italic}
+table{border-collapse:collapse;width:100%;margin:12px 0}
+th,td{border:1px solid #ccd8e5;padding:9px;text-align:center}
+th{background:#eaf2fa}
+.eval-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}
+.eval-option{padding:16px;background:#eef5fc;border:1px solid #d8e5f2;border-radius:10px;text-align:center}
+.eval-option button{width:100%}
+#examArea,#examResult{display:none}
+.exam-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#eef5fc;padding:15px;border-radius:9px;margin:15px 0}
+.timer{font-size:22px;font-weight:bold;color:var(--red)}
+.score{font-size:35px;color:var(--green);font-weight:bold}
+.correction{border-top:1px solid #d7e3ed;padding:12px 0}
+.history-item{background:#f1f5f9;border-radius:7px;padding:12px;margin:9px 0}
+.stat-box{background:#eef5fc;padding:16px;border-radius:10px;text-align:center}
+.stat-box strong{font-size:26px;color:var(--green);display:block}
+.progress{height:12px;background:#e2e8f0;border-radius:20px;overflow:hidden}
+.progress div{height:100%;background:var(--green);width:0}
 .hidden{display:none!important}
-
+footer{text-align:center;padding:25px;background:var(--blue);color:white;margin-top:35px}
 @media(max-width:600px){
-    .hero h1{font-size:27px}
-    header{justify-content:center}
-    nav{justify-content:center}
-    .card{padding:16px}
+ .hero h1{font-size:27px}
+ header{justify-content:center}
+ nav{justify-content:center}
+ .card{padding:16px}
 }
 </style>
 </head>
@@ -285,1321 +112,695 @@ footer{
 <body>
 
 <header>
-    <div class="logo">MAT<span>HIA</span></div>
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#cours">Cours</a>
-        <a href="#exercices">Exercices</a>
-        <a href="#evaluation">Évaluations</a>
-    </nav>
+ <div class="logo">MAT<span>HIA</span></div>
+ <nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#cours">Cours</a>
+  <a href="#exercices">Exercices</a>
+  <a href="#evaluation">Évaluations</a>
+  <a href="#progression">Progression</a>
+ </nav>
 </header>
 
 <section class="hero" id="accueil">
-    <h1>Bienvenue sur MATHIA</h1>
-    <p>
-        Apprends les mathématiques autrement !
-        Des cours, des exemples, des exercices corrigés
-        et des évaluations pour progresser à ton rythme.
-    </p>
+ <h1>Bienvenue sur MATHIA</h1>
+ <p>Apprends les mathématiques autrement ! Des cours, des exemples, des exercices corrigés et des évaluations pour progresser à ton rythme.</p>
 </section>
 
 <main class="container">
 
 <section class="card">
-    <h2>Bienvenue dans ton espace d'apprentissage</h2>
-    <p class="intro">
-        MATHIA accompagne les élèves de 10e année dans
-        l'apprentissage des mathématiques.
-    </p>
-    <div class="grid">
-        <div class="subject">
-            <h3>📘 Des cours</h3>
-            <p>Des explications progressives et des exemples pratiques.</p>
-        </div>
-        <div class="subject">
-            <h3>✏️ Des exercices</h3>
-            <p>Entraîne-toi et vérifie tes réponses immédiatement.</p>
-        </div>
-        <div class="subject">
-            <h3>🎯 Des évaluations</h3>
-            <p>Teste tes connaissances et découvre tes résultats.</p>
-        </div>
-    </div>
+ <h2>Ton espace d'apprentissage</h2>
+ <p class="intro">MATHIA accompagne les élèves de 10ᵉ année dans leur apprentissage des mathématiques.</p>
+ <div class="grid">
+  <div class="subject"><h3>📘 Des cours</h3><p>Des explications et des exemples progressifs.</p></div>
+  <div class="subject"><h3>✏️ Des exercices</h3><p>Entraîne-toi et vérifie tes réponses.</p></div>
+  <div class="subject"><h3>🎯 Des évaluations</h3><p>Teste tes connaissances et obtiens une note.</p></div>
+  <div class="subject"><h3>📊 Ta progression</h3><p>Consulte tes résultats enregistrés.</p></div>
+ </div>
 </section>
 
 <section class="card" id="cours">
-    <h2>📚 Les cours de mathématiques</h2>
-    <p class="intro">Choisis une matière pour consulter ses chapitres.</p>
-
-    <h3>1. ALGÈBRE</h3>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('algebre1')">
-            Chapitre 1 : Les ensembles de nombres
-        </div>
-        <div class="lesson-content" id="algebre1">
-            <h3>Les différents ensembles de nombres</h3>
-            <p>Les nombres sont regroupés dans plusieurs ensembles.</p>
-            <ul>
-                <li><b>ℕ :</b> les nombres entiers naturels : 0, 1, 2, 3...</li>
-                <li><b>ℤ :</b> les nombres entiers relatifs : ..., -2, -1, 0, 1...</li>
-                <li><b>𝔻 :</b> les nombres décimaux : 2,5 ; -3,25...</li>
-                <li><b>ℚ :</b> les nombres rationnels, qui peuvent s'écrire sous forme de fraction.</li>
-                <li><b>ℝ :</b> les nombres réels.</li>
-            </ul>
-            <div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div>
-            <div class="example">
-                <b>Exemple :</b> 5 appartient à ℕ, ℤ, 𝔻, ℚ et ℝ.
-                Le nombre -3 appartient à ℤ, 𝔻, ℚ et ℝ.
-            </div>
-            <div class="exercise">
-                <b>Exercice 1 : Le nombre -7 appartient à quel ensemble ?</b>
-                <label><input type="radio" name="a1" value="a"> ℕ uniquement</label>
-                <label><input type="radio" name="a1" value="b"> ℤ</label>
-                <label><input type="radio" name="a1" value="c"> ℕ uniquement et jamais ℤ</label>
-                <button onclick="verifier('a1','b','r1','-7 est un entier relatif : il appartient à ℤ.')">Vérifier</button>
-                <div class="result" id="r1"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('algebre2')">
-            Chapitre 2 : Les opérations sur les nombres réels
-        </div>
-        <div class="lesson-content" id="algebre2">
-            <h3>Addition, soustraction, multiplication et division</h3>
-            <p>Les nombres réels permettent d'effectuer les quatre opérations fondamentales.</p>
-            <div class="formula">
-                a + b : somme<br>
-                a - b : différence<br>
-                a × b : produit<br>
-                a ÷ b : quotient (si b ≠ 0)
-            </div>
-            <h3>Les règles de priorité</h3>
-            <ol>
-                <li>Les parenthèses.</li>
-                <li>Les puissances.</li>
-                <li>Les multiplications et divisions.</li>
-                <li>Les additions et soustractions.</li>
-            </ol>
-            <div class="example">
-                <b>Exemple :</b><br>
-                A = 5 + 3 × 2<br>
-                A = 5 + 6<br>
-                A = 11
-            </div>
-            <div class="exercise">
-                <b>Exercice 1 : Calculer 4 + 3 × 5.</b>
-                <label><input type="radio" name="a2" value="a"> 35</label>
-                <label><input type="radio" name="a2" value="b"> 19</label>
-                <label><input type="radio" name="a2" value="c"> 23</label>
-                <button onclick="verifier('a2','b','r2','On effectue d’abord la multiplication : 3 × 5 = 15, puis 4 + 15 = 19.')">Vérifier</button>
-                <div class="result" id="r2"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 2 : Calculer (8 + 4) ÷ 3.</b>
-                <label><input type="radio" name="a3" value="a"> 4</label>
-                <label><input type="radio" name="a3" value="b"> 6</label>
-                <label><input type="radio" name="a3" value="c"> 8</label>
-                <button onclick="verifier('a3','a','r3','8 + 4 = 12, puis 12 ÷ 3 = 4.')">Vérifier</button>
-                <div class="result" id="r3"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('algebre3')">
-            Chapitre 3 : Développement et factorisation
-        </div>
-        <div class="lesson-content" id="algebre3">
-            <h3>Le développement</h3>
-            <p>Développer consiste à transformer un produit en somme.</p>
-            <div class="formula">a(b + c) = ab + ac</div>
-            <div class="example">
-                3(x + 4) = 3x + 12
-            </div>
-            <h3>La factorisation</h3>
-            <p>Factoriser consiste à transformer une somme en produit.</p>
-            <div class="formula">ab + ac = a(b + c)</div>
-            <div class="example">
-                5x + 15 = 5(x + 3)
-            </div>
-            <h3>Identités remarquables</h3>
-            <div class="formula">
-                (a + b)² = a² + 2ab + b²<br>
-                (a - b)² = a² - 2ab + b²<br>
-                (a + b)(a - b) = a² - b²
-            </div>
-            <div class="exercise">
-                <b>Exercice : Développer 2(x + 5).</b>
-                <label><input type="radio" name="a4" value="a"> 2x + 5</label>
-                <label><input type="radio" name="a4" value="b"> 2x + 10</label>
-                <label><input type="radio" name="a4" value="c"> x + 10</label>
-                <button onclick="verifier('a4','b','r4','On distribue 2 : 2 × x + 2 × 5 = 2x + 10.')">Vérifier</button>
-                <div class="result" id="r4"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice : Factoriser 4x + 12.</b>
-                <label><input type="radio" name="a5" value="a"> 4(x + 3)</label>
-                <label><input type="radio" name="a5" value="b"> 4(x + 12)</label>
-                <label><input type="radio" name="a5" value="c"> x(4 + 12)</label>
-                <button onclick="verifier('a5','a','r5','Le facteur commun est 4 : 4x + 12 = 4(x + 3).')">Vérifier</button>
-                <div class="result" id="r5"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('algebre4')">
-            Chapitre 4 : Les équations du premier degré
-        </div>
-        <div class="lesson-content" id="algebre4">
-            <h3>Définition</h3>
-            <p>Une équation est une égalité contenant une inconnue, souvent notée x.</p>
-            <div class="formula">ax + b = 0, avec a ≠ 0</div>
-            <h3>Méthode de résolution</h3>
-            <div class="example">
-                Résoudre : 2x + 6 = 14<br>
-                2x = 14 - 6<br>
-                2x = 8<br>
-                x = 8/2<br>
-                <b>x = 4</b>
-            </div>
-            <div class="exercise">
-                <b>Exercice : Résoudre 3x + 6 = 15.</b>
-                <label><input type="radio" name="a6" value="a"> x = 2</label>
-                <label><input type="radio" name="a6" value="b"> x = 3</label>
-                <label><input type="radio" name="a6" value="c"> x = 5</label>
-                <button onclick="verifier('a6','b','r6','3x = 15 - 6 = 9, donc x = 9/3 = 3.')">Vérifier</button>
-                <div class="result" id="r6"></div>
-            </div>
-        </div>
-    </div>
-
-    <h3>2. GÉOMÉTRIE</h3>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('geo1')">
-            Chapitre 1 : Droites et angles
-        </div>
-        <div class="lesson-content" id="geo1">
-            <h3>Les différents types d'angles</h3>
-            <ul>
-                <li>Angle aigu : inférieur à 90°.</li>
-                <li>Angle droit : égal à 90°.</li>
-                <li>Angle obtus : compris entre 90° et 180°.</li>
-                <li>Angle plat : égal à 180°.</li>
-            </ul>
-            <div class="formula">
-                Deux angles complémentaires ont une somme de 90°.<br>
-                Deux angles supplémentaires ont une somme de 180°.
-            </div>
-            <div class="example">
-                Si deux angles sont supplémentaires et que le premier mesure 65°,
-                le deuxième mesure 180° - 65° = 115°.
-            </div>
-            <div class="exercise">
-                <b>Exercice : Un angle de 40° est complété par quel angle ?</b>
-                <label><input type="radio" name="g1" value="a"> 40°</label>
-                <label><input type="radio" name="g1" value="b"> 50°</label>
-                <label><input type="radio" name="g1" value="c"> 140°</label>
-                <button onclick="verifier('g1','b','rg1','90° - 40° = 50°.')">Vérifier</button>
-                <div class="result" id="rg1"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('geo2')">
-            Chapitre 2 : Les triangles
-        </div>
-        <div class="lesson-content" id="geo2">
-            <h3>Les types de triangles</h3>
-            <ul>
-                <li>Triangle équilatéral : trois côtés égaux.</li>
-                <li>Triangle isocèle : deux côtés égaux.</li>
-                <li>Triangle rectangle : un angle droit.</li>
-                <li>Triangle quelconque : aucune propriété particulière obligatoire.</li>
-            </ul>
-            <div class="formula">
-                La somme des angles d'un triangle est toujours égale à 180°.
-            </div>
-            <div class="example">
-                Si deux angles mesurent 50° et 60°, alors le troisième mesure :
-                180° - 50° - 60° = 70°.
-            </div>
-            <div class="exercise">
-                <b>Exercice : Un triangle a deux angles de 60° et 60°. Quel est le troisième ?</b>
-                <label><input type="radio" name="g2" value="a"> 30°</label>
-                <label><input type="radio" name="g2" value="b"> 60°</label>
-                <label><input type="radio" name="g2" value="c"> 90°</label>
-                <button onclick="verifier('g2','b','rg2','180° - 60° - 60° = 60°.')">Vérifier</button>
-                <div class="result" id="rg2"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('geo3')">
-            Chapitre 3 : Les quadrilatères
-        </div>
-        <div class="lesson-content" id="geo3">
-            <h3>Définition</h3>
-            <p>Un quadrilatère est un polygone qui possède quatre côtés.</p>
-            <ul>
-                <li>Le carré : quatre côtés égaux et quatre angles droits.</li>
-                <li>Le rectangle : côtés opposés égaux et quatre angles droits.</li>
-                <li>Le losange : quatre côtés égaux.</li>
-                <li>Le parallélogramme : côtés opposés parallèles.</li>
-            </ul>
-            <div class="formula">La somme des angles d'un quadrilatère est 360°.</div>
-            <div class="exercise">
-                <b>Exercice : Combien mesure chaque angle d'un carré ?</b>
-                <label><input type="radio" name="g3" value="a"> 45°</label>
-                <label><input type="radio" name="g3" value="b"> 90°</label>
-                <label><input type="radio" name="g3" value="c"> 180°</label>
-                <button onclick="verifier('g3','b','rg3','Un carré possède quatre angles droits de 90° chacun.')">Vérifier</button>
-                <div class="result" id="rg3"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('geo4')">
-            Chapitre 4 : Le théorème de Thalès
-        </div>
-        <div class="lesson-content" id="geo4">
-            <h3>Énoncé</h3>
-            <p>
-                Lorsque deux droites sécantes sont coupées par deux droites parallèles,
-                les longueurs correspondantes sont proportionnelles.
-            </p>
-            <div class="formula">
-                Si (BC) est parallèle à (DE), alors :<br>
-                AB/AD = AC/AE = BC/DE
-            </div>
-            <div class="example">
-                Si AB = 3, AD = 6 et AC = 4, alors :<br>
-                3/6 = 4/AE<br>
-                AE = (6 × 4)/3 = 8.
-            </div>
-            <div class="exercise">
-                <b>Exercice : Si AB = 2, AD = 6 et AC = 3, calculer AE.</b>
-                <label><input type="radio" name="g4" value="a"> 6</label>
-                <label><input type="radio" name="g4" value="b"> 9</label>
-                <label><input type="radio" name="g4" value="c"> 12</label>
-                <button onclick="verifier('g4','b','rg4','AE = (AD × AC)/AB = (6 × 3)/2 = 9.')">Vérifier</button>
-                <div class="result" id="rg4"></div>
-            </div>
-        </div>
-    </div>
-
-    <h3>3. FONCTIONS</h3>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('fonc1')">
-            Chapitre 1 : Généralités sur les fonctions
-        </div>
-        <div class="lesson-content" id="fonc1">
-            <h3>Définition</h3>
-            <p>
-                Une fonction est une relation qui associe à chaque nombre x
-                de son domaine de définition un unique nombre appelé image de x.
-            </p>
-            <div class="formula">f : x → f(x)</div>
-            <h3>Image et antécédent</h3>
-            <p>Si f(2) = 5, alors :</p>
-            <ul>
-                <li>5 est l'image de 2.</li>
-                <li>2 est un antécédent de 5.</li>
-            </ul>
-            <h3>Exemple de tableau de valeurs</h3>
-            <table>
-                <tr><th>x</th><th>-2</th><th>-1</th><th>0</th><th>1</th><th>2</th></tr>
-                <tr><th>f(x)=2x+1</th><td>-3</td><td>-1</td><td>1</td><td>3</td><td>5</td></tr>
-            </table>
-            <h3>Fonction linéaire et affine</h3>
-            <div class="formula">
-                Fonction linéaire : f(x) = ax<br>
-                Fonction affine : f(x) = ax + b
-            </div>
-            <div class="example">
-                f(x) = 3x + 2<br>
-                f(2) = 3 × 2 + 2 = 8.
-            </div>
-            <div class="exercise">
-                <b>Exercice 1 : Si f(x) = 2x + 3, calculer f(4).</b>
-                <label><input type="radio" name="f1" value="a"> 8</label>
-                <label><input type="radio" name="f1" value="b"> 11</label>
-                <label><input type="radio" name="f1" value="c"> 14</label>
-                <button onclick="verifier('f1','b','rf1','f(4) = 2 × 4 + 3 = 11.')">Vérifier</button>
-                <div class="result" id="rf1"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 2 : Si f(x) = 5x, calculer f(3).</b>
-                <label><input type="radio" name="f2" value="a"> 8</label>
-                <label><input type="radio" name="f2" value="b"> 15</label>
-                <label><input type="radio" name="f2" value="c"> 20</label>
-                <button onclick="verifier('f2','b','rf2','f(3) = 5 × 3 = 15.')">Vérifier</button>
-                <div class="result" id="rf2"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('fonc2')">
-            Chapitre 2 : Sens de variation d'une fonction
-        </div>
-        <div class="lesson-content" id="fonc2">
-            <h3>Fonction croissante</h3>
-            <p>Une fonction est croissante lorsque ses images augmentent quand x augmente.</p>
-            <h3>Fonction décroissante</h3>
-            <p>Une fonction est décroissante lorsque ses images diminuent quand x augmente.</p>
-            <h3>Fonction constante</h3>
-            <p>Une fonction est constante lorsque ses images restent les mêmes.</p>
-            <div class="formula">
-                f croissante : x₁ &lt; x₂ implique f(x₁) ≤ f(x₂).<br>
-                f décroissante : x₁ &lt; x₂ implique f(x₁) ≥ f(x₂).
-            </div>
-            <h3>Exemple : f(x) = 2x + 1</h3>
-            <p>Comme son coefficient directeur est positif (2), elle est strictement croissante sur ℝ.</p>
-            <h3>Exemple : f(x) = -3x + 4</h3>
-            <p>Son coefficient directeur est négatif (-3), elle est strictement décroissante sur ℝ.</p>
-            <div class="example">
-                La fonction carré f(x) = x² est décroissante sur ]-∞ ; 0]
-                et croissante sur [0 ; +∞[.
-                Elle possède un minimum égal à 0 en x = 0.
-            </div>
-            <div class="exercise">
-                <b>Exercice 1 : La fonction f(x) = 4x + 2 est :</b>
-                <label><input type="radio" name="f3" value="a"> Croissante</label>
-                <label><input type="radio" name="f3" value="b"> Décroissante</label>
-                <label><input type="radio" name="f3" value="c"> Constante</label>
-                <button onclick="verifier('f3','a','rf3','Le coefficient directeur 4 est positif : la fonction est croissante.')">Vérifier</button>
-                <div class="result" id="rf3"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 2 : La fonction f(x) = -2x + 1 est :</b>
-                <label><input type="radio" name="f4" value="a"> Croissante</label>
-                <label><input type="radio" name="f4" value="b"> Décroissante</label>
-                <label><input type="radio" name="f4" value="c"> Constante</label>
-                <button onclick="verifier('f4','b','rf4','Le coefficient directeur -2 est négatif : la fonction est décroissante.')">Vérifier</button>
-                <div class="result" id="rf4"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('fonc3')">
-            Chapitre 3 : Les fonctions usuelles
-        </div>
-        <div class="lesson-content" id="fonc3">
-            <h3>Introduction</h3>
-            <p>
-                Les fonctions usuelles sont des fonctions mathématiques
-                fréquemment utilisées. Nous allons étudier quatre fonctions :
-                la fonction carré, la fonction cube, la fonction inverse
-                et la fonction racine carrée.
-            </p>
-
-            <h3>1. La fonction carré</h3>
-            <div class="formula">f(x) = x²</div>
-            <p>La fonction carré associe à chaque nombre réel son carré.</p>
-            <ul>
-                <li>Domaine de définition : ℝ.</li>
-                <li>Elle est décroissante sur ]-∞ ; 0].</li>
-                <li>Elle est croissante sur [0 ; +∞[.</li>
-                <li>Son minimum est 0, atteint pour x = 0.</li>
-            </ul>
-            <table>
-                <tr><th>x</th><th>-2</th><th>-1</th><th>0</th><th>1</th><th>2</th></tr>
-                <tr><th>x²</th><td>4</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
-            </table>
-            <div class="example">
-                Pour x = 3 : f(3) = 3² = 9.<br>
-                Pour x = -4 : f(-4) = (-4)² = 16.
-            </div>
-
-            <h3>2. La fonction cube</h3>
-            <div class="formula">f(x) = x³</div>
-            <ul>
-                <li>Domaine de définition : ℝ.</li>
-                <li>Elle est strictement croissante sur ℝ.</li>
-                <li>Elle prend des valeurs négatives, nulles ou positives.</li>
-            </ul>
-            <table>
-                <tr><th>x</th><th>-2</th><th>-1</th><th>0</th><th>1</th><th>2</th></tr>
-                <tr><th>x³</th><td>-8</td><td>-1</td><td>0</td><td>1</td><td>8</td></tr>
-            </table>
-            <div class="example">
-                f(2) = 2³ = 8.<br>
-                f(-3) = (-3)³ = -27.
-            </div>
-
-            <h3>3. La fonction inverse</h3>
-            <div class="formula">f(x) = 1/x</div>
-            <ul>
-                <li>Domaine de définition : ℝ privé de 0.</li>
-                <li>Elle n'est pas définie pour x = 0.</li>
-                <li>Elle est décroissante sur ]-∞ ; 0[.</li>
-                <li>Elle est également décroissante sur ]0 ; +∞[.</li>
-            </ul>
-            <table>
-                <tr><th>x</th><th>-2</th><th>-1</th><th>1</th><th>2</th></tr>
-                <tr><th>1/x</th><td>-1/2</td><td>-1</td><td>1</td><td>1/2</td></tr>
-            </table>
-            <div class="example">
-                f(2) = 1/2.<br>
-                f(-4) = -1/4.<br>
-                Attention : on ne peut jamais diviser par zéro.
-            </div>
-
-            <h3>4. La fonction racine carrée</h3>
-            <div class="formula">f(x) = √x</div>
-            <ul>
-                <li>Domaine de définition : [0 ; +∞[.</li>
-                <li>Elle n'est pas définie dans ℝ pour les nombres négatifs.</li>
-                <li>Elle est strictement croissante sur son domaine.</li>
-            </ul>
-            <table>
-                <tr><th>x</th><th>0</th><th>1</th><th>4</th><th>9</th><th>16</th></tr>
-                <tr><th>√x</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-            </table>
-            <div class="example">
-                √25 = 5 car 5² = 25.<br>
-                √49 = 7 car 7² = 49.
-            </div>
-
-            <h3>Résumé des quatre fonctions</h3>
-            <table>
-                <tr><th>Fonction</th><th>Domaine</th><th>Variation</th></tr>
-                <tr><td>x²</td><td>ℝ</td><td>Décroissante puis croissante</td></tr>
-                <tr><td>x³</td><td>ℝ</td><td>Croissante</td></tr>
-                <tr><td>1/x</td><td>ℝ privé de 0</td><td>Décroissante sur chaque intervalle</td></tr>
-                <tr><td>√x</td><td>[0 ; +∞[</td><td>Croissante</td></tr>
-            </table>
-
-            <h3>Exercices d'application</h3>
-            <div class="exercise">
-                <b>Exercice 1 : Calculer f(3) si f(x) = x².</b>
-                <label><input type="radio" name="u1" value="a"> 6</label>
-                <label><input type="radio" name="u1" value="b"> 9</label>
-                <label><input type="radio" name="u1" value="c"> 12</label>
-                <button onclick="verifier('u1','b','ru1','f(3) = 3² = 9.')">Vérifier</button>
-                <div class="result" id="ru1"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 2 : Calculer (-2)³.</b>
-                <label><input type="radio" name="u2" value="a"> -8</label>
-                <label><input type="radio" name="u2" value="b"> 8</label>
-                <label><input type="radio" name="u2" value="c"> -6</label>
-                <button onclick="verifier('u2','a','ru2','(-2)³ = (-2) × (-2) × (-2) = -8.')">Vérifier</button>
-                <div class="result" id="ru2"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 3 : Quel est le domaine de définition de 1/x ?</b>
-                <label><input type="radio" name="u3" value="a"> ℝ</label>
-                <label><input type="radio" name="u3" value="b"> ℝ privé de 0</label>
-                <label><input type="radio" name="u3" value="c"> [0 ; +∞[</label>
-                <button onclick="verifier('u3','b','ru3','La division par zéro est impossible : x ne doit pas être égal à 0.')">Vérifier</button>
-                <div class="result" id="ru3"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 4 : Calculer √81.</b>
-                <label><input type="radio" name="u4" value="a"> 8</label>
-                <label><input type="radio" name="u4" value="b"> 9</label>
-                <label><input type="radio" name="u4" value="c"> 10</label>
-                <button onclick="verifier('u4','b','ru4','√81 = 9 car 9² = 81.')">Vérifier</button>
-                <div class="result" id="ru4"></div>
-            </div>
-            <div class="exercise">
-                <b>Exercice 5 : La fonction carré est croissante sur :</b>
-                <label><input type="radio" name="u5" value="a"> ℝ entier</label>
-                <label><input type="radio" name="u5" value="b"> [0 ; +∞[</label>
-                <label><input type="radio" name="u5" value="c"> ]-∞ ; 0]</label>
-                <button onclick="verifier('u5','b','ru5','La fonction carré est croissante sur [0 ; +∞[ et décroissante sur ]-∞ ; 0].')">Vérifier</button>
-                <div class="result" id="ru5"></div>
-            </div>
-        </div>
-    </div>
-
-    <h3>4. STATISTIQUES</h3>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('stat1')">
-            Chapitre 1 : Vocabulaire statistique
-        </div>
-        <div class="lesson-content" id="stat1">
-            <h3>Définitions</h3>
-            <ul>
-                <li>Population : ensemble des individus étudiés.</li>
-                <li>Individu : élément de la population.</li>
-                <li>Caractère : propriété étudiée.</li>
-                <li>Effectif : nombre d'individus.</li>
-                <li>Fréquence : rapport entre un effectif et l'effectif total.</li>
-            </ul>
-            <div class="formula">
-                Fréquence = Effectif / Effectif total
-            </div>
-            <div class="example">
-                Dans une classe de 40 élèves, 10 sont absents.<br>
-                Fréquence des absents = 10/40 = 0,25 = 25 %.
-            </div>
-            <div class="exercise">
-                <b>Exercice : Dans une classe de 30 élèves, 15 sont des filles. Quelle est leur fréquence ?</b>
-                <label><input type="radio" name="s1" value="a"> 25 %</label>
-                <label><input type="radio" name="s1" value="b"> 50 %</label>
-                <label><input type="radio" name="s1" value="c"> 75 %</label>
-                <button onclick="verifier('s1','b','rs1','15/30 = 0,5, soit 50 %.')">Vérifier</button>
-                <div class="result" id="rs1"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('stat2')">
-            Chapitre 2 : Moyenne, médiane et étendue
-        </div>
-        <div class="lesson-content" id="stat2">
-            <h3>La moyenne</h3>
-            <div class="formula">
-                Moyenne = Somme des valeurs / Nombre de valeurs
-            </div>
-            <div class="example">
-                Série : 10, 12, 14, 16.<br>
-                Moyenne = (10 + 12 + 14 + 16)/4 = 13.
-            </div>
-            <h3>La médiane</h3>
-            <p>La médiane partage une série ordonnée en deux groupes de même effectif.</p>
-            <div class="example">
-                Série : 2, 4, 6, 8, 10.<br>
-                La médiane est 6.
-            </div>
-            <h3>L'étendue</h3>
-            <div class="formula">Étendue = Valeur maximale - Valeur minimale</div>
-            <div class="example">
-                Pour 3, 5, 8, 10 : étendue = 10 - 3 = 7.
-            </div>
-            <div class="exercise">
-                <b>Exercice : Calculer la moyenne de 4, 6 et 8.</b>
-                <label><input type="radio" name="s2" value="a"> 5</label>
-                <label><input type="radio" name="s2" value="b"> 6</label>
-                <label><input type="radio" name="s2" value="c"> 7</label>
-                <button onclick="verifier('s2','b','rs2','(4 + 6 + 8)/3 = 18/3 = 6.')">Vérifier</button>
-                <div class="result" id="rs2"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lesson">
-        <div class="lesson-title" onclick="ouvrir('stat3')">
-            Chapitre 3 : Les représentations graphiques
-        </div>
-        <div class="lesson-content" id="stat3">
-            <h3>Les différents graphiques</h3>
-            <ul>
-                <li>Diagramme en bâtons : comparer des effectifs.</li>
-                <li>Diagramme circulaire : représenter des proportions.</li>
-                <li>Histogramme : représenter des données regroupées en intervalles.</li>
-                <li>Courbe : montrer l'évolution d'une grandeur.</li>
-            </ul>
-            <div class="example">
-                Exemple : une classe compte 20 élèves.<br>
-                10 aiment le football, 6 aiment le basketball et 4 aiment le volleyball.
-            </div>
-            <div class="formula">
-                Pour un diagramme circulaire :<br>
-                Angle = Fréquence × 360°
-            </div>
-            <div class="exercise">
-                <b>Exercice : Quelle représentation est adaptée pour montrer des proportions ?</b>
-                <label><input type="radio" name="s3" value="a"> Diagramme circulaire</label>
-                <label><input type="radio" name="s3" value="b"> Une équation</label>
-                <label><input type="radio" name="s3" value="c"> Une droite numérique</label>
-                <button onclick="verifier('s3','a','rs3','Le diagramme circulaire permet de représenter les proportions d’un ensemble.')">Vérifier</button>
-                <div class="result" id="rs3"></div>
-            </div>
-        </div>
-    </div>
+ <h2>📚 Bibliothèque des cours</h2>
+ <p class="intro">Sélectionne une matière ou recherche un chapitre.</p>
+ <input type="search" id="rechercheCours" placeholder="Rechercher un cours ou un chapitre..." oninput="rechercherCours()">
+ <div id="listeCours"></div>
 </section>
 
 <section class="card" id="exercices">
-    <h2>✏️ Espace d'entraînement</h2>
-    <p class="intro">
-        Réponds aux questions pour vérifier tes connaissances.
-        Les exercices de chaque chapitre se trouvent également dans les cours.
-    </p>
-    <div class="exercise">
-        <b>1. Résoudre : 5x = 25.</b>
-        <label><input type="radio" name="ex1" value="a"> x = 4</label>
-        <label><input type="radio" name="ex1" value="b"> x = 5</label>
-        <label><input type="radio" name="ex1" value="c"> x = 10</label>
-        <div class="result" id="rex1"></div>
-    </div>
-    <div class="exercise">
-        <b>2. Combien font 7² ?</b>
-        <label><input type="radio" name="ex2" value="a"> 14</label>
-        <label><input type="radio" name="ex2" value="b"> 42</label>
-        <label><input type="radio" name="ex2" value="c"> 49</label>
-        <div class="result" id="rex2"></div>
-    </div>
-    <div class="exercise">
-        <b>3. La somme des angles d'un triangle vaut :</b>
-        <label><input type="radio" name="ex3" value="a"> 90°</label>
-        <label><input type="radio" name="ex3" value="b"> 180°</label>
-        <label><input type="radio" name="ex3" value="c"> 360°</label>
-        <div class="result" id="rex3"></div>
-    </div>
-    <div class="exercise">
-        <b>4. La moyenne de 2, 4 et 6 est :</b>
-        <label><input type="radio" name="ex4" value="a"> 3</label>
-        <label><input type="radio" name="ex4" value="b"> 4</label>
-        <label><input type="radio" name="ex4" value="c"> 6</label>
-        <div class="result" id="rex4"></div>
-    </div>
-    <div class="exercise">
-        <b>5. Si f(x) = 3x, alors f(2) vaut :</b>
-        <label><input type="radio" name="ex5" value="a"> 5</label>
-        <label><input type="radio" name="ex5" value="b"> 6</label>
-        <label><input type="radio" name="ex5" value="c"> 9</label>
-        <div class="result" id="rex5"></div>
-    </div>
-    <button class="green" onclick="corrigerGeneral()">Corriger mon entraînement</button>
-    <div id="resultatGeneral" class="result"></div>
+ <h2>✏️ Espace d'entraînement</h2>
+ <p class="intro">Réponds aux questions puis clique sur « Corriger mon entraînement ».</p>
+ <div id="zoneExercices"></div>
+ <button class="green" onclick="corrigerEntrainement()">Corriger mon entraînement</button>
+ <div id="resultatEntrainement" class="result"></div>
 </section>
 
 <section class="card" id="evaluation">
-    <h2>🎯 Centre d'évaluation MATHIA</h2>
-    <p class="intro">
-        Choisis une matière ou passe une évaluation générale.
-        Chaque bonne réponse rapporte des points.
-    </p>
+ <h2>🎯 Centre d'évaluation MATHIA</h2>
+ <p class="intro">Choisis une matière. Les questions sont mélangées et le temps est limité.</p>
+ <div class="note"><b>Consigne :</b> lis attentivement chaque question. À la fin, tu obtiendras une note sur 20 et une correction détaillée.</div>
 
-    <div class="note">
-        <b>Consigne :</b> lis attentivement chaque question.
-        Une fois l'évaluation terminée, tu obtiendras automatiquement
-        ta note sur 20 et les explications des réponses.
-    </div>
+ <div class="eval-options" id="evalOptions">
+  <div class="eval-option"><h3>📘 Algèbre</h3><p>Nombres, calculs et équations.</p><button onclick="demarrerEvaluation('Algèbre')">Commencer</button></div>
+  <div class="eval-option"><h3>📐 Géométrie</h3><p>Angles, triangles et théorèmes.</p><button onclick="demarrerEvaluation('Géométrie')">Commencer</button></div>
+  <div class="eval-option"><h3>📈 Fonctions</h3><p>Images, fonctions et variations.</p><button onclick="demarrerEvaluation('Fonctions')">Commencer</button></div>
+  <div class="eval-option"><h3>📊 Statistiques</h3><p>Moyenne, médiane et fréquences.</p><button onclick="demarrerEvaluation('Statistiques')">Commencer</button></div>
+  <div class="eval-option"><h3>🏆 Évaluation générale</h3><p>Questions de toutes les matières.</p><button class="green" onclick="demarrerEvaluation('Générale')">Commencer</button></div>
+ </div>
 
-    <div class="eval-options" id="evalOptions">
-        <div class="eval-option">
-            <h3>📘 Algèbre</h3>
-            <p>Questions sur les nombres, calculs et équations.</p>
-            <button onclick="demarrerEvaluation('Algèbre')">Commencer</button>
-        </div>
-        <div class="eval-option">
-            <h3>📐 Géométrie</h3>
-            <p>Questions sur les angles, triangles et théorèmes.</p>
-            <button onclick="demarrerEvaluation('Géométrie')">Commencer</button>
-        </div>
-        <div class="eval-option">
-            <h3>📈 Fonctions</h3>
-            <p>Questions sur les fonctions et leurs variations.</p>
-            <button onclick="demarrerEvaluation('Fonctions')">Commencer</button>
-        </div>
-        <div class="eval-option">
-            <h3>📊 Statistiques</h3>
-            <p>Questions sur la moyenne, médiane et fréquences.</p>
-            <button onclick="demarrerEvaluation('Statistiques')">Commencer</button>
-        </div>
-        <div class="eval-option">
-            <h3>🏆 Évaluation générale</h3>
-            <p>Un mélange de toutes les matières.</p>
-            <button class="green" onclick="demarrerEvaluation('Générale')">Commencer</button>
-        </div>
-    </div>
+ <div id="examArea">
+  <div class="exam-top">
+   <div><b id="examTitle">Évaluation</b><br><span id="examProgress"></span></div>
+   <div class="timer" id="timer">10:00</div>
+  </div>
+  <div id="questionsContainer"></div>
+  <button class="green" onclick="terminerEvaluation()">Terminer et corriger</button>
+  <button class="red" onclick="annulerEvaluation()">Annuler</button>
+ </div>
 
-    <div id="examArea">
-        <div class="exam-top">
-            <div>
-                <b id="examTitle">Évaluation</b><br>
-                <span id="examProgress">Questions</span>
-            </div>
-            <div class="timer" id="timer">15:00</div>
-        </div>
+ <div id="examResult">
+  <h3>Résultat de ton évaluation</h3>
+  <div class="score" id="scoreValue">0/20</div>
+  <p id="scoreMessage"></p>
+  <h3>Correction détaillée</h3>
+  <div id="corrections"></div>
+  <button class="green" onclick="nouvelleEvaluation()">Nouvelle évaluation</button>
+ </div>
+</section>
 
-        <div id="questionsContainer"></div>
-
-        <button class="green" id="submitExam" onclick="terminerEvaluation()">
-            Terminer et corriger
-        </button>
-        <button class="red" onclick="annulerEvaluation()">Annuler</button>
-    </div>
-
-    <div id="examResult">
-        <h3>Résultat de ton évaluation</h3>
-        <div class="score" id="scoreValue">0/20</div>
-        <p id="scoreMessage"></p>
-        <h3>Correction détaillée</h3>
-        <div id="corrections"></div>
-        <button class="green" onclick="nouvelleEvaluation()">Nouvelle évaluation</button>
-    </div>
+<section class="card" id="progression">
+ <h2>📊 Ma progression</h2>
+ <p class="intro">Tes résultats sont conservés sur cet appareil.</p>
+ <div class="grid">
+  <div class="stat-box"><strong id="nombreEvaluations">0</strong>Évaluations réalisées</div>
+  <div class="stat-box"><strong id="meilleureNote">0/20</strong>Meilleure note</div>
+  <div class="stat-box"><strong id="moyenneNotes">0/20</strong>Moyenne des notes</div>
+ </div>
+ <h3>Historique des évaluations</h3>
+ <div id="historyList"></div>
+ <button class="red" onclick="effacerHistorique()">Effacer l'historique</button>
 </section>
 
 <section class="card">
-    <h2>📜 Historique des évaluations</h2>
-    <p class="intro">
-        Tes dernières évaluations sont conservées sur cet appareil.
-    </p>
-    <div id="historyList"></div>
-    <button class="red" onclick="effacerHistorique()">Effacer l'historique</button>
-</section>
-
-<section class="card">
-    <h2>💡 Conseils pour réussir</h2>
-    <ul>
-        <li>Lis attentivement chaque leçon.</li>
-        <li>Recopie les formules importantes dans ton cahier.</li>
-        <li>Refais les exemples sans regarder la correction.</li>
-        <li>Entraîne-toi régulièrement.</li>
-        <li>Analyse tes erreurs pour mieux progresser.</li>
-    </ul>
+ <h2>💡 Conseils pour réussir</h2>
+ <ul>
+  <li>Lis attentivement chaque leçon.</li>
+  <li>Recopie les formules importantes dans ton cahier.</li>
+  <li>Refais les exemples sans regarder la correction.</li>
+  <li>Entraîne-toi régulièrement.</li>
+  <li>Analyse tes erreurs pour mieux progresser.</li>
+ </ul>
 </section>
 
 </main>
 
 <footer>
-    <b>MATHIA</b> - Apprendre les mathématiques autrement.<br>
-    <small>Plateforme éducative pour les élèves de 10e année.</small>
+ <b>MATHIA</b> - Apprendre les mathématiques autrement.<br>
+ <small>Plateforme éducative pour les élèves de 10ᵉ année.</small>
 </footer>
 
 <script>
-/* OUVERTURE DES CHAPITRES */
-function ouvrir(id){
-    const element = document.getElementById(id);
-    if(element){
-        element.classList.toggle("active");
-    }
+/* =====================================================
+   1. BIBLIOTHEQUE DES COURS
+===================================================== */
+
+const cours = [
+{
+ matiere:"Algèbre",
+ chapitres:[
+  {
+   titre:"Chapitre 1 : Les ensembles de nombres",
+   contenu:`
+   <h3>Les différents ensembles</h3>
+   <p>Les nombres sont regroupés dans plusieurs ensembles.</p>
+   <ul>
+    <li><b>ℕ :</b> nombres entiers naturels : 0, 1, 2, 3...</li>
+    <li><b>ℤ :</b> nombres entiers relatifs : ..., -2, -1, 0, 1...</li>
+    <li><b>𝔻 :</b> nombres décimaux : 2,5 ; -3,25...</li>
+    <li><b>ℚ :</b> nombres rationnels pouvant s'écrire sous forme de fraction.</li>
+    <li><b>ℝ :</b> nombres réels.</li>
+   </ul>
+   <div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div>
+   <div class="example"><b>Exemple :</b> 5 appartient à tous ces ensembles. -3 appartient à ℤ, 𝔻, ℚ et ℝ.</div>
+   <p>Attention : un nombre décimal peut toujours s'écrire sous forme de fraction décimale.</p>`
+  },
+  {
+   titre:"Chapitre 2 : Les opérations sur les nombres réels",
+   contenu:`
+   <h3>Les quatre opérations</h3>
+   <ul><li>Addition : a + b</li><li>Soustraction : a - b</li><li>Multiplication : a × b</li><li>Division : a ÷ b, avec b différent de 0.</li></ul>
+   <h3>Priorités opératoires</h3>
+   <ol><li>Parenthèses</li><li>Puissances</li><li>Multiplications et divisions</li><li>Additions et soustractions</li></ol>
+   <div class="example">A = 5 + 3 × 2<br>A = 5 + 6<br><b>A = 11</b></div>
+   <div class="formula">Règle des signes : (+)×(+) = + ; (-)×(-) = + ; (+)×(-) = -.</div>`
+  },
+  {
+   titre:"Chapitre 3 : Puissances et racines carrées",
+   contenu:`
+   <h3>Les puissances</h3>
+   <p>Une puissance permet d'écrire plus simplement un produit de facteurs identiques.</p>
+   <div class="formula">aⁿ = a × a × ... × a (n facteurs)</div>
+   <p>Exemple : 2⁴ = 2 × 2 × 2 × 2 = 16.</p>
+   <h3>Règles de calcul</h3>
+   <div class="formula">aᵐ × aⁿ = aᵐ⁺ⁿ<br>aᵐ / aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>(aᵐ)ⁿ = aᵐⁿ</div>
+   <h3>Racine carrée</h3>
+   <p>La racine carrée d'un nombre positif est le nombre positif dont le carré donne ce nombre.</p>
+   <div class="example">√25 = 5 car 5² = 25. De même, √81 = 9.</div>`
+  },
+  {
+   titre:"Chapitre 4 : Développement et factorisation",
+   contenu:`
+   <h3>Développer</h3><p>Développer consiste à transformer un produit en somme.</p>
+   <div class="formula">a(b + c) = ab + ac</div>
+   <div class="example">3(x + 4) = 3x + 12.</div>
+   <h3>Factoriser</h3><p>Factoriser consiste à transformer une somme en produit.</p>
+   <div class="formula">ab + ac = a(b + c)</div>
+   <div class="example">5x + 15 = 5(x + 3).</div>
+   <h3>Identités remarquables</h3>
+   <div class="formula">(a + b)² = a² + 2ab + b²<br>(a - b)² = a² - 2ab + b²<br>(a + b)(a - b) = a² - b²</div>`
+  },
+  {
+   titre:"Chapitre 5 : Les équations du premier degré",
+   contenu:`
+   <h3>Définition</h3><p>Une équation est une égalité contenant une inconnue, souvent notée x.</p>
+   <div class="formula">ax + b = 0, avec a ≠ 0</div>
+   <h3>Méthode de résolution</h3>
+   <div class="example">Résoudre : 2x + 6 = 14<br>2x = 14 - 6<br>2x = 8<br>x = 8/2<br><b>x = 4</b></div>
+   <p>On effectue la même opération sur les deux membres de l'égalité pour conserver l'équilibre.</p>`
+  },
+  {
+   titre:"Chapitre 6 : Les inéquations",
+   contenu:`
+   <h3>Définition</h3><p>Une inéquation est une inégalité qui contient une inconnue.</p>
+   <div class="formula">2x + 3 &gt; 7</div>
+   <h3>Résolution</h3>
+   <div class="example">2x + 3 &gt; 7<br>2x &gt; 4<br><b>x &gt; 2</b></div>
+   <div class="note">Attention : lorsqu'on multiplie ou divise une inégalité par un nombre négatif, on inverse le sens du signe.</div>`
+  }
+ ]
+},
+{
+ matiere:"Géométrie",
+ chapitres:[
+  {
+   titre:"Chapitre 1 : Droites et angles",
+   contenu:`
+   <h3>Les types d'angles</h3>
+   <ul><li>Angle aigu : inférieur à 90°.</li><li>Angle droit : égal à 90°.</li><li>Angle obtus : entre 90° et 180°.</li><li>Angle plat : égal à 180°.</li></ul>
+   <div class="formula">Angles complémentaires : somme = 90°.<br>Angles supplémentaires : somme = 180°.</div>
+   <div class="example">Si deux angles sont supplémentaires et que le premier mesure 65°, le second mesure 180° - 65° = 115°.</div>`
+  },
+  {
+   titre:"Chapitre 2 : Les triangles",
+   contenu:`
+   <h3>Les différents triangles</h3>
+   <ul><li>Équilatéral : trois côtés égaux.</li><li>Isocèle : deux côtés égaux.</li><li>Rectangle : un angle droit.</li><li>Quelconque : sans propriété particulière obligatoire.</li></ul>
+   <div class="formula">La somme des angles d'un triangle est égale à 180°.</div>
+   <div class="example">Si deux angles mesurent 50° et 60°, le troisième vaut 180° - 50° - 60° = 70°.</div>`
+  },
+  {
+   titre:"Chapitre 3 : Les quadrilatères",
+   contenu:`
+   <p>Un quadrilatère est un polygone qui possède quatre côtés.</p>
+   <ul><li>Carré : quatre côtés égaux et quatre angles droits.</li><li>Rectangle : quatre angles droits et côtés opposés égaux.</li><li>Losange : quatre côtés égaux.</li><li>Parallélogramme : côtés opposés parallèles.</li></ul>
+   <div class="formula">La somme des angles d'un quadrilatère est 360°.</div>`
+  },
+  {
+   titre:"Chapitre 4 : Le théorème de Thalès",
+   contenu:`
+   <h3>Énoncé</h3>
+   <p>Lorsque deux droites sécantes sont coupées par deux droites parallèles, les longueurs correspondantes sont proportionnelles.</p>
+   <div class="formula">Si (BC) est parallèle à (DE), alors AB/AD = AC/AE = BC/DE.</div>
+   <div class="example">AB = 3, AD = 6 et AC = 4.<br>3/6 = 4/AE<br>AE = (6 × 4)/3 = <b>8</b>.</div>
+   <p>Le théorème de Thalès permet de calculer une longueur inconnue.</p>`
+  },
+  {
+   titre:"Chapitre 5 : Le théorème de Pythagore",
+   contenu:`
+   <h3>Énoncé</h3><p>Dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des deux autres côtés.</p>
+   <div class="formula">Si ABC est rectangle en A : BC² = AB² + AC².</div>
+   <div class="example">AB = 3 cm et AC = 4 cm.<br>BC² = 3² + 4² = 9 + 16 = 25.<br>BC = √25 = <b>5 cm</b>.</div>
+   <p>L'hypoténuse est le côté opposé à l'angle droit.</p>`
+  },
+  {
+   titre:"Chapitre 6 : Périmètres et aires",
+   contenu:`
+   <h3>Formules essentielles</h3>
+   <table><tr><th>Figure</th><th>Périmètre</th><th>Aire</th></tr>
+   <tr><td>Carré</td><td>4 × côté</td><td>côté × côté</td></tr>
+   <tr><td>Rectangle</td><td>2(L + l)</td><td>L × l</td></tr>
+   <tr><td>Triangle</td><td>Somme des côtés</td><td>(base × hauteur)/2</td></tr>
+   <tr><td>Disque</td><td>2πr</td><td>πr²</td></tr></table>
+   <div class="example">Un rectangle de longueur 8 cm et largeur 3 cm a une aire de 8 × 3 = 24 cm².</div>`
+  }
+ ]
+},
+{
+ matiere:"Fonctions",
+ chapitres:[
+  {
+   titre:"Chapitre 1 : Généralités sur les fonctions",
+   contenu:`
+   <h3>Définition</h3><p>Une fonction associe à chaque nombre x de son domaine un unique nombre appelé image de x.</p>
+   <div class="formula">f : x → f(x)</div>
+   <h3>Image et antécédent</h3><p>Si f(2) = 5, alors 5 est l'image de 2 et 2 est un antécédent de 5.</p>
+   <h3>Exemple</h3><div class="example">f(x) = 2x + 1<br>f(2) = 2 × 2 + 1 = 5.</div>
+   <table><tr><th>x</th><th>-2</th><th>-1</th><th>0</th><th>1</th><th>2</th></tr><tr><th>2x + 1</th><td>-3</td><td>-1</td><td>1</td><td>3</td><td>5</td></tr></table>`
+  },
+  {
+   titre:"Chapitre 2 : Fonctions linéaires et affines",
+   contenu:`
+   <h3>Fonction linéaire</h3><div class="formula">f(x) = ax</div>
+   <p>Sa représentation graphique est une droite qui passe par l'origine du repère.</p>
+   <h3>Fonction affine</h3><div class="formula">f(x) = ax + b</div>
+   <p>Sa représentation graphique est une droite. Le nombre a est le coefficient directeur et b l'ordonnée à l'origine.</p>
+   <div class="example">f(x) = 3x + 2. Alors f(2) = 3 × 2 + 2 = 8.</div>`
+  },
+  {
+   titre:"Chapitre 3 : Sens de variation",
+   contenu:`
+   <h3>Fonction croissante</h3><p>Ses images augmentent lorsque x augmente.</p>
+   <h3>Fonction décroissante</h3><p>Ses images diminuent lorsque x augmente.</p>
+   <h3>Fonction constante</h3><p>Ses images restent identiques.</p>
+   <div class="formula">Pour f(x) = ax + b : si a &gt; 0, f est croissante ; si a &lt; 0, f est décroissante ; si a = 0, f est constante.</div>
+   <div class="example">f(x) = 2x + 1 est croissante. f(x) = -3x + 4 est décroissante.</div>`
+  },
+  {
+   titre:"Chapitre 4 : Les fonctions usuelles",
+   contenu:`
+   <h3>Fonction carré</h3><div class="formula">f(x) = x² ; domaine : ℝ.</div><p>Elle est décroissante sur ]-∞ ; 0] et croissante sur [0 ; +∞[.</p>
+   <h3>Fonction cube</h3><div class="formula">f(x) = x³ ; domaine : ℝ.</div><p>Elle est strictement croissante sur ℝ.</p>
+   <h3>Fonction inverse</h3><div class="formula">f(x) = 1/x ; domaine : ℝ privé de 0.</div><p>Elle est décroissante sur ]-∞ ; 0[ et sur ]0 ; +∞[.</p>
+   <h3>Fonction racine carrée</h3><div class="formula">f(x) = √x ; domaine : [0 ; +∞[.</div><p>Elle est croissante sur son domaine.</p>
+   <div class="example">√49 = 7 car 7² = 49. La fonction inverse n'est pas définie en zéro.</div>`
+  }
+ ]
+},
+{
+ matiere:"Statistiques",
+ chapitres:[
+  {
+   titre:"Chapitre 1 : Vocabulaire statistique",
+   contenu:`
+   <ul><li>Population : ensemble des individus étudiés.</li><li>Individu : élément de la population.</li><li>Caractère : propriété étudiée.</li><li>Effectif : nombre d'individus.</li><li>Fréquence : rapport entre un effectif et l'effectif total.</li></ul>
+   <div class="formula">Fréquence = Effectif / Effectif total</div>
+   <div class="example">Dans une classe de 40 élèves, 10 sont absents. Fréquence = 10/40 = 0,25 = 25 %.</div>`
+  },
+  {
+   titre:"Chapitre 2 : Moyenne, médiane et étendue",
+   contenu:`
+   <h3>Moyenne</h3><div class="formula">Moyenne = Somme des valeurs / Nombre de valeurs</div>
+   <div class="example">Pour 10, 12, 14 et 16 : moyenne = 52/4 = 13.</div>
+   <h3>Médiane</h3><p>La médiane partage une série ordonnée en deux groupes de même effectif.</p>
+   <div class="example">Pour 2, 4, 6, 8, 10, la médiane est 6.</div>
+   <h3>Étendue</h3><div class="formula">Étendue = Maximum - Minimum</div>
+   <div class="example">Pour 3, 5, 8, 10 : étendue = 10 - 3 = 7.</div>`
+  },
+  {
+   titre:"Chapitre 3 : Représentations graphiques",
+   contenu:`
+   <ul><li>Diagramme en bâtons : comparer des effectifs.</li><li>Diagramme circulaire : représenter des proportions.</li><li>Histogramme : représenter des données regroupées en intervalles.</li><li>Courbe : montrer l'évolution d'une grandeur.</li></ul>
+   <div class="formula">Angle d'un secteur = fréquence × 360°</div>
+   <div class="example">Une fréquence de 25 % donne un angle de 0,25 × 360° = 90°.</div>`
+  }
+ ]
 }
-
-/* CORRECTION DES EXERCICES DES COURS */
-function verifier(nom,bonneReponse,resultatId,explication){
-    const choix = document.querySelector('input[name="'+nom+'"]:checked');
-    const resultat = document.getElementById(resultatId);
-
-    if(!choix){
-        resultat.textContent = "Choisis d'abord une réponse.";
-        resultat.style.color = "#dc3545";
-        return;
-    }
-
-    if(choix.value === bonneReponse){
-        resultat.textContent = "✓ Bonne réponse ! " + explication;
-        resultat.style.color = "#15966a";
-    }else{
-        resultat.textContent = "✗ Mauvaise réponse. " + explication;
-        resultat.style.color = "#dc3545";
-    }
-}
-
-/* ENTRAINEMENT GENERAL */
-function corrigerGeneral(){
-    const reponses = [
-        {nom:"ex1",bonne:"b",resultat:"rex1",explication:"5x = 25 donc x = 5."},
-        {nom:"ex2",bonne:"c",resultat:"rex2",explication:"7² = 7 × 7 = 49."},
-        {nom:"ex3",bonne:"b",resultat:"rex3",explication:"La somme des angles d'un triangle vaut 180°."},
-        {nom:"ex4",bonne:"b",resultat:"rex4",explication:"(2 + 4 + 6)/3 = 4."},
-        {nom:"ex5",bonne:"b",resultat:"rex5",explication:"f(2) = 3 × 2 = 6."}
-    ];
-
-    let score = 0;
-
-    reponses.forEach(q=>{
-        const choix = document.querySelector('input[name="'+q.nom+'"]:checked');
-        const resultat = document.getElementById(q.resultat);
-
-        if(choix && choix.value === q.bonne){
-            score++;
-            resultat.textContent = "✓ Bonne réponse ! " + q.explication;
-            resultat.style.color = "#15966a";
-        }else{
-            resultat.textContent = "✗ " + q.explication;
-            resultat.style.color = "#dc3545";
-        }
-    });
-
-    document.getElementById("resultatGeneral").textContent =
-        "Ton résultat : " + score + "/5, soit " + (score*4) + "/20.";
-}
-
-/* BANQUE DE QUESTIONS DES EVALUATIONS */
-const banqueQuestions = [
-    {
-        matiere:"Algèbre",
-        question:"Quel est le résultat de 5 + 2 × 4 ?",
-        options:["28","13","20"],
-        answer:1,
-        explication:"On effectue d'abord la multiplication : 2 × 4 = 8, puis 5 + 8 = 13."
-    },
-    {
-        matiere:"Algèbre",
-        question:"Résoudre : 2x = 18.",
-        options:["x = 8","x = 9","x = 10"],
-        answer:1,
-        explication:"On divise les deux membres par 2 : x = 18/2 = 9."
-    },
-    {
-        matiere:"Algèbre",
-        question:"Développer 3(x + 2).",
-        options:["3x + 2","3x + 6","x + 6"],
-        answer:1,
-        explication:"3(x + 2) = 3 × x + 3 × 2 = 3x + 6."
-    },
-    {
-        matiere:"Algèbre",
-        question:"Factoriser 6x + 12.",
-        options:["6(x + 2)","6(x + 12)","2(6x + 12)"],
-        answer:0,
-        explication:"Le facteur commun est 6 : 6x + 12 = 6(x + 2)."
-    },
-    {
-        matiere:"Algèbre",
-        question:"Le nombre -5 appartient à quel ensemble ?",
-        options:["ℕ","ℤ","Il n'appartient à aucun ensemble numérique"],
-        answer:1,
-        explication:"-5 est un entier relatif, donc il appartient à ℤ."
-    },
-    {
-        matiere:"Algèbre",
-        question:"Résoudre : 4x - 8 = 0.",
-        options:["x = 4","x = 2","x = -2"],
-        answer:1,
-        explication:"4x = 8 donc x = 2."
-    },
-    {
-        matiere:"Algèbre",
-        question:"Combien vaut (a + b)² ?",
-        options:["a² + b²","a² + 2ab + b²","a² - 2ab + b²"],
-        answer:1,
-        explication:"C'est la première identité remarquable : (a + b)² = a² + 2ab + b²."
-    },
-
-    {
-        matiere:"Géométrie",
-        question:"Combien vaut la somme des angles d'un triangle ?",
-        options:["90°","180°","360°"],
-        answer:1,
-        explication:"La somme des angles intérieurs d'un triangle est égale à 180°."
-    },
-    {
-        matiere:"Géométrie",
-        question:"Un angle droit mesure :",
-        options:["45°","90°","180°"],
-        answer:1,
-        explication:"Un angle droit mesure exactement 90°."
-    },
-    {
-        matiere:"Géométrie",
-        question:"Un triangle qui possède trois côtés égaux est :",
-        options:["Isocèle","Rectangle","Équilatéral"],
-        answer:2,
-        explication:"Un triangle équilatéral possède trois côtés de même longueur."
-    },
-    {
-        matiere:"Géométrie",
-        question:"La somme des angles d'un quadrilatère vaut :",
-        options:["180°","270°","360°"],
-        answer:2,
-        explication:"La somme des angles intérieurs d'un quadrilatère est 360°."
-    },
-    {
-        matiere:"Géométrie",
-        question:"Un angle de 120° est :",
-        options:["Aigu","Obtus","Droit"],
-        answer:1,
-        explication:"Un angle obtus est supérieur à 90° et inférieur à 180°."
-    },
-    {
-        matiere:"Géométrie",
-        question:"Dans un carré, les quatre angles mesurent :",
-        options:["60°","90°","120°"],
-        answer:1,
-        explication:"Les quatre angles d'un carré sont droits et mesurent 90°."
-    },
-    {
-        matiere:"Géométrie",
-        question:"Le théorème de Thalès concerne notamment :",
-        options:["Des droites parallèles et des rapports de longueurs","Les probabilités","Les moyennes"],
-        answer:0,
-        explication:"Thalès permet d'établir des rapports de longueurs lorsque des droites parallèles coupent deux droites sécantes."
-    },
-
-    {
-        matiere:"Fonctions",
-        question:"Si f(x) = 2x + 1, combien vaut f(3) ?",
-        options:["5","7","8"],
-        answer:1,
-        explication:"f(3) = 2 × 3 + 1 = 7."
-    },
-    {
-        matiere:"Fonctions",
-        question:"La fonction f(x) = 4x est :",
-        options:["Linéaire","Constante","Inverse"],
-        answer:0,
-        explication:"Une fonction de la forme f(x) = ax est une fonction linéaire."
-    },
-    {
-        matiere:"Fonctions",
-        question:"La fonction f(x) = -3x + 2 est :",
-        options:["Croissante","Décroissante","Constante"],
-        answer:1,
-        explication:"Son coefficient directeur est négatif : elle est décroissante sur ℝ."
-    },
-    {
-        matiere:"Fonctions",
-        question:"Le domaine de définition de f(x) = 1/x est :",
-        options:["ℝ","ℝ privé de 0","[0 ; +∞["],
-        answer:1,
-        explication:"La division par zéro est impossible."
-    },
-    {
-        matiere:"Fonctions",
-        question:"La fonction carré est définie sur :",
-        options:["ℝ","[0 ; +∞[ uniquement","ℝ privé de 0"],
-        answer:0,
-        explication:"Tout nombre réel possède un carré."
-    },
-    {
-        matiere:"Fonctions",
-        question:"Combien vaut √64 ?",
-        options:["6","7","8"],
-        answer:2,
-        explication:"8² = 64, donc √64 = 8."
-    },
-    {
-        matiere:"Fonctions",
-        question:"La fonction cube x³ est :",
-        options:["Strictement croissante sur ℝ","Décroissante sur ℝ","Constante"],
-        answer:0,
-        explication:"La fonction cube est strictement croissante sur l'ensemble des réels."
-    },
-
-    {
-        matiere:"Statistiques",
-        question:"Calculer la moyenne de 5, 10 et 15.",
-        options:["5","10","15"],
-        answer:1,
-        explication:"(5 + 10 + 15)/3 = 30/3 = 10."
-    },
-    {
-        matiere:"Statistiques",
-        question:"L'étendue d'une série est :",
-        options:["Le maximum moins le minimum","La somme des valeurs","La valeur centrale"],
-        answer:0,
-        explication:"Étendue = valeur maximale - valeur minimale."
-    },
-    {
-        matiere:"Statistiques",
-        question:"La médiane partage une série ordonnée en :",
-        options:["Deux groupes de même effectif","Trois groupes égaux","Quatre groupes"],
-        answer:0,
-        explication:"La médiane partage la série ordonnée en deux groupes de même effectif."
-    },
-    {
-        matiere:"Statistiques",
-        question:"Dans une classe de 20 élèves, 10 sont des filles. Leur fréquence est :",
-        options:["25 %","50 %","75 %"],
-        answer:1,
-        explication:"10/20 = 0,5, soit 50 %."
-    },
-    {
-        matiere:"Statistiques",
-        question:"Quel graphique permet de représenter des proportions ?",
-        options:["Diagramme circulaire","Équation","Droite graduée"],
-        answer:0,
-        explication:"Le diagramme circulaire représente les parts d'un ensemble."
-    },
-    {
-        matiere:"Statistiques",
-        question:"Quelle est la médiane de 2, 4, 6, 8, 10 ?",
-        options:["4","6","8"],
-        answer:1,
-        explication:"La valeur centrale de la série ordonnée est 6."
-    }
 ];
 
-/* VARIABLES DE L'EVALUATION */
-let questionsActuelles = [];
-let tempsRestant = 0;
-let intervalle = null;
-let evaluationActive = false;
-let debutEvaluation = 0;
-let sujetActuel = "";
+/* =====================================================
+   2. AFFICHAGE ET RECHERCHE DES COURS
+===================================================== */
 
-/* MELANGER LES QUESTIONS */
+function afficherCours(filtre=""){
+ const zone=document.getElementById("listeCours");
+ zone.innerHTML="";
+ let nombre=0;
+
+ cours.forEach((matiere,mi)=>{
+  const chapitres=matiere.chapitres.filter(ch=>
+   (matiere.matiere+" "+ch.titre+" "+ch.contenu.replace(/<[^>]*>/g,""))
+   .toLowerCase().includes(filtre.toLowerCase())
+  );
+
+  if(chapitres.length===0)return;
+
+  const titre=document.createElement("h3");
+  titre.textContent=(mi+1)+". "+matiere.matiere.toUpperCase();
+  zone.appendChild(titre);
+
+  chapitres.forEach(ch=>{
+   nombre++;
+   const bloc=document.createElement("div");
+   bloc.className="lesson";
+
+   const entete=document.createElement("div");
+   entete.className="lesson-title";
+   entete.textContent=ch.titre+"  ▾";
+
+   const contenu=document.createElement("div");
+   contenu.className="lesson-content";
+   contenu.innerHTML=ch.contenu;
+
+   entete.onclick=()=>contenu.classList.toggle("active");
+   bloc.appendChild(entete);
+   bloc.appendChild(contenu);
+   zone.appendChild(bloc);
+  });
+ });
+
+ if(nombre===0)zone.textContent="Aucun chapitre ne correspond à ta recherche.";
+}
+
+function rechercherCours(){
+ afficherCours(document.getElementById("rechercheCours").value);
+}
+
+/* =====================================================
+   3. BANQUE D'EXERCICES
+===================================================== */
+
+const exercices=[
+ {matiere:"Algèbre",q:"Le nombre -7 appartient à quel ensemble ?",o:["ℕ","ℤ","ℕ uniquement"],a:1,e:"-7 est un entier relatif : il appartient à ℤ."},
+ {matiere:"Algèbre",q:"Calculer 4 + 3 × 5.",o:["35","19","23"],a:1,e:"On effectue d'abord 3 × 5 = 15, puis 4 + 15 = 19."},
+ {matiere:"Algèbre",q:"Développer 2(x + 5).",o:["2x + 5","2x + 10","x + 10"],a:1,e:"2(x + 5) = 2x + 10."},
+ {matiere:"Algèbre",q:"Factoriser 4x + 12.",o:["4(x + 3)","4(x + 12)","x(4 + 12)"],a:0,e:"Le facteur commun est 4."},
+ {matiere:"Algèbre",q:"Résoudre 3x + 6 = 15.",o:["x = 2","x = 3","x = 5"],a:1,e:"3x = 9 donc x = 3."},
+ {matiere:"Algèbre",q:"Combien vaut 2³ ?",o:["6","8","9"],a:1,e:"2³ = 2 × 2 × 2 = 8."},
+ {matiere:"Géométrie",q:"Un angle droit mesure :",o:["45°","90°","180°"],a:1,e:"Un angle droit mesure 90°."},
+ {matiere:"Géométrie",q:"La somme des angles d'un triangle vaut :",o:["90°","180°","360°"],a:1,e:"La somme des angles d'un triangle est 180°."},
+ {matiere:"Géométrie",q:"Un triangle à trois côtés égaux est :",o:["Isocèle","Rectangle","Équilatéral"],a:2,e:"Un triangle équilatéral possède trois côtés égaux."},
+ {matiere:"Géométrie",q:"Un angle de 120° est :",o:["Aigu","Obtus","Droit"],a:1,e:"Un angle obtus est entre 90° et 180°."},
+ {matiere:"Géométrie",q:"La somme des angles d'un quadrilatère vaut :",o:["180°","270°","360°"],a:2,e:"La somme des angles intérieurs d'un quadrilatère vaut 360°."},
+ {matiere:"Géométrie",q:"Dans un triangle rectangle de côtés 3 et 4, l'hypoténuse vaut :",o:["5","6","7"],a:0,e:"D'après Pythagore : 3² + 4² = 25, donc √25 = 5."},
+ {matiere:"Fonctions",q:"Si f(x) = 2x + 3, calculer f(4).",o:["8","11","14"],a:1,e:"f(4) = 2 × 4 + 3 = 11."},
+ {matiere:"Fonctions",q:"Si f(x) = 5x, calculer f(3).",o:["8","15","20"],a:1,e:"f(3) = 5 × 3 = 15."},
+ {matiere:"Fonctions",q:"La fonction f(x) = 4x + 2 est :",o:["Croissante","Décroissante","Constante"],a:0,e:"Son coefficient directeur est positif."},
+ {matiere:"Fonctions",q:"La fonction f(x) = -2x + 1 est :",o:["Croissante","Décroissante","Constante"],a:1,e:"Son coefficient directeur est négatif."},
+ {matiere:"Fonctions",q:"Le domaine de définition de 1/x est :",o:["ℝ","ℝ privé de 0","[0 ; +∞["],a:1,e:"La division par zéro est impossible."},
+ {matiere:"Fonctions",q:"Calculer √81.",o:["8","9","10"],a:1,e:"√81 = 9 car 9² = 81."},
+ {matiere:"Statistiques",q:"Calculer la moyenne de 4, 6 et 8.",o:["5","6","7"],a:1,e:"(4 + 6 + 8)/3 = 18/3 = 6."},
+ {matiere:"Statistiques",q:"L'étendue est :",o:["Maximum - minimum","Somme des valeurs","Valeur centrale"],a:0,e:"Étendue = valeur maximale - valeur minimale."},
+ {matiere:"Statistiques",q:"La médiane de 2, 4, 6, 8, 10 est :",o:["4","6","8"],a:1,e:"La valeur centrale est 6."},
+ {matiere:"Statistiques",q:"Dans une classe de 30 élèves, 15 sont des filles. Leur fréquence est :",o:["25 %","50 %","75 %"],a:1,e:"15/30 = 0,5, soit 50 %."},
+ {matiere:"Statistiques",q:"Quel graphique représente des proportions ?",o:["Diagramme circulaire","Une équation","Une droite graduée"],a:0,e:"Le diagramme circulaire représente les parts d'un ensemble."},
+ {matiere:"Statistiques",q:"La moyenne de 5, 10 et 15 est :",o:["5","10","15"],a:1,e:"(5 + 10 + 15)/3 = 10."}
+];
+
 function melanger(tableau){
-    const copie = [...tableau];
-    for(let i = copie.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [copie[i],copie[j]] = [copie[j],copie[i]];
-    }
-    return copie;
+ const copie=[...tableau];
+ for(let i=copie.length-1;i>0;i--){
+  const j=Math.floor(Math.random()*(i+1));
+  [copie[i],copie[j]]=[copie[j],copie[i]];
+ }
+ return copie;
 }
 
-/* DEMARRER UNE EVALUATION */
+function afficherExercices(){
+ const zone=document.getElementById("zoneExercices");
+ zone.innerHTML="";
+ const selection=melanger(exercices).slice(0,10);
+
+ selection.forEach((q,i)=>{
+  const bloc=document.createElement("div");
+  bloc.className="exercise";
+  bloc.dataset.reponse=q.a;
+  bloc.dataset.explication=q.e;
+
+  const titre=document.createElement("b");
+  titre.textContent=(i+1)+". ["+q.matiere+"] "+q.q;
+  bloc.appendChild(titre);
+
+  q.o.forEach((option,j)=>{
+   const label=document.createElement("label");
+   const radio=document.createElement("input");
+   radio.type="radio";
+   radio.name="entrainement_"+i;
+   radio.value=j;
+   label.appendChild(radio);
+   label.appendChild(document.createTextNode(" "+option));
+   bloc.appendChild(label);
+  });
+
+  const resultat=document.createElement("div");
+  resultat.className="result";
+  bloc.appendChild(resultat);
+  zone.appendChild(bloc);
+ });
+}
+
+function corrigerEntrainement(){
+ const blocs=document.querySelectorAll("#zoneExercices .exercise");
+ let score=0;
+ let repondu=0;
+
+ blocs.forEach(bloc=>{
+  const choix=bloc.querySelector("input:checked");
+  const resultat=bloc.querySelector(".result");
+  const bonne=Number(bloc.dataset.reponse);
+
+  if(choix)repondu++;
+
+  if(choix && Number(choix.value)===bonne){
+   score++;
+   resultat.className="result correct";
+   resultat.textContent="✓ Bonne réponse ! "+bloc.dataset.explication;
+  }else{
+   resultat.className="result incorrect";
+   resultat.textContent="✗ Réponse incorrecte ou absente. "+bloc.dataset.explication;
+  }
+ });
+
+ const note=Math.round(score/blocs.length*20*100)/100;
+ document.getElementById("resultatEntrainement").textContent=
+  "Résultat : "+score+"/"+blocs.length+" bonnes réponses, soit "+note+"/20. Réponses données : "+repondu+".";
+}
+
+/* =====================================================
+   4. EVALUATIONS
+===================================================== */
+
+let questionsActuelles=[];
+let sujetActuel="";
+let tempsRestant=0;
+let intervalle=null;
+let evaluationActive=false;
+
 function demarrerEvaluation(matiere){
-    if(evaluationActive){
-        const confirmer = confirm("Une évaluation est déjà en cours. La remplacer ?");
-        if(!confirmer) return;
-        clearInterval(intervalle);
-    }
+ if(evaluationActive){
+  if(!confirm("Une évaluation est déjà en cours. La remplacer ?"))return;
+  clearInterval(intervalle);
+ }
 
-    sujetActuel = matiere;
+ sujetActuel=matiere;
+ let disponibles=matiere==="Générale"
+  ?exercices
+  :exercices.filter(q=>q.matiere===matiere);
 
-    let disponibles = matiere === "Générale"
-        ? banqueQuestions
-        : banqueQuestions.filter(q => q.matiere === matiere);
+ questionsActuelles=melanger(disponibles).slice(0,Math.min(10,disponibles.length));
+ tempsRestant=matiere==="Générale"?10*60:6*60;
+ evaluationActive=true;
 
-    questionsActuelles = melanger(disponibles);
+ document.getElementById("evalOptions").style.display="none";
+ document.getElementById("examResult").style.display="none";
+ document.getElementById("examArea").style.display="block";
+ document.getElementById("examTitle").textContent="Évaluation : "+matiere;
+ document.getElementById("examProgress").textContent=questionsActuelles.length+" questions";
+ afficherQuestions();
+ afficherTemps();
 
-    /* Nombre de questions : 20 au maximum */
-    questionsActuelles = questionsActuelles.slice(0,20);
+ intervalle=setInterval(()=>{
+  tempsRestant--;
+  afficherTemps();
+  if(tempsRestant<=0)terminerEvaluation(true);
+ },1000);
 
-    tempsRestant = matiere === "Générale" ? 15 * 60 : 8 * 60;
-    debutEvaluation = Date.now();
-    evaluationActive = true;
-
-    document.getElementById("evalOptions").style.display = "none";
-    document.getElementById("examResult").style.display = "none";
-    document.getElementById("examArea").style.display = "block";
-    document.getElementById("examTitle").textContent = "Évaluation : " + matiere;
-    document.getElementById("examProgress").textContent =
-        questionsActuelles.length + " questions";
-
-    afficherQuestions();
-    afficherTemps();
-
-    intervalle = setInterval(()=>{
-        tempsRestant--;
-        afficherTemps();
-
-        if(tempsRestant <= 0){
-            terminerEvaluation(true);
-        }
-    },1000);
-
-    document.getElementById("examArea").scrollIntoView({behavior:"smooth"});
+ document.getElementById("examArea").scrollIntoView({behavior:"smooth"});
 }
 
-/* AFFICHER LES QUESTIONS */
 function afficherQuestions(){
-    const conteneur = document.getElementById("questionsContainer");
-    conteneur.innerHTML = "";
+ const zone=document.getElementById("questionsContainer");
+ zone.innerHTML="";
 
-    questionsActuelles.forEach((q,index)=>{
-        const bloc = document.createElement("div");
-        bloc.className = "question";
+ questionsActuelles.forEach((q,i)=>{
+  const bloc=document.createElement("div");
+  bloc.className="question";
+  const titre=document.createElement("h4");
+  titre.textContent=(i+1)+". "+q.q;
+  bloc.appendChild(titre);
 
-        const titre = document.createElement("h4");
-        titre.textContent = (index+1) + ". " + q.question;
-        bloc.appendChild(titre);
-
-        q.options.forEach((option,i)=>{
-            const label = document.createElement("label");
-            const radio = document.createElement("input");
-
-            radio.type = "radio";
-            radio.name = "question_" + index;
-            radio.value = i;
-
-            label.appendChild(radio);
-            label.appendChild(document.createTextNode(" " + option));
-            bloc.appendChild(label);
-        });
-
-        conteneur.appendChild(bloc);
-    });
+  q.o.forEach((option,j)=>{
+   const label=document.createElement("label");
+   const radio=document.createElement("input");
+   radio.type="radio";
+   radio.name="question_"+i;
+   radio.value=j;
+   label.appendChild(radio);
+   label.appendChild(document.createTextNode(" "+option));
+   bloc.appendChild(label);
+  });
+  zone.appendChild(bloc);
+ });
 }
 
-/* CHRONOMETRE */
 function afficherTemps(){
-    const minutes = Math.floor(tempsRestant / 60);
-    const secondes = tempsRestant % 60;
-
-    document.getElementById("timer").textContent =
-        String(minutes).padStart(2,"0") + ":" +
-        String(secondes).padStart(2,"0");
+ const m=Math.floor(tempsRestant/60);
+ const s=tempsRestant%60;
+ document.getElementById("timer").textContent=
+  String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
 }
 
-/* TERMINER ET CORRIGER */
-function terminerEvaluation(finTemps = false){
-    if(!evaluationActive) return;
+function terminerEvaluation(finTemps=false){
+ if(!evaluationActive)return;
+ if(!finTemps && !confirm("Veux-tu vraiment terminer cette évaluation ?"))return;
 
-    if(!finTemps){
-        const confirme = confirm("Veux-tu vraiment terminer cette évaluation ?");
-        if(!confirme) return;
-    }
+ clearInterval(intervalle);
+ evaluationActive=false;
 
-    clearInterval(intervalle);
-    evaluationActive = false;
+ let score=0;
+ const zone=document.getElementById("corrections");
+ zone.innerHTML="";
 
-    let bonnesReponses = 0;
-    let corrections = "";
+ questionsActuelles.forEach((q,i)=>{
+  const choix=document.querySelector('input[name="question_'+i+'"]:checked');
+  const reponse=choix?Number(choix.value):-1;
+  const correct=reponse===q.a;
+  if(correct)score++;
 
-    questionsActuelles.forEach((q,index)=>{
-        const choix = document.querySelector(
-            'input[name="question_'+index+'"]:checked'
-        );
+  const bloc=document.createElement("div");
+  bloc.className="correction";
 
-        const reponse = choix ? Number(choix.value) : -1;
-        const correcte = reponse === q.answer;
+  const titre=document.createElement("b");
+  titre.textContent=(i+1)+". "+q.q;
+  bloc.appendChild(titre);
 
-        if(correcte) bonnesReponses++;
+  const resultat=document.createElement("p");
+  resultat.className=correct?"correct":"incorrect";
+  resultat.textContent=correct
+   ?"✓ Bonne réponse : "+q.o[q.a]
+   :"✗ Ta réponse : "+(reponse===-1?"Aucune réponse":q.o[reponse])+" | Bonne réponse : "+q.o[q.a];
+  bloc.appendChild(resultat);
 
-        const bloc = document.createElement("div");
-        bloc.className = "correction";
+  const explication=document.createElement("p");
+  explication.textContent="Explication : "+q.e;
+  bloc.appendChild(explication);
+  zone.appendChild(bloc);
+ });
 
-        const titre = document.createElement("b");
-        titre.textContent = (index+1) + ". " + q.question;
-        bloc.appendChild(titre);
+ const note=Math.round(score/questionsActuelles.length*20*100)/100;
+ document.getElementById("scoreValue").textContent=note+"/20";
 
-        const resultat = document.createElement("p");
-        resultat.className = correcte ? "correct" : "incorrect";
+ let message="";
+ if(note>=16)message="Excellent travail ! Tu maîtrises bien ces notions.";
+ else if(note>=14)message="Très bien ! Continue tes efforts.";
+ else if(note>=10)message="Résultat satisfaisant. Tu peux encore progresser.";
+ else message="Il faut revoir les cours et refaire les exercices.";
 
-        resultat.textContent = correcte
-            ? "✓ Bonne réponse : " + q.options[q.answer]
-            : "✗ Ta réponse : " +
-              (reponse === -1 ? "Aucune réponse" : q.options[reponse]) +
-              " | Réponse correcte : " + q.options[q.answer];
+ if(finTemps)message+=" Le temps est écoulé.";
+ document.getElementById("scoreMessage").textContent=
+  message+" Tu as obtenu "+score+" bonne(s) réponse(s) sur "+questionsActuelles.length+".";
 
-        bloc.appendChild(resultat);
+ document.getElementById("examArea").style.display="none";
+ document.getElementById("examResult").style.display="block";
 
-        const explication = document.createElement("p");
-        explication.textContent = "Explication : " + q.explication;
-        bloc.appendChild(explication);
+ enregistrerResultat({
+  matiere:sujetActuel,
+  note:note,
+  bonnes:score,
+  total:questionsActuelles.length,
+  date:new Date().toLocaleString("fr-FR")
+ });
 
-        document.getElementById("corrections").appendChild(bloc);
-    });
-
-    const total = questionsActuelles.length;
-    const note = total ? (bonnesReponses / total) * 20 : 0;
-    const noteArrondie = Math.round(note * 100) / 100;
-
-    document.getElementById("scoreValue").textContent =
-        noteArrondie + "/20";
-
-    let message = "";
-
-    if(note >= 16){
-        message = "Excellent travail ! Tu maîtrises bien ces notions.";
-    }else if(note >= 14){
-        message = "Très bien ! Continue tes efforts.";
-    }else if(note >= 10){
-        message = "Passable. Tu peux encore progresser.";
-    }else{
-        message = "Il faut revoir les cours et refaire les exercices.";
-    }
-
-    if(finTemps) message += " Le temps est écoulé.";
-
-    document.getElementById("scoreMessage").textContent =
-        message + " Tu as obtenu " + bonnesReponses +
-        " bonne(s) réponse(s) sur " + total + ".";
-
-    document.getElementById("examArea").style.display = "none";
-    document.getElementById("examResult").style.display = "block";
-
-    /* Enregistrer l'historique */
-    enregistrerResultat({
-        matiere:sujetActuel,
-        note:noteArrondie,
-        bonnes:bonnesReponses,
-        total:total,
-        date:new Date().toLocaleString("fr-FR")
-    });
-
-    document.getElementById("examResult").scrollIntoView({behavior:"smooth"});
+ document.getElementById("examResult").scrollIntoView({behavior:"smooth"});
 }
 
-/* NOUVELLE EVALUATION */
-function nouvelleEvaluation(){
-    document.getElementById("examResult").style.display = "none";
-    document.getElementById("evalOptions").style.display = "grid";
-    document.getElementById("corrections").innerHTML = "";
-    document.getElementById("evalOptions").scrollIntoView({behavior:"smooth"});
-}
-
-/* ANNULER UNE EVALUATION */
 function annulerEvaluation(){
-    if(!confirm("Veux-tu vraiment annuler cette évaluation ?")) return;
-
-    clearInterval(intervalle);
-    evaluationActive = false;
-
-    document.getElementById("examArea").style.display = "none";
-    document.getElementById("evalOptions").style.display = "grid";
+ if(!confirm("Veux-tu vraiment annuler cette évaluation ?"))return;
+ clearInterval(intervalle);
+ evaluationActive=false;
+ document.getElementById("examArea").style.display="none";
+ document.getElementById("evalOptions").style.display="grid";
 }
 
-/* HISTORIQUE */
+function nouvelleEvaluation(){
+ document.getElementById("examResult").style.display="none";
+ document.getElementById("evalOptions").style.display="grid";
+ document.getElementById("evalOptions").scrollIntoView({behavior:"smooth"});
+}
+
+/* =====================================================
+   5. HISTORIQUE ET PROGRESSION
+===================================================== */
+
 function lireHistorique(){
-    try{
-        const donnees = localStorage.getItem("mathia_historique");
-        return donnees ? JSON.parse(donnees) : [];
-    }catch(e){
-        return [];
-    }
+ try{
+  return JSON.parse(localStorage.getItem("mathia_historique")||"[]");
+ }catch(e){return [];}
 }
 
 function enregistrerResultat(resultat){
-    const historique = lireHistorique();
-    historique.unshift(resultat);
-
-    try{
-        localStorage.setItem(
-            "mathia_historique",
-            JSON.stringify(historique.slice(0,30))
-        );
-    }catch(e){
-        console.warn("Impossible d'enregistrer l'historique.");
-    }
-
-    afficherHistorique();
+ const historique=lireHistorique();
+ historique.unshift(resultat);
+ try{
+  localStorage.setItem("mathia_historique",JSON.stringify(historique.slice(0,50)));
+ }catch(e){
+  alert("L'enregistrement de l'historique est impossible sur cet appareil.");
+ }
+ afficherHistorique();
 }
 
 function afficherHistorique(){
-    const conteneur = document.getElementById("historyList");
-    const historique = lireHistorique();
+ const historique=lireHistorique();
+ const zone=document.getElementById("historyList");
+ zone.innerHTML="";
 
-    conteneur.innerHTML = "";
+ document.getElementById("nombreEvaluations").textContent=historique.length;
 
-    if(historique.length === 0){
-        conteneur.textContent = "Aucune évaluation effectuée pour le moment.";
-        conteneur.className = "empty";
-        return;
-    }
+ if(historique.length===0){
+  zone.textContent="Aucune évaluation effectuée pour le moment.";
+  document.getElementById("meilleureNote").textContent="0/20";
+  document.getElementById("moyenneNotes").textContent="0/20";
+  return;
+ }
 
-    conteneur.className = "";
+ const notes=historique.map(x=>Number(x.note)||0);
+ const meilleure=Math.max(...notes);
+ const moyenne=notes.reduce((a,b)=>a+b,0)/notes.length;
 
-    historique.forEach(item=>{
-        const bloc = document.createElement("div");
-        bloc.className = "history-item";
+ document.getElementById("meilleureNote").textContent=meilleure+"/20";
+ document.getElementById("moyenneNotes").textContent=(Math.round(moyenne*100)/100)+"/20";
 
-        const titre = document.createElement("b");
-        titre.textContent = item.matiere + " : " + item.note + "/20";
+ historique.forEach(item=>{
+  const bloc=document.createElement("div");
+  bloc.className="history-item";
 
-        const date = document.createElement("p");
-        date.textContent = item.date;
+  const titre=document.createElement("b");
+  titre.textContent=item.matiere+" : "+item.note+"/20";
 
-        const details = document.createElement("small");
-        details.textContent = item.bonnes + " bonne(s) réponse(s) sur " + item.total;
+  const date=document.createElement("p");
+  date.textContent=item.date;
 
-        bloc.appendChild(titre);
-        bloc.appendChild(date);
-        bloc.appendChild(details);
+  const detail=document.createElement("small");
+  detail.textContent=item.bonnes+" bonne(s) réponse(s) sur "+item.total;
 
-        conteneur.appendChild(bloc);
-    });
+  bloc.appendChild(titre);
+  bloc.appendChild(date);
+  bloc.appendChild(detail);
+  zone.appendChild(bloc);
+ });
 }
 
 function effacerHistorique(){
-    if(!confirm("Effacer définitivement tout l'historique de cet appareil ?")) return;
-
-    localStorage.removeItem("mathia_historique");
-    afficherHistorique();
+ if(!confirm("Effacer définitivement tout l'historique de cet appareil ?"))return;
+ localStorage.removeItem("mathia_historique");
+ afficherHistorique();
 }
 
-/* INITIALISATION */
+/* =====================================================
+   6. INITIALISATION
+===================================================== */
+
+afficherCours();
+afficherExercices();
 afficherHistorique();
 </script>
 
