@@ -105,6 +105,8 @@ footer{text-align:center;padding:25px;background:var(--blue);color:white;margin-
  header{justify-content:center}
  nav{justify-content:center}
  .card{padding:16px}
+ table{font-size:13px}
+ th,td{padding:6px}
 }
 </style>
 </head>
@@ -152,6 +154,7 @@ footer{text-align:center;padding:25px;background:var(--blue);color:white;margin-
  <p class="intro">Réponds aux questions puis clique sur « Corriger mon entraînement ».</p>
  <div id="zoneExercices"></div>
  <button class="green" onclick="corrigerEntrainement()">Corriger mon entraînement</button>
+ <button onclick="afficherExercices()">Nouveaux exercices</button>
  <div id="resultatEntrainement" class="result"></div>
 </section>
 
@@ -242,7 +245,10 @@ const cours = [
    </ul>
    <div class="formula">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</div>
    <div class="example"><b>Exemple :</b> 5 appartient à tous ces ensembles. -3 appartient à ℤ, 𝔻, ℚ et ℝ.</div>
-   <p>Attention : un nombre décimal peut toujours s'écrire sous forme de fraction décimale.</p>`
+   <h3>Appartenance et inclusion</h3>
+   <p>Le symbole ∈ signifie « appartient à ». Le symbole ⊂ signifie « est inclus dans ».</p>
+   <div class="example">-4 ∈ ℤ ; 2,5 ∈ 𝔻 ; ℕ ⊂ ℤ.</div>
+   <div class="note">Attention : √2 est un nombre réel irrationnel. Il n'appartient pas à ℚ.</div>`
   },
   {
    titre:"Chapitre 2 : Les opérations sur les nombres réels",
@@ -252,7 +258,10 @@ const cours = [
    <h3>Priorités opératoires</h3>
    <ol><li>Parenthèses</li><li>Puissances</li><li>Multiplications et divisions</li><li>Additions et soustractions</li></ol>
    <div class="example">A = 5 + 3 × 2<br>A = 5 + 6<br><b>A = 11</b></div>
-   <div class="formula">Règle des signes : (+)×(+) = + ; (-)×(-) = + ; (+)×(-) = -.</div>`
+   <h3>Règles des signes</h3>
+   <div class="formula">(+ ) × (+) = +<br>(-) × (-) = +<br>(+) × (-) = -<br>(-) × (+) = -</div>
+   <div class="example">B = -5 × (-3) + 4<br>B = 15 + 4<br><b>B = 19</b></div>
+   <div class="note">Dans une succession d'additions et de soustractions, on peut transformer une soustraction en addition de l'opposé.</div>`
   },
   {
    titre:"Chapitre 3 : Puissances et racines carrées",
@@ -262,22 +271,30 @@ const cours = [
    <div class="formula">aⁿ = a × a × ... × a (n facteurs)</div>
    <p>Exemple : 2⁴ = 2 × 2 × 2 × 2 = 16.</p>
    <h3>Règles de calcul</h3>
-   <div class="formula">aᵐ × aⁿ = aᵐ⁺ⁿ<br>aᵐ / aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>(aᵐ)ⁿ = aᵐⁿ</div>
+   <div class="formula">aᵐ × aⁿ = aᵐ⁺ⁿ<br>aᵐ / aⁿ = aᵐ⁻ⁿ (a ≠ 0)<br>(aᵐ)ⁿ = aᵐⁿ<br>(ab)ⁿ = aⁿbⁿ</div>
+   <div class="example">3² × 3⁴ = 3⁶ = 729.<br>(2³)² = 2⁶ = 64.</div>
+   <h3>Exposants particuliers</h3>
+   <div class="formula">a⁰ = 1 (si a ≠ 0)<br>a¹ = a<br>a⁻ⁿ = 1/aⁿ (si a ≠ 0)</div>
    <h3>Racine carrée</h3>
    <p>La racine carrée d'un nombre positif est le nombre positif dont le carré donne ce nombre.</p>
-   <div class="example">√25 = 5 car 5² = 25. De même, √81 = 9.</div>`
+   <div class="example">√25 = 5 car 5² = 25. De même, √81 = 9.</div>
+   <div class="formula">Pour a ≥ 0 : (√a)² = a.</div>
+   <div class="note">Dans ℝ, la racine carrée d'un nombre négatif n'est pas définie.</div>`
   },
   {
    titre:"Chapitre 4 : Développement et factorisation",
    contenu:`
    <h3>Développer</h3><p>Développer consiste à transformer un produit en somme.</p>
-   <div class="formula">a(b + c) = ab + ac</div>
-   <div class="example">3(x + 4) = 3x + 12.</div>
+   <div class="formula">a(b + c) = ab + ac<br>a(b - c) = ab - ac</div>
+   <div class="example">3(x + 4) = 3x + 12.<br>5(2x - 3) = 10x - 15.</div>
    <h3>Factoriser</h3><p>Factoriser consiste à transformer une somme en produit.</p>
    <div class="formula">ab + ac = a(b + c)</div>
-   <div class="example">5x + 15 = 5(x + 3).</div>
+   <div class="example">5x + 15 = 5(x + 3).<br>6x - 12 = 6(x - 2).</div>
    <h3>Identités remarquables</h3>
-   <div class="formula">(a + b)² = a² + 2ab + b²<br>(a - b)² = a² - 2ab + b²<br>(a + b)(a - b) = a² - b²</div>`
+   <div class="formula">(a + b)² = a² + 2ab + b²<br>(a - b)² = a² - 2ab + b²<br>(a + b)(a - b) = a² - b²</div>
+   <div class="example">(x + 3)² = x² + 6x + 9.<br>(x - 4)² = x² - 8x + 16.<br>(x + 5)(x - 5) = x² - 25.</div>
+   <h3>Factoriser avec les identités</h3>
+   <div class="example">x² - 16 = (x - 4)(x + 4).<br>x² + 6x + 9 = (x + 3)².</div>`
   },
   {
    titre:"Chapitre 5 : Les équations du premier degré",
@@ -286,7 +303,12 @@ const cours = [
    <div class="formula">ax + b = 0, avec a ≠ 0</div>
    <h3>Méthode de résolution</h3>
    <div class="example">Résoudre : 2x + 6 = 14<br>2x = 14 - 6<br>2x = 8<br>x = 8/2<br><b>x = 4</b></div>
-   <p>On effectue la même opération sur les deux membres de l'égalité pour conserver l'équilibre.</p>`
+   <h3>Vérification</h3>
+   <p>On remplace x par la valeur trouvée dans l'équation de départ.</p>
+   <div class="example">Pour x = 4 : 2 × 4 + 6 = 14. L'égalité est vraie.</div>
+   <h3>Problème concret</h3>
+   <div class="example">Un nombre augmenté de 7 donne 19. On pose x + 7 = 19. Donc x = 19 - 7 = <b>12</b>.</div>
+   <div class="note">On effectue la même opération sur les deux membres de l'égalité pour conserver l'équilibre.</div>`
   },
   {
    titre:"Chapitre 6 : Les inéquations",
@@ -295,7 +317,47 @@ const cours = [
    <div class="formula">2x + 3 &gt; 7</div>
    <h3>Résolution</h3>
    <div class="example">2x + 3 &gt; 7<br>2x &gt; 4<br><b>x &gt; 2</b></div>
-   <div class="note">Attention : lorsqu'on multiplie ou divise une inégalité par un nombre négatif, on inverse le sens du signe.</div>`
+   <h3>Les signes d'inégalité</h3>
+   <ul><li>&gt; : strictement supérieur à.</li><li>&lt; : strictement inférieur à.</li><li>≥ : supérieur ou égal à.</li><li>≤ : inférieur ou égal à.</li></ul>
+   <div class="note">Attention : lorsqu'on multiplie ou divise une inégalité par un nombre négatif, on inverse le sens du signe.</div>
+   <div class="example">-2x &gt; 6<br>x &lt; 6/(-2)<br><b>x &lt; -3</b>.</div>`
+  },
+  {
+   titre:"Chapitre 7 : Les fractions et les opérations fractionnaires",
+   contenu:`
+   <h3>Définition</h3>
+   <p>Une fraction représente le quotient de deux nombres. Le dénominateur doit être différent de zéro.</p>
+   <div class="formula">a/b avec b ≠ 0</div>
+   <h3>Simplification d'une fraction</h3>
+   <p>On divise le numérateur et le dénominateur par un même nombre non nul.</p>
+   <div class="example">12/18 = (12 ÷ 6)/(18 ÷ 6) = <b>2/3</b>.</div>
+   <h3>Addition et soustraction</h3>
+   <p>Pour additionner ou soustraire deux fractions, elles doivent avoir le même dénominateur.</p>
+   <div class="formula">a/c + b/c = (a + b)/c</div>
+   <div class="example">2/5 + 1/5 = 3/5.<br><br>Pour 1/2 + 1/3, on prend le dénominateur commun 6 :<br>1/2 + 1/3 = 3/6 + 2/6 = <b>5/6</b>.</div>
+   <h3>Multiplication</h3>
+   <div class="formula">(a/b) × (c/d) = (a × c)/(b × d)</div>
+   <div class="example">2/3 × 4/5 = 8/15.</div>
+   <h3>Division</h3>
+   <p>Diviser par une fraction revient à multiplier par son inverse.</p>
+   <div class="formula">(a/b) ÷ (c/d) = (a/b) × (d/c)</div>
+   <div class="example">2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = <b>5/6</b>.</div>
+   <div class="note">Ne confonds pas l'addition des fractions avec leur multiplication : on ne multiplie pas les dénominateurs pour additionner.</div>`
+  },
+  {
+   titre:"Chapitre 8 : Notation scientifique et puissances de 10",
+   contenu:`
+   <h3>Puissances de 10</h3>
+   <div class="formula">10¹ = 10<br>10² = 100<br>10³ = 1 000<br>10⁴ = 10 000<br>10⁻¹ = 0,1<br>10⁻² = 0,01</div>
+   <h3>Multiplier par une puissance de 10</h3>
+   <div class="example">3,45 × 10² = 345.<br>6,2 × 10⁻² = 0,062.</div>
+   <h3>Notation scientifique</h3>
+   <p>Un nombre positif s'écrit en notation scientifique sous la forme :</p>
+   <div class="formula">a × 10ⁿ, avec 1 ≤ a &lt; 10 et n entier relatif.</div>
+   <div class="example">45 000 = 4,5 × 10⁴.<br>0,00072 = 7,2 × 10⁻⁴.</div>
+   <h3>Pourquoi l'utiliser ?</h3>
+   <p>Elle permet d'écrire facilement les très grands et les très petits nombres, notamment en sciences et en technologie.</p>
+   <div class="note">Pour un grand nombre, l'exposant est positif. Pour un nombre positif inférieur à 1, l'exposant est négatif.</div>`
   }
  ]
 },
@@ -476,34 +538,67 @@ function rechercherCours(){
 }
 
 /* =====================================================
-   3. BANQUE D'EXERCICES
+   3. BANQUE D'EXERCICES ET QUESTIONS
 ===================================================== */
 
 const exercices=[
  {matiere:"Algèbre",q:"Le nombre -7 appartient à quel ensemble ?",o:["ℕ","ℤ","ℕ uniquement"],a:1,e:"-7 est un entier relatif : il appartient à ℤ."},
  {matiere:"Algèbre",q:"Calculer 4 + 3 × 5.",o:["35","19","23"],a:1,e:"On effectue d'abord 3 × 5 = 15, puis 4 + 15 = 19."},
  {matiere:"Algèbre",q:"Développer 2(x + 5).",o:["2x + 5","2x + 10","x + 10"],a:1,e:"2(x + 5) = 2x + 10."},
- {matiere:"Algèbre",q:"Factoriser 4x + 12.",o:["4(x + 3)","4(x + 12)","x(4 + 12)"],a:0,e:"Le facteur commun est 4."},
- {matiere:"Algèbre",q:"Résoudre 3x + 6 = 15.",o:["x = 2","x = 3","x = 5"],a:1,e:"3x = 9 donc x = 3."},
+ {matiere:"Algèbre",q:"Factoriser 4x + 12.",o:["4(x + 3)","4(x + 12)","x(4 + 12)"],a:0,e:"Le facteur commun est 4 : 4x + 12 = 4(x + 3)."},
+ {matiere:"Algèbre",q:"Résoudre 3x + 6 = 15.",o:["x = 2","x = 3","x = 5"],a:1,e:"3x = 15 - 6 = 9, donc x = 3."},
  {matiere:"Algèbre",q:"Combien vaut 2³ ?",o:["6","8","9"],a:1,e:"2³ = 2 × 2 × 2 = 8."},
+ {matiere:"Algèbre",q:"Calculer 5² × 5³.",o:["5⁵","5⁶","5¹"],a:0,e:"On additionne les exposants : 5² × 5³ = 5⁵."},
+ {matiere:"Algèbre",q:"Calculer √144.",o:["10","12","14"],a:1,e:"12² = 144, donc √144 = 12."},
+ {matiere:"Algèbre",q:"Développer (x + 3)².",o:["x² + 9","x² + 6x + 9","x² + 3x + 9"],a:1,e:"(a + b)² = a² + 2ab + b². Donc x² + 6x + 9."},
+ {matiere:"Algèbre",q:"Factoriser x² - 25.",o:["(x - 5)²","(x + 5)²","(x - 5)(x + 5)"],a:2,e:"C'est une différence de deux carrés : x² - 5² = (x - 5)(x + 5)."},
+ {matiere:"Algèbre",q:"Résoudre 5x - 10 = 0.",o:["x = 2","x = -2","x = 5"],a:0,e:"5x = 10, donc x = 2."},
+ {matiere:"Algèbre",q:"Résoudre 2x + 1 > 7.",o:["x > 3","x < 3","x > 4"],a:0,e:"2x > 6, donc x > 3."},
+ {matiere:"Algèbre",q:"Simplifier la fraction 12/18.",o:["3/4","2/3","6/9"],a:1,e:"On divise le numérateur et le dénominateur par 6 : 12/18 = 2/3."},
+ {matiere:"Algèbre",q:"Calculer 1/2 + 1/3.",o:["2/5","5/6","1/6"],a:1,e:"1/2 = 3/6 et 1/3 = 2/6. La somme vaut 5/6."},
+ {matiere:"Algèbre",q:"Calculer 2/3 × 3/4.",o:["1/2","5/7","6/7"],a:0,e:"2/3 × 3/4 = 6/12 = 1/2."},
+ {matiere:"Algèbre",q:"Calculer 2/3 ÷ 4/5.",o:["8/15","5/6","6/5"],a:1,e:"2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6."},
+ {matiere:"Algèbre",q:"Écrire 45 000 en notation scientifique.",o:["45 × 10³","4,5 × 10⁴","4,5 × 10³"],a:1,e:"La notation scientifique impose un nombre entre 1 inclus et 10 exclu : 4,5 × 10⁴."},
+ {matiere:"Algèbre",q:"Calculer 10⁻².",o:["100","0,1","0,01"],a:2,e:"10⁻² = 1/10² = 1/100 = 0,01."},
+ {matiere:"Algèbre",q:"La solution de 4x = 20 est :",o:["x = 4","x = 5","x = 16"],a:1,e:"On divise les deux membres par 4 : x = 20/4 = 5."},
+ {matiere:"Algèbre",q:"Quelle est la valeur de (-3)² ?",o:["-9","9","-6"],a:1,e:"(-3)² = (-3) × (-3) = 9."},
+ {matiere:"Algèbre",q:"Calculer 7 - 2 × 3.",o:["15","1","5"],a:1,e:"On fait d'abord la multiplication : 7 - 6 = 1."},
+ {matiere:"Algèbre",q:"Développer 3(2x - 4).",o:["6x - 12","5x - 4","6x - 4"],a:0,e:"On distribue 3 : 3 × 2x - 3 × 4 = 6x - 12."},
+ {matiere:"Algèbre",q:"Quel nombre est irrationnel ?",o:["0,5","√2","3/4"],a:1,e:"√2 ne peut pas s'écrire comme quotient de deux entiers."},
+ {matiere:"Algèbre",q:"Calculer 3² + 4².",o:["25","49","12"],a:0,e:"3² + 4² = 9 + 16 = 25."},
+
  {matiere:"Géométrie",q:"Un angle droit mesure :",o:["45°","90°","180°"],a:1,e:"Un angle droit mesure 90°."},
  {matiere:"Géométrie",q:"La somme des angles d'un triangle vaut :",o:["90°","180°","360°"],a:1,e:"La somme des angles d'un triangle est 180°."},
  {matiere:"Géométrie",q:"Un triangle à trois côtés égaux est :",o:["Isocèle","Rectangle","Équilatéral"],a:2,e:"Un triangle équilatéral possède trois côtés égaux."},
  {matiere:"Géométrie",q:"Un angle de 120° est :",o:["Aigu","Obtus","Droit"],a:1,e:"Un angle obtus est entre 90° et 180°."},
  {matiere:"Géométrie",q:"La somme des angles d'un quadrilatère vaut :",o:["180°","270°","360°"],a:2,e:"La somme des angles intérieurs d'un quadrilatère vaut 360°."},
  {matiere:"Géométrie",q:"Dans un triangle rectangle de côtés 3 et 4, l'hypoténuse vaut :",o:["5","6","7"],a:0,e:"D'après Pythagore : 3² + 4² = 25, donc √25 = 5."},
+ {matiere:"Géométrie",q:"L'aire d'un rectangle de longueur 8 et largeur 3 vaut :",o:["11","22","24"],a:2,e:"Aire = longueur × largeur = 8 × 3 = 24."},
+ {matiere:"Géométrie",q:"Deux angles complémentaires ont une somme de :",o:["90°","180°","360°"],a:0,e:"Deux angles complémentaires ont une somme égale à 90°."},
+ {matiere:"Géométrie",q:"Le périmètre d'un carré de côté 5 cm est :",o:["10 cm","20 cm","25 cm"],a:1,e:"P = 4 × 5 = 20 cm."},
+ {matiere:"Géométrie",q:"Le théorème de Pythagore s'applique dans :",o:["Un triangle quelconque","Un triangle rectangle","Un cercle"],a:1,e:"Le théorème de Pythagore s'applique dans un triangle rectangle."},
+
  {matiere:"Fonctions",q:"Si f(x) = 2x + 3, calculer f(4).",o:["8","11","14"],a:1,e:"f(4) = 2 × 4 + 3 = 11."},
  {matiere:"Fonctions",q:"Si f(x) = 5x, calculer f(3).",o:["8","15","20"],a:1,e:"f(3) = 5 × 3 = 15."},
  {matiere:"Fonctions",q:"La fonction f(x) = 4x + 2 est :",o:["Croissante","Décroissante","Constante"],a:0,e:"Son coefficient directeur est positif."},
  {matiere:"Fonctions",q:"La fonction f(x) = -2x + 1 est :",o:["Croissante","Décroissante","Constante"],a:1,e:"Son coefficient directeur est négatif."},
  {matiere:"Fonctions",q:"Le domaine de définition de 1/x est :",o:["ℝ","ℝ privé de 0","[0 ; +∞["],a:1,e:"La division par zéro est impossible."},
  {matiere:"Fonctions",q:"Calculer √81.",o:["8","9","10"],a:1,e:"√81 = 9 car 9² = 81."},
+ {matiere:"Fonctions",q:"Si f(x) = x², calculer f(-3).",o:["-9","6","9"],a:2,e:"f(-3) = (-3)² = 9."},
+ {matiere:"Fonctions",q:"La fonction f(x) = 7 est :",o:["Croissante","Décroissante","Constante"],a:2,e:"Toutes les images sont égales à 7."},
+ {matiere:"Fonctions",q:"Si f(x) = 3x - 2, calculer f(2).",o:["4","6","8"],a:0,e:"f(2) = 3 × 2 - 2 = 4."},
+ {matiere:"Fonctions",q:"La représentation graphique d'une fonction affine est :",o:["Un cercle","Une droite","Une parabole"],a:1,e:"La représentation graphique d'une fonction affine est une droite."},
+
  {matiere:"Statistiques",q:"Calculer la moyenne de 4, 6 et 8.",o:["5","6","7"],a:1,e:"(4 + 6 + 8)/3 = 18/3 = 6."},
  {matiere:"Statistiques",q:"L'étendue est :",o:["Maximum - minimum","Somme des valeurs","Valeur centrale"],a:0,e:"Étendue = valeur maximale - valeur minimale."},
  {matiere:"Statistiques",q:"La médiane de 2, 4, 6, 8, 10 est :",o:["4","6","8"],a:1,e:"La valeur centrale est 6."},
  {matiere:"Statistiques",q:"Dans une classe de 30 élèves, 15 sont des filles. Leur fréquence est :",o:["25 %","50 %","75 %"],a:1,e:"15/30 = 0,5, soit 50 %."},
  {matiere:"Statistiques",q:"Quel graphique représente des proportions ?",o:["Diagramme circulaire","Une équation","Une droite graduée"],a:0,e:"Le diagramme circulaire représente les parts d'un ensemble."},
- {matiere:"Statistiques",q:"La moyenne de 5, 10 et 15 est :",o:["5","10","15"],a:1,e:"(5 + 10 + 15)/3 = 10."}
+ {matiere:"Statistiques",q:"La moyenne de 5, 10 et 15 est :",o:["5","10","15"],a:1,e:"(5 + 10 + 15)/3 = 10."},
+ {matiere:"Statistiques",q:"L'effectif total est :",o:["La somme des effectifs","La plus petite valeur","La moyenne"],a:0,e:"L'effectif total est la somme de tous les effectifs."},
+ {matiere:"Statistiques",q:"Une fréquence de 0,25 correspond à :",o:["2,5 %","25 %","250 %"],a:1,e:"0,25 × 100 = 25 %."},
+ {matiere:"Statistiques",q:"L'étendue de la série 4, 7, 9, 12 est :",o:["8","9","12"],a:0,e:"Étendue = 12 - 4 = 8."},
+ {matiere:"Statistiques",q:"L'angle d'un secteur représentant 50 % d'un disque vaut :",o:["90°","180°","360°"],a:1,e:"0,5 × 360° = 180°."}
 ];
 
 function melanger(tableau){
@@ -518,6 +613,7 @@ function melanger(tableau){
 function afficherExercices(){
  const zone=document.getElementById("zoneExercices");
  zone.innerHTML="";
+ document.getElementById("resultatEntrainement").textContent="";
  const selection=melanger(exercices).slice(0,10);
 
  selection.forEach((q,i)=>{
@@ -525,6 +621,7 @@ function afficherExercices(){
   bloc.className="exercise";
   bloc.dataset.reponse=q.a;
   bloc.dataset.explication=q.e;
+  bloc.dataset.options=JSON.stringify(q.o);
 
   const titre=document.createElement("b");
   titre.textContent=(i+1)+". ["+q.matiere+"] "+q.q;
@@ -557,6 +654,7 @@ function corrigerEntrainement(){
   const choix=bloc.querySelector("input:checked");
   const resultat=bloc.querySelector(".result");
   const bonne=Number(bloc.dataset.reponse);
+  const options=JSON.parse(bloc.dataset.options);
 
   if(choix)repondu++;
 
@@ -566,7 +664,7 @@ function corrigerEntrainement(){
    resultat.textContent="✓ Bonne réponse ! "+bloc.dataset.explication;
   }else{
    resultat.className="result incorrect";
-   resultat.textContent="✗ Réponse incorrecte ou absente. "+bloc.dataset.explication;
+   resultat.textContent="✗ Réponse incorrecte ou absente. Bonne réponse : "+options[bonne]+". "+bloc.dataset.explication;
   }
  });
 
@@ -625,7 +723,7 @@ function afficherQuestions(){
   const bloc=document.createElement("div");
   bloc.className="question";
   const titre=document.createElement("h4");
-  titre.textContent=(i+1)+". "+q.q;
+  titre.textContent=(i+1)+". ["+q.matiere+"] "+q.q;
   bloc.appendChild(titre);
 
   q.o.forEach((option,j)=>{
@@ -670,7 +768,7 @@ function terminerEvaluation(finTemps=false){
   bloc.className="correction";
 
   const titre=document.createElement("b");
-  titre.textContent=(i+1)+". "+q.q;
+  titre.textContent=(i+1)+". ["+q.matiere+"] "+q.q;
   bloc.appendChild(titre);
 
   const resultat=document.createElement("p");
